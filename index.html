@@ -25,12 +25,24 @@ nav{display:flex;gap:26px;color:#d9cfe5;font-size:.92rem}nav a:hover{color:var(-
 .join{margin:20px 0 70px;border-radius:20px;padding:35px;text-align:center;background:linear-gradient(110deg,#6b21a8,#86198f 55%,#155e75);box-shadow:0 15px 60px #0005}.join h2{font-size:clamp(1.8rem,4vw,3rem);margin:5px}.join p{color:#f2ddff;line-height:1.6}.join .btn{border-color:#ffffff88;background:#ffffff17}
 footer{border-top:1px solid #ffffff16;padding:24px 0;color:#a99eb7;font-size:.85rem}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;color:#fff;border-radius:18px;padding:24px;box-shadow:0 0 60px #a855f755}dialog::backdrop{background:#000b}dialog h2{margin-top:0}dialog p{color:var(--muted);line-height:1.7}.close{float:right;background:#ffffff12;border:1px solid #ffffff30;color:white;border-radius:8px;padding:7px 10px;cursor:pointer}
+
+.snake-panel{border:1px solid var(--line);border-radius:20px;padding:24px;background:linear-gradient(135deg,#160d23,#090a12);display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,420px);gap:24px;align-items:center}
+.snake-copy p{color:var(--muted);line-height:1.7}.snake-stage{background:#05090c;border:1px solid #286b57;border-radius:14px;padding:14px;text-align:center;box-shadow:0 0 25px #10b98118}
+#snakeCanvas{display:block;width:100%;max-width:360px;height:auto;aspect-ratio:1;margin:0 auto;border:1px solid #1d5744;border-radius:8px;background:#07120f;touch-action:none}
+.snake-stats{display:flex;justify-content:space-between;color:var(--cyan);font-weight:800;margin:0 auto 10px;max-width:360px}
+.snake-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:12px}
+.snake-actions button,.snake-pad button{border:1px solid #287d60;background:#10291f;color:#fff;border-radius:9px;padding:10px 15px;font-weight:800;cursor:pointer}
+.snake-actions button:hover,.snake-pad button:hover{background:#176343}
+.snake-pad{display:grid;grid-template-columns:repeat(3,42px);gap:6px;justify-content:center;margin:12px auto 0}
+.snake-pad button{padding:8px 0;font-size:1.1rem}.snake-pad button:nth-child(1){grid-column:2}.snake-pad button:nth-child(2){grid-column:1;grid-row:2}.snake-pad button:nth-child(3){grid-column:2;grid-row:2}.snake-pad button:nth-child(4){grid-column:3;grid-row:2}
+@media(max-width:760px){.snake-panel{grid-template-columns:1fr;padding:18px}}
+
 @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:50px}.visual{min-height:330px;grid-row:1}.hero-copy{grid-row:2}.cards{grid-template-columns:1fr}.art{height:130px}.arcade{grid-template-columns:1fr}.nav{height:65px}nav{gap:12px;font-size:.78rem}.hero h1{letter-spacing:-1.5px}.hud.one{right:2%}.hud.two{left:2%}.section-head{display:block}.section-head p{margin-top:10px}}
 @media(max-width:430px){nav a:nth-child(2),nav a:nth-child(4){display:none}.warrior{font-size:9rem}.visual{min-height:290px}.hud{padding:9px 11px}.hero{gap:0}}
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="logo" href="#home">GM<span>.</span>HUB</a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="btn secondary" href="#games">Enter Hub ↗</a></div></header>
+<header><div class="wrap nav"><a class="logo" href="#home">GM<span>.</span>HUB</a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="btn secondary" href="#games">Enter Hub ↗</a></div></header>
 <main>
 <section class="wrap hero" id="home"><div class="hero-copy"><div class="eyebrow">✦ Next-level gaming experience</div><h1>The Future of <span>Gaming Lives Here.</span></h1><p>Enter the arena. Discover your next favorite game, challenge your reflexes, and explore a neon-powered world built for players.</p><div class="actions"><a class="btn primary" href="#games">⚡ Explore Games</a><a class="btn secondary" href="#arena">▶ Play a Mini-Game</a></div></div><div class="visual" aria-label="Futuristic warrior illustration"><div class="orb"></div><div class="warrior" role="img" aria-label="Samurai mask">👾</div><div class="hud one"><strong>LEVEL UP</strong>YOUR NEXT QUEST</div><div class="hud two"><strong>GM / 001</strong>PLAYER READY</div></div></section>
 <section class="wrap section" id="games"><div class="section-head"><div><div class="eyebrow">Choose your mission</div><h2>Explore the <span style="color:var(--pink)">Game Zone</span></h2></div><p>Pick a portal and jump into the action. These cards are ready for you to customize with your own games.</p></div><div class="cards">
@@ -39,6 +51,11 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 <article class="card"><div class="art">🏎️</div><div class="card-body"><div class="tag">Racing • Speed</div><h3>Neon Drift</h3><p>Feel the speed, chase the glow, and own the futuristic streets.</p><button class="play" data-game="Neon Drift">View mission ↗</button></div></article>
 </div></section>
 <section class="wrap section" id="arena"><div class="arcade"><div><div class="eyebrow">Playable right now</div><h2>Quick Reflex <span style="color:var(--cyan)">Challenge</span></h2><p>Test your reaction speed! Press start, wait for the screen to turn green, then click as quickly as you can. This mini-game works directly in your browser.</p><p style="font-size:.85rem">No account needed. No downloads. Just play.</p></div><div class="mini-game"><div class="game-screen" id="gameScreen">Ready when you are, player.</div><div class="game-controls"><button id="startGame">Start challenge</button><button id="resetGame">Reset</button></div><p id="gameMessage" aria-live="polite" style="font-size:.85rem;color:var(--muted)">Try to beat your best time!</p></div></div></section>
+
+<section class="wrap section" id="snake"><div class="section-head"><div><div class="eyebrow">Classic arcade • Play now</div><h2>Snake <span style="color:var(--cyan)">Game</span> 🐍</h2></div><p>Eat the glowing food, grow your snake, and try not to crash. Your best score is saved on this device.</p></div>
+<div class="snake-panel"><div class="snake-copy"><div class="tag">GM.HUB arcade original</div><h3>How long can you survive?</h3><p>Use the arrow keys or WASD on your keyboard. On a phone or tablet, use the direction buttons. Grab the pink food to score points and make your snake longer.</p><p><strong style="color:var(--cyan)">Tip:</strong> Don’t run into the walls or your own tail!</p></div>
+<div class="snake-stage"><div class="snake-stats"><span>Score: <span id="snakeScore">0</span></span><span>Best: <span id="snakeBest">0</span></span></div><canvas id="snakeCanvas" width="360" height="360" aria-label="Snake game board"></canvas><div class="snake-actions"><button id="snakeStart">Start game</button><button id="snakePause">Pause</button><button id="snakeReset">Restart</button></div><div class="snake-pad" aria-label="Touch controls"><button data-dir="up" aria-label="Up">↑</button><button data-dir="left" aria-label="Left">←</button><button data-dir="down" aria-label="Down">↓</button><button data-dir="right" aria-label="Right">→</button></div><p id="snakeMessage" aria-live="polite" style="font-size:.82rem;color:var(--muted);margin-bottom:0">Press Start game to play.</p></div></div></section>
+
 <section class="wrap join" id="community"><div class="eyebrow">Your next chapter starts here</div><h2>Ready to Join the Battle?</h2><p>GM.HUB is your portal to games, challenges, and good times.<br>Stay sharp. Play fair. Keep leveling up.</p><a class="btn" href="#games">Find Your Next Game ✦</a></section>
 </main>
 <footer><div class="wrap foot"><span>© <span id="year"></span> GM.HUB — Fan-made gaming hub.</span><span>Built for players, powered by imagination 💜</span></div></footer>
@@ -54,5 +71,41 @@ function reset(){clearTimeout(timer);state='idle';screen.style.background='trans
 startBtn.addEventListener('click',()=>{if(state==='waiting')return;reset();state='waiting';screen.textContent='Wait for green…';message.textContent='Don’t click too early!';startBtn.disabled=true;timer=setTimeout(()=>{state='go';startTime=performance.now();screen.style.background='#064e3b';screen.innerHTML='<strong>CLICK NOW!</strong>';},1200+Math.random()*3000)});
 screen.addEventListener('click',()=>{if(state==='waiting'){clearTimeout(timer);state='early';screen.textContent='Too soon!';message.textContent='False start — press Start challenge to try again.';startBtn.disabled=false}else if(state==='go'){const elapsed=Math.round(performance.now()-startTime);state='done';screen.style.background='transparent';screen.innerHTML='<strong>'+elapsed+' ms</strong>';message.textContent=elapsed<250?'Lightning reflexes! ⚡':elapsed<400?'Nice reaction, player!':'Good try — can you go faster?';startBtn.disabled=false}});
 document.getElementById('resetGame').addEventListener('click',reset);
+
+const snakeCanvas=document.getElementById('snakeCanvas');
+if(snakeCanvas){
+ const ctx=snakeCanvas.getContext('2d'),grid=18,cell=20;
+ let snake=[{x:8,y:9},{x:7,y:9},{x:6,y:9}],dir={x:1,y:0},nextDir={x:1,y:0},food={x:13,y:9},score=0,best=0,running=false,ended=false,loop=null;
+ const scoreEl=document.getElementById('snakeScore'),bestEl=document.getElementById('snakeBest'),msg=document.getElementById('snakeMessage');
+ try{best=Number(localStorage.getItem('gmhubSnakeBest')||0)}catch(e){}
+ bestEl.textContent=best;
+ function placeFood(){do{food={x:Math.floor(Math.random()*grid),y:Math.floor(Math.random()*grid)}}while(snake.some(p=>p.x===food.x&&p.y===food.y))}
+ function draw(){
+  ctx.fillStyle='#07120f';ctx.fillRect(0,0,360,360);
+  ctx.strokeStyle='#10291f';ctx.lineWidth=1;for(let i=0;i<=grid;i++){ctx.beginPath();ctx.moveTo(i*cell,0);ctx.lineTo(i*cell,360);ctx.stroke();ctx.beginPath();ctx.moveTo(0,i*cell);ctx.lineTo(360,i*cell);ctx.stroke()}
+  ctx.fillStyle='#fb7185';ctx.shadowColor='#fb7185';ctx.shadowBlur=14;ctx.beginPath();ctx.arc(food.x*cell+10,food.y*cell+10,7,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;
+  snake.forEach((p,i)=>{ctx.fillStyle=i===0?'#6ee7b7':'#10b981';ctx.shadowColor='#10b981';ctx.shadowBlur=i===0?10:0;ctx.fillRect(p.x*cell+2,p.y*cell+2,16,16)});ctx.shadowBlur=0;
+ }
+ function stop(){running=false;clearInterval(loop);loop=null}
+ function finish(){stop();ended=true;msg.textContent='Game over! Final score: '+score+'. Press Restart or Start game to try again.'}
+ function tick(){
+  dir=nextDir;const head={x:snake[0].x+dir.x,y:snake[0].y+dir.y};
+  if(head.x<0||head.x>=grid||head.y<0||head.y>=grid||snake.some((p,i)=>i<snake.length-1&&p.x===head.x&&p.y===head.y)){finish();return}
+  snake.unshift(head);
+  if(head.x===food.x&&head.y===food.y){score+=10;scoreEl.textContent=score;if(score>best){best=score;bestEl.textContent=best;try{localStorage.setItem('gmhubSnakeBest',String(best))}catch(e){}}placeFood()}
+  else snake.pop();
+  draw();
+ }
+ function start(){if(running)return;if(ended)reset();running=true;msg.textContent='Game on! Use arrows or WASD.';loop=setInterval(tick,125)}
+ function reset(){stop();snake=[{x:8,y:9},{x:7,y:9},{x:6,y:9}];dir={x:1,y:0};nextDir={x:1,y:0};score=0;scoreEl.textContent='0';ended=false;placeFood();draw();msg.textContent='Fresh start! Press Start game.'}
+ function change(d){const dirs={up:{x:0,y:-1},down:{x:0,y:1},left:{x:-1,y:0},right:{x:1,y:0}};const n=dirs[d];if(n&&!(n.x===-dir.x&&n.y===-dir.y))nextDir=n}
+ document.addEventListener('keydown',e=>{const map={ArrowUp:'up',w:'up',W:'up',ArrowDown:'down',s:'down',S:'down',ArrowLeft:'left',a:'left',A:'left',ArrowRight:'right',d:'right',D:'right'};if(map[e.key]){e.preventDefault();change(map[e.key])}});
+ document.querySelectorAll('[data-dir]').forEach(b=>b.addEventListener('click',()=>change(b.dataset.dir)));
+ document.getElementById('snakeStart').addEventListener('click',start);
+ document.getElementById('snakePause').addEventListener('click',()=>{if(running){stop();msg.textContent='Paused. Press Start game to continue.'}else if(!ended)start()});
+ document.getElementById('snakeReset').addEventListener('click',reset);
+ draw();
+}
+
 </script>
 </body></html>
