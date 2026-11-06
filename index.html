@@ -33,7 +33,7 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 .snake-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:12px}
 .snake-actions button,.snake-pad button{border:1px solid #287d60;background:#10291f;color:#fff;border-radius:9px;padding:10px 15px;font-weight:800;cursor:pointer}
 .snake-actions button:hover,.snake-pad button:hover{background:#176343}
-.snake-pad{display:grid;grid-template-columns:repeat(3,42px);gap:6px;justify-content:center;margin:12px auto 0}
+.snake-pad{display:none;grid-template-columns:repeat(3,42px);gap:6px;justify-content:center;margin:12px auto 0}body.touch-device .snake-pad{display:grid}
 .snake-pad button{padding:8px 0;font-size:1.1rem}.snake-pad button:nth-child(1){grid-column:2}.snake-pad button:nth-child(2){grid-column:1;grid-row:2}.snake-pad button:nth-child(3){grid-column:2;grid-row:2}.snake-pad button:nth-child(4){grid-column:3;grid-row:2}
 @media(max-width:760px){.snake-panel{grid-template-columns:1fr;padding:18px}}
 
@@ -53,8 +53,8 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 <section class="wrap section" id="arena"><div class="arcade"><div><div class="eyebrow">Playable right now</div><h2>Quick Reflex <span style="color:var(--cyan)">Challenge</span></h2><p>Test your reaction speed! Press start, wait for the screen to turn green, then click as quickly as you can. This mini-game works directly in your browser.</p><p style="font-size:.85rem">No account needed. No downloads. Just play.</p></div><div class="mini-game"><div class="game-screen" id="gameScreen">Ready when you are, player.</div><div class="game-controls"><button id="startGame">Start challenge</button><button id="resetGame">Reset</button></div><p id="gameMessage" aria-live="polite" style="font-size:.85rem;color:var(--muted)">Try to beat your best time!</p></div></div></section>
 
 <section class="wrap section" id="snake"><div class="section-head"><div><div class="eyebrow">Classic arcade • Play now</div><h2>Snake <span style="color:var(--cyan)">Game</span> 🐍</h2></div><p>Eat the glowing food, grow your snake, and try not to crash. Your best score is saved on this device.</p></div>
-<div class="snake-panel"><div class="snake-copy"><div class="tag">GM.HUB arcade original</div><h3>How long can you survive?</h3><p>Use the arrow keys or WASD on your keyboard. On a phone or tablet, use the direction buttons. Grab the pink food to score points and make your snake longer.</p><p><strong style="color:var(--cyan)">Tip:</strong> Wrap through one wall and appear on the opposite side. Avoid the bombs and your own tail!</p></div>
-<div class="snake-stage"><div class="snake-stats"><span>Score: <span id="snakeScore">0</span></span><span>Best: <span id="snakeBest">0</span></span></div><canvas id="snakeCanvas" width="360" height="360" aria-label="Snake game board"></canvas><div class="snake-actions"><button id="snakeStart">Start game</button><button id="snakePause">Pause</button><button id="snakeReset">Restart</button></div><div class="snake-pad" aria-label="Touch controls"><button data-dir="up" aria-label="Up">↑</button><button data-dir="left" aria-label="Left">←</button><button data-dir="down" aria-label="Down">↓</button><button data-dir="right" aria-label="Right">→</button></div><p id="snakeMessage" aria-live="polite" style="font-size:.82rem;color:var(--muted);margin-bottom:0">Press Start game to play.</p></div></div></section>
+<div class="snake-panel"><div class="snake-copy"><div class="tag">GM.HUB arcade original</div><h3>How long can you survive?</h3><p>The game automatically adapts to your device. Use arrow keys or WASD on a computer, or swipe the board / tap the direction buttons on a phone or tablet. Grab the pink food to score points and make your snake longer.</p><p><strong style="color:var(--cyan)">Tip:</strong> Wrap through one wall and appear on the opposite side. Avoid the bombs and your own tail!</p></div>
+<div class="snake-stage"><div class="snake-stats"><span>Score: <span id="snakeScore">0</span></span><span>Best: <span id="snakeBest">0</span></span></div><canvas id="snakeCanvas" width="360" height="360" aria-label="Snake game board"></canvas><div class="snake-actions"><button id="snakeStart">Start game</button><button id="snakePause">Pause</button><button id="snakeReset">Restart</button></div><p id="snakeControlHint" style="font-size:.8rem;color:var(--muted);margin:12px 0 0">Keyboard: use arrow keys or WASD.</p><div class="snake-pad" aria-label="Touch controls"><button data-dir="up" aria-label="Up">↑</button><button data-dir="left" aria-label="Left">←</button><button data-dir="down" aria-label="Down">↓</button><button data-dir="right" aria-label="Right">→</button></div><p id="snakeMessage" aria-live="polite" style="font-size:.82rem;color:var(--muted);margin-bottom:0">Press Start game to play.</p></div></div></section>
 
 <section class="wrap join" id="community"><div class="eyebrow">Your next chapter starts here</div><h2>Ready to Join the Battle?</h2><p>GM.HUB is your portal to games, challenges, and good times.<br>Stay sharp. Play fair. Keep leveling up.</p><a class="btn" href="#games">Find Your Next Game ✦</a></section>
 </main>
@@ -76,7 +76,10 @@ const snakeCanvas=document.getElementById('snakeCanvas');
 if(snakeCanvas){
  const ctx=snakeCanvas.getContext('2d'),grid=18,cell=20;
  let snake=[{x:8,y:9},{x:7,y:9},{x:6,y:9}],dir={x:1,y:0},nextDir={x:1,y:0},food={x:13,y:9},bombs=[],score=0,best=0,running=false,ended=false,loop=null;
- const scoreEl=document.getElementById('snakeScore'),bestEl=document.getElementById('snakeBest'),msg=document.getElementById('snakeMessage');
+ const scoreEl=document.getElementById('snakeScore'),bestEl=document.getElementById('snakeBest'),msg=document.getElementById('snakeMessage'),controlHint=document.getElementById('snakeControlHint');
+ const touchMode=()=>window.matchMedia('(pointer: coarse)').matches||window.matchMedia('(max-width: 760px)').matches;
+ function updateDeviceControls(){document.body.classList.toggle('touch-device',touchMode());if(controlHint)controlHint.textContent=touchMode()?'Phone/tablet controls: swipe on the board or tap the arrows.':'Computer controls: use the arrow keys or WASD.'}
+ updateDeviceControls();window.matchMedia('(pointer: coarse)').addEventListener?.('change',updateDeviceControls);window.matchMedia('(max-width: 760px)').addEventListener?.('change',updateDeviceControls);
  try{best=Number(localStorage.getItem('gmhubSnakeBest')||0)}catch(e){}
  bestEl.textContent=best;
  function occupied(p){return snake.some(s=>s.x===p.x&&s.y===p.y)|| (food&&food.x===p.x&&food.y===p.y)||bombs.some(b=>b.x===p.x&&b.y===p.y)}
@@ -109,6 +112,11 @@ if(snakeCanvas){
  function change(d){const dirs={up:{x:0,y:-1},down:{x:0,y:1},left:{x:-1,y:0},right:{x:1,y:0}};const n=dirs[d];if(n&&!(n.x===-dir.x&&n.y===-dir.y))nextDir=n}
  document.addEventListener('keydown',e=>{const map={ArrowUp:'up',w:'up',W:'up',ArrowDown:'down',s:'down',S:'down',ArrowLeft:'left',a:'left',A:'left',ArrowRight:'right',d:'right',D:'right'};if(map[e.key]){e.preventDefault();change(map[e.key])}});
  document.querySelectorAll('[data-dir]').forEach(b=>b.addEventListener('click',()=>change(b.dataset.dir)));
+ // Swipe gestures make the board directly playable on touchscreens.
+ let touchStart=null;
+ snakeCanvas.addEventListener('pointerdown',e=>{if(e.pointerType==='touch'||e.pointerType==='pen'){touchStart={x:e.clientX,y:e.clientY};e.preventDefault()}},{passive:false});
+ snakeCanvas.addEventListener('pointerup',e=>{if(!touchStart)return;const dx=e.clientX-touchStart.x,dy=e.clientY-touchStart.y;touchStart=null;if(Math.max(Math.abs(dx),Math.abs(dy))<18)return;if(Math.abs(dx)>Math.abs(dy))change(dx>0?'right':'left');else change(dy>0?'down':'up')});
+ snakeCanvas.addEventListener('pointercancel',()=>{touchStart=null});
  document.getElementById('snakeStart').addEventListener('click',start);
  document.getElementById('snakePause').addEventListener('click',()=>{if(running){stop();msg.textContent='Paused. Press Start game to continue.'}else if(!ended)start()});
  document.getElementById('snakeReset').addEventListener('click',reset);
