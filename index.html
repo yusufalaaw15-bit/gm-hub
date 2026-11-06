@@ -49,10 +49,22 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 
 @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:50px}.visual{min-height:330px;grid-row:1}.hero-copy{grid-row:2}.cards{grid-template-columns:1fr}.art{height:130px}.arcade{grid-template-columns:1fr}.nav{height:65px}nav{gap:12px;font-size:.78rem}.hero h1{letter-spacing:-1.5px}.hud.one{right:2%}.hud.two{left:2%}.section-head{display:block}.section-head p{margin-top:10px}}
 @media(max-width:430px){nav a:nth-child(2),nav a:nth-child(4){display:none}.warrior{font-size:9rem}.visual{min-height:290px}.hud{padding:9px 11px}.hero{gap:0}}
+
+/* UNO card table */
+.uno-table{border:1px solid var(--line);border-radius:20px;padding:22px;background:radial-gradient(ellipse at 50% 45%,#1c1530,#090a12 75%);display:grid;grid-template-columns:1fr minmax(280px,500px);gap:22px;align-items:center}
+.uno-info p{color:var(--muted);line-height:1.7}.uno-seats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0}
+.uno-seat{background:#ffffff09;border:1px solid #ffffff20;border-radius:10px;padding:10px;text-align:center;font-size:.82rem}.uno-seat.active{border-color:var(--cyan);box-shadow:0 0 15px #63e6ff33}.uno-seat strong{display:block;color:#fff;margin-bottom:3px}
+.uno-arena{min-width:0}.uno-opponents{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.uno-player{border:1px solid #70428b;background:#160e22;border-radius:11px;padding:9px;text-align:center;font-size:.8rem}.uno-player.active{border-color:var(--cyan);box-shadow:0 0 14px #63e6ff33}.uno-player b{display:block;color:var(--pink);font-size:.9rem}.uno-center{display:flex;align-items:center;justify-content:center;gap:16px;min-height:150px;background:#08070d99;border:1px solid #ffffff17;border-radius:14px;padding:12px}
+.uno-pile{text-align:center}.uno-pile small{display:block;color:var(--muted);margin-top:7px}.uno-card{width:66px;height:98px;border:3px solid #fff;border-radius:11px;display:inline-flex;flex-direction:column;justify-content:center;align-items:center;color:white;font-weight:950;font-size:1.8rem;text-shadow:1px 2px 2px #0008;box-shadow:0 4px 12px #0007;position:relative;transform:rotate(-4deg);background:#333}.uno-card.red{background:#e53935}.uno-card.yellow{background:#f5c928;color:#241b00;text-shadow:none}.uno-card.green{background:#169b62}.uno-card.blue{background:#2864d7}.uno-card.wild{background:conic-gradient(#e53935 0 25%,#f5c928 0 50%,#169b62 0 75%,#2864d7 0)}.uno-card small{font-size:.55rem;position:absolute;top:5px;left:6px}.uno-card.back{background:radial-gradient(circle,#b026d3,#4c1d95 65%,#180b2a);font-size:1.3rem;transform:none}.uno-hand{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin:14px 0;min-height:104px}
+.uno-hand .uno-card{width:57px;height:86px;font-size:1.45rem;cursor:pointer;transition:transform .15s}.uno-hand .uno-card:hover:not(:disabled){transform:translateY(-9px) rotate(0)}.uno-hand .uno-card:disabled{opacity:.42;cursor:not-allowed}.uno-hand .uno-card small{font-size:.48rem}
+.uno-controls{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.uno-controls button,.uno-color-picker button{border:1px solid #8d52ba;background:#21112f;color:#fff;border-radius:9px;padding:10px 14px;font-weight:800;cursor:pointer}.uno-controls button:disabled{opacity:.4;cursor:not-allowed}.uno-controls .uno-call{background:linear-gradient(110deg,#9333ea,#c026d3)}.uno-status{text-align:center;color:var(--cyan);font-weight:800;min-height:2.5em;margin:12px 0 0}.uno-color-picker{display:flex;gap:8px;justify-content:center;margin-top:10px;flex-wrap:wrap}.uno-color-picker button{min-width:72px}.uno-color-picker .red{background:#b91c1c}.uno-color-picker .yellow{background:#a98200}.uno-color-picker .green{background:#087443}.uno-color-picker .blue{background:#1d4ed8}
+@media(max-width:760px){.uno-table{grid-template-columns:1fr;padding:15px}.uno-info{text-align:center}.uno-card{width:58px;height:88px}.uno-hand .uno-card{width:48px;height:74px;font-size:1.2rem}.uno-center{min-height:125px}}
+
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="logo" href="#home">GM<span>.</span>HUB</a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#chess">Chess</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="btn secondary" href="#games">Enter Hub ↗</a></div></header>
+<header><div class="wrap nav"><a class="logo" href="#home">GM<span>.</span>HUB</a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#chess">Chess</a><a href="#uno">UNO</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="btn secondary" href="#games">Enter Hub ↗</a></div></header>
 <main>
 <section class="wrap hero" id="home"><div class="hero-copy"><div class="eyebrow">✦ Next-level gaming experience</div><h1>The Future of <span>Gaming Lives Here.</span></h1><p>Enter the arena. Discover your next favorite game, challenge your reflexes, and explore a neon-powered world built for players.</p><div class="actions"><a class="btn primary" href="#games">⚡ Explore Games</a><a class="btn secondary" href="#arena">▶ Play a Mini-Game</a></div></div><div class="visual" aria-label="Futuristic warrior illustration"><div class="orb"></div><div class="warrior" role="img" aria-label="Samurai mask">👾</div><div class="hud one"><strong>LEVEL UP</strong>YOUR NEXT QUEST</div><div class="hud two"><strong>GM / 001</strong>PLAYER READY</div></div></section>
 <section class="wrap section" id="games"><div class="section-head"><div><div class="eyebrow">Choose your mission</div><h2>Explore the <span style="color:var(--pink)">Game Zone</span></h2></div><p>Pick a portal and jump into the action. These cards are ready for you to customize with your own games.</p></div><div class="cards">
@@ -66,6 +78,11 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 <section class="wrap section" id="chess"><div class="section-head"><div><div class="eyebrow">Strategy • Play now</div><h2>GM.HUB <span style="color:var(--pink)">Chess</span> ♟️</h2></div><p>Challenge the computer or play face-to-face with another person on the same device.</p></div>
 <div class="chess-wrap"><div class="chess-info"><div class="tag">Choose your game mode</div><h3>One board. Two ways to play.</h3><div class="chess-options"><button id="chessAiMode" class="active">1 vs AI</button><button id="chessHumanMode">2 Players</button></div><p id="chessModeText">You play White. The computer plays Black.</p><p>Tap a piece, then tap a highlighted square to move. On a computer, you can also use a mouse. Legal moves, check, checkmate, castling and pawn promotion are supported.</p><div class="chess-controls"><button id="chessUndo">Undo</button><button id="chessRestart">New game</button></div><p id="chessStatus" class="chess-status" aria-live="polite">White to move.</p></div>
 <div><div id="chessBoard" class="chess-board" role="group" aria-label="Interactive chess board"></div></div></div></section>
+
+
+<section class="wrap section" id="uno"><div class="section-head"><div><div class="eyebrow">Card battle • 4 players</div><h2>GM.HUB <span style="color:var(--pink)">UNO</span> 🃏</h2></div><p>Four players at the table: you against three computer opponents. Match colors or numbers, use action cards, and be the first to empty your hand.</p></div>
+<div class="uno-table"><div class="uno-info"><div class="tag">1 human + 3 AI players</div><h3>Ready to shout UNO?</h3><p>Play cards that match the discard pile by color, number, or symbol. Draw a card if you cannot play. Skip, Reverse, Draw Two, Wild and Wild Draw Four cards are included.</p><div class="uno-seats"><div class="uno-seat"><strong>You</strong>Human</div><div class="uno-seat"><strong>Nova</strong>AI</div><div class="uno-seat"><strong>Pixel</strong>AI</div></div><div class="uno-seat"><strong>Glitch</strong>AI</div><div class="uno-controls" style="margin-top:15px"><button id="unoNew">New game</button></div></div>
+<div class="uno-arena"><div class="uno-opponents" id="unoOpponents"></div><div class="uno-center"><div class="uno-pile"><div class="uno-card back">GM</div><small>Draw pile</small></div><div class="uno-pile"><div id="unoDiscard" class="uno-card red">7</div><small>Discard pile</small></div></div><div class="uno-status" id="unoStatus" aria-live="polite">Dealing cards…</div><div class="uno-hand" id="unoHand" aria-label="Your cards"></div><div class="uno-controls"><button id="unoDraw">Draw card</button><button id="unoKeep" disabled>Keep drawn card</button><button id="unoCall" class="uno-call" disabled>UNO!</button></div><div id="unoColorPicker" class="uno-color-picker" hidden><button class="red" data-color="red">Red</button><button class="yellow" data-color="yellow">Yellow</button><button class="green" data-color="green">Green</button><button class="blue" data-color="blue">Blue</button></div></div></div></section>
 
 <section class="wrap section" id="snake"><div class="section-head"><div><div class="eyebrow">Classic arcade • Play now</div><h2>Snake <span style="color:var(--cyan)">Game</span> 🐍</h2></div><p>Eat the glowing food, grow your snake, and try not to crash. Your best score is saved on this device.</p></div>
 <div class="snake-panel"><div class="snake-copy"><div class="tag">GM.HUB arcade original</div><h3>How long can you survive?</h3><p>The game automatically adapts to your device. Use arrow keys or WASD on a computer, or swipe the board / tap the direction buttons on a phone or tablet. Grab the pink food to score points and make your snake longer.</p><p><strong style="color:var(--cyan)">Tip:</strong> Wrap through one wall and appear on the opposite side. Avoid the bombs and your own tail!</p></div>
@@ -193,4 +210,82 @@ if(snakeCanvas){
 }
 
 </script>
+
+<script>
+(()=>{
+const $=id=>document.getElementById(id);
+const names=['You','Nova','Pixel','Glitch'],colors=['red','yellow','green','blue'];
+const values=['0','1','2','3','4','5','6','7','8','9','Skip','Reverse','+2'];
+let deck=[],hands=[],discard=[],turn=0,direction=1,currentColor='red',drawnId=null,waitingColor=null,locked=false,finished=false,unoCalled=[true,true,true,true],turnTimer=null;
+let nextId=1;
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function makeDeck(){const d=[];for(const color of colors){d.push({id:nextId++,color,value:'0'});for(let n=1;n<=9;n++)for(let k=0;k<2;k++)d.push({id:nextId++,color,value:String(n)});for(const value of ['Skip','Reverse','+2'])for(let k=0;k<2;k++)d.push({id:nextId++,color,value})}for(let k=0;k<4;k++){d.push({id:nextId++,color:'wild',value:'Wild'},{id:nextId++,color:'wild',value:'+4'})}return shuffle(d)}
+function refill(){if(deck.length)return;const top=discard.pop();deck=shuffle(discard);discard=[top]}
+function take(){refill();return deck.pop()}
+function deal(){nextId=1;deck=makeDeck();hands=[[],[],[],[]];for(let n=0;n<7;n++)for(let p=0;p<4;p++)hands[p].push(take());discard=[];let first=take();while(first.color==='wild'||['Skip','Reverse','+2'].includes(first.value)){deck.unshift(first);first=take()}discard.push(first);currentColor=first.color;turn=0;direction=1;drawnId=null;waitingColor=null;locked=false;finished=false;unoCalled=[true,true,true,true];clearTimeout(turnTimer);render();say('Your turn! Match the '+currentColor+' card or its value.')}
+function top(){return discard[discard.length-1]}
+function playable(c){return c.color==='wild'||c.color===currentColor||c.value===top().value}
+function cardText(c){return c.value==='Skip'?'⊘':c.value==='Reverse'?'⇄':c.value==='+2'?'+2':c.value==='+4'?'+4':c.value==='Wild'?'★':c.value}
+function cardClass(c){return c.color==='wild'?'wild':c.color}
+function say(t){$('unoStatus').textContent=t}
+function render(){
+ const opp=$('unoOpponents');opp.innerHTML='';
+ for(let p=1;p<4;p++){const el=document.createElement('div');el.className='uno-player'+(turn===p?' active':'');el.innerHTML='<b>'+names[p]+'</b>'+hands[p].length+' cards';opp.appendChild(el)}
+ const d=top(),discardEl=$('unoDiscard');discardEl.className='uno-card '+(d.color==='wild'?'wild':d.color);discardEl.textContent=cardText(d);discardEl.title=d.color==='wild'?'Wild — '+currentColor:d.color+' '+d.value;
+ const hand=$('unoHand');hand.innerHTML='';
+ hands[0].forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.className='uno-card '+cardClass(c);b.textContent=cardText(c);b.disabled=finished||locked||turn!==0||waitingColor!==null||!(drawnId?c.id===drawnId:playable(c));b.setAttribute('aria-label',c.color+' '+c.value);const sm=document.createElement('small');sm.textContent=c.color==='wild'?'W':c.color[0].toUpperCase();b.appendChild(sm);b.addEventListener('click',()=>humanPlay(c.id));hand.appendChild(b)});
+ $('unoDraw').disabled=finished||locked||turn!==0||drawnId!==null||waitingColor!==null;
+ $('unoKeep').disabled=finished||locked||turn!==0||drawnId===null;
+ $('unoCall').disabled=finished||hands[0].length!==1||unoCalled[0];
+ $('unoColorPicker').hidden=waitingColor===null;
+}
+function drawCards(p,n){for(let i=0;i<n;i++)hands[p].push(take())}
+function next(n=1){turn=(turn+direction*n+4*4)%4;drawnId=null;prepareTurn()}
+function prepareTurn(){
+ if(finished)return;
+ if(hands[turn].length===1&&!unoCalled[turn]){drawCards(turn,2);unoCalled[turn]=true;if(turn===0)say('You forgot to call UNO! Draw 2 cards.');}
+ render();
+ if(turn!==0){locked=true;render();turnTimer=setTimeout(aiTurn,850)}
+ else{locked=false;render();if(hands[0].length===1)say('Only one card left — press UNO! before the next player moves.');else say('Your turn. Play a matching card or draw one.')}
+}
+function endIfWon(p){if(hands[p].length===0){finished=true;locked=true;clearTimeout(turnTimer);render();say(names[p]+' wins the game! 🎉');return true}return false}
+function applyCard(p,c,chosen){
+ discard.push(c);drawnId=null;
+ if(c.color==='wild')currentColor=chosen||colors[Math.floor(Math.random()*4)];else currentColor=c.color;
+ if(hands[p].length===1){unoCalled[p]=p===0?unoCalled[p]:true;if(p!==0)unoCalled[p]=true}
+ if(endIfWon(p))return;
+ let skip=1;
+ if(c.value==='Skip')skip=2;
+ if(c.value==='Reverse'){direction*=-1;if(hands.length===2)skip=2}
+ if(c.value==='+2'){const target=(p+direction+16)%4;drawCards(target,2);skip=2}
+ if(c.value==='+4'){const target=(p+direction+16)%4;drawCards(target,4);skip=2}
+ next(skip);
+}
+function humanPlay(id){
+ if(locked||turn!==0||finished)return;
+ const idx=hands[0].findIndex(c=>c.id===id);if(idx<0)return;const c=hands[0][idx];
+ if(drawnId&&id!==drawnId)return;if(!playable(c))return;
+ hands[0].splice(idx,1);
+ if(c.color==='wild'){waitingColor=c;render();say(c.value+'! Choose the color.');return}
+ applyCard(0,c);render();
+}
+$('unoColorPicker').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{if(!waitingColor)return;const c=waitingColor;waitingColor=null;applyCard(0,c,b.dataset.color);render()}));
+$('unoDraw').addEventListener('click',()=>{if(locked||turn!==0||drawnId!==null||finished)return;const c=take();hands[0].push(c);drawnId=c.id;if(playable(c)){say('You drew a playable card. Play it or keep it.')}else{say('No playable card. You drew one and your turn ends.');drawnId=null;next()}render()});
+$('unoKeep').addEventListener('click',()=>{if(drawnId===null||locked||turn!==0)return;drawnId=null;next();render()});
+$('unoCall').addEventListener('click',()=>{if(hands[0].length===1&&!unoCalled[0]){unoCalled[0]=true;say('UNO! You called it in time!');render()}});
+function chooseColor(hand){const counts={red:0,yellow:0,green:0,blue:0};hand.forEach(c=>{if(c.color!=='wild')counts[c.color]++});return colors.sort((a,b)=>counts[b]-counts[a])[0]}
+function aiTurn(){
+ if(finished||turn===0)return;
+ const p=turn;let choices=hands[p].filter(playable);
+ if(choices.length){choices.sort((a,b)=>{const rank=c=>(c.value==='+4'?5:c.value==='+2'?4:c.value==='Skip'||c.value==='Reverse'?3:c.color==='wild'?2:1);return rank(b)-rank(a)});const c=choices[0];hands[p].splice(hands[p].findIndex(x=>x.id===c.id),1);if(hands[p].length===1)unoCalled[p]=true;applyCard(p,c,c.color==='wild'?chooseColor(hands[p]):undefined);if(!finished)say(names[p]+' played '+c.value+'.');render();return}
+ const c=take();hands[p].push(c);
+ if(playable(c)){hands[p].splice(hands[p].length-1,1);if(hands[p].length===1)unoCalled[p]=true;applyCard(p,c,c.color==='wild'?chooseColor(hands[p]):undefined);if(!finished)say(names[p]+' drew and played a card.')}
+ else{say(names[p]+' drew a card.');next()}
+ render();
+}
+$('unoNew').addEventListener('click',deal);
+deal();
+})();
+</script>
+
 </body></html>
