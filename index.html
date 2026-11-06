@@ -61,10 +61,22 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 .uno-controls{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.uno-controls button,.uno-color-picker button{border:1px solid #8d52ba;background:#21112f;color:#fff;border-radius:9px;padding:10px 14px;font-weight:800;cursor:pointer}.uno-controls button:disabled{opacity:.4;cursor:not-allowed}.uno-controls .uno-call{background:linear-gradient(110deg,#9333ea,#c026d3)}.uno-status{text-align:center;color:var(--cyan);font-weight:800;min-height:2.5em;margin:12px 0 0}.uno-color-picker{display:flex;gap:8px;justify-content:center;margin-top:10px;flex-wrap:wrap}.uno-color-picker button{min-width:72px}.uno-color-picker .red{background:#b91c1c}.uno-color-picker .yellow{background:#a98200}.uno-color-picker .green{background:#087443}.uno-color-picker .blue{background:#1d4ed8}
 @media(max-width:760px){.uno-table{grid-template-columns:1fr;padding:15px}.uno-info{text-align:center}.uno-card{width:58px;height:88px}.uno-hand .uno-card{width:48px;height:74px;font-size:1.2rem}.uno-center{min-height:125px}}
 
+
+/* Neon highway car game */
+.race-panel{border:1px solid #4c3764;border-radius:20px;padding:22px;background:linear-gradient(135deg,#171027,#080a12);display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,420px);gap:22px;align-items:center}
+.race-copy p{color:var(--muted);line-height:1.7}.race-stage{background:#05080d;border:1px solid #376078;border-radius:15px;padding:12px;text-align:center;box-shadow:0 0 25px #22d3ee18}
+#raceCanvas{display:block;width:100%;max-width:360px;height:auto;aspect-ratio:3/4;margin:auto;border:1px solid #34566a;border-radius:8px;background:#101820}
+.race-stats{display:flex;justify-content:space-between;gap:10px;max-width:360px;margin:0 auto 10px;color:var(--cyan);font-weight:850}
+.race-actions,.race-pad{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:12px}
+.race-actions button,.race-pad button{border:1px solid #397b9b;background:#102638;color:#fff;border-radius:9px;padding:10px 15px;font-weight:800;cursor:pointer}
+.race-actions button:hover,.race-pad button:hover{background:#15506b}.race-pad button{min-width:58px;font-size:1.1rem;touch-action: manipulation}
+.race-status{color:var(--cyan);font-weight:800;min-height:1.4em;margin:10px 0 0}
+@media(max-width:760px){.race-panel{grid-template-columns:1fr;padding:16px}.race-copy{text-align:center}}
+
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="logo" href="#home">GM<span>.</span>HUB</a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#chess">Chess</a><a href="#uno">UNO</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="btn secondary" href="#games">Enter Hub ↗</a></div></header>
+<header><div class="wrap nav"><a class="logo" href="#home">GM<span>.</span>HUB</a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#chess">Chess</a><a href="#uno">UNO</a><a href="#carrace">Car Race</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="btn secondary" href="#games">Enter Hub ↗</a></div></header>
 <main>
 <section class="wrap hero" id="home"><div class="hero-copy"><div class="eyebrow">✦ Next-level gaming experience</div><h1>The Future of <span>Gaming Lives Here.</span></h1><p>Enter the arena. Discover your next favorite game, challenge your reflexes, and explore a neon-powered world built for players.</p><div class="actions"><a class="btn primary" href="#games">⚡ Explore Games</a><a class="btn secondary" href="#arena">▶ Play a Mini-Game</a></div></div><div class="visual" aria-label="Futuristic warrior illustration"><div class="orb"></div><div class="warrior" role="img" aria-label="Samurai mask">👾</div><div class="hud one"><strong>LEVEL UP</strong>YOUR NEXT QUEST</div><div class="hud two"><strong>GM / 001</strong>PLAYER READY</div></div></section>
 <section class="wrap section" id="games"><div class="section-head"><div><div class="eyebrow">Choose your mission</div><h2>Explore the <span style="color:var(--pink)">Game Zone</span></h2></div><p>Pick a portal and jump into the action. These cards are ready for you to customize with your own games.</p></div><div class="cards">
@@ -83,6 +95,11 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 <section class="wrap section" id="uno"><div class="section-head"><div><div class="eyebrow">Card battle • 4 players</div><h2>GM.HUB <span style="color:var(--pink)">UNO</span> 🃏</h2></div><p>Four players at the table: you against three computer opponents. Match colors or numbers, use action cards, and be the first to empty your hand.</p></div>
 <div class="uno-table"><div class="uno-info"><div class="tag">1 human + 3 AI players</div><h3>Ready to shout UNO?</h3><p>Play cards that match the discard pile by color, number, or symbol. Draw a card if you cannot play. Skip, Reverse, Draw Two, Wild and Wild Draw Four cards are included.</p><div class="uno-seats"><div class="uno-seat"><strong>You</strong>Human</div><div class="uno-seat"><strong>Nova</strong>AI</div><div class="uno-seat"><strong>Pixel</strong>AI</div></div><div class="uno-seat"><strong>Glitch</strong>AI</div><div class="uno-controls" style="margin-top:15px"><button id="unoNew">New game</button></div></div>
 <div class="uno-arena"><div class="uno-opponents" id="unoOpponents"></div><div class="uno-center"><div class="uno-pile"><div class="uno-card back">GM</div><small>Draw pile</small></div><div class="uno-pile"><div id="unoDiscard" class="uno-card red">7</div><small>Discard pile</small></div></div><div class="uno-status" id="unoStatus" aria-live="polite">Dealing cards…</div><div class="uno-hand" id="unoHand" aria-label="Your cards"></div><div class="uno-controls"><button id="unoDraw">Draw card</button><button id="unoKeep" disabled>Keep drawn card</button><button id="unoCall" class="uno-call" disabled>UNO!</button></div><div id="unoColorPicker" class="uno-color-picker" hidden><button class="red" data-color="red">Red</button><button class="yellow" data-color="yellow">Yellow</button><button class="green" data-color="green">Green</button><button class="blue" data-color="blue">Blue</button></div></div></div></section>
+
+
+<section class="wrap section" id="carrace"><div class="section-head"><div><div class="eyebrow">Arcade racer • Dodge traffic</div><h2>Neon <span style="color:var(--cyan)">Car Race</span> 🏎️</h2></div><p>Hit the highway, dodge traffic, and see how long you can survive. The road gets faster as your score climbs!</p></div>
+<div class="race-panel"><div class="race-copy"><div class="tag">GM.HUB racing challenge</div><h3>Can you beat your high score?</h3><p>Steer your car between lanes and avoid the oncoming cars. Use the arrow keys or A/D on a computer, or the touch buttons on your phone.</p><p><strong>Controls:</strong> ← → or A / D to steer. Avoid every car!</p><div class="race-actions"><button id="raceStart">Start race</button><button id="raceRestart">Restart</button></div><p id="raceStatus" class="race-status" aria-live="polite">Press Start race to begin.</p></div>
+<div class="race-stage"><div class="race-stats"><span>Score: <b id="raceScore">0</b></span><span>Best: <b id="raceBest">0</b></span></div><canvas id="raceCanvas" width="360" height="480" aria-label="Car racing game"></canvas><div class="race-pad"><button id="raceLeft" aria-label="Steer left">◀</button><button id="raceRight" aria-label="Steer right">▶</button></div></div></div></section>
 
 <section class="wrap section" id="snake"><div class="section-head"><div><div class="eyebrow">Classic arcade • Play now</div><h2>Snake <span style="color:var(--cyan)">Game</span> 🐍</h2></div><p>Eat the glowing food, grow your snake, and try not to crash. Your best score is saved on this device.</p></div>
 <div class="snake-panel"><div class="snake-copy"><div class="tag">GM.HUB arcade original</div><h3>How long can you survive?</h3><p>The game automatically adapts to your device. Use arrow keys or WASD on a computer, or swipe the board / tap the direction buttons on a phone or tablet. Grab the pink food to score points and make your snake longer.</p><p><strong style="color:var(--cyan)">Tip:</strong> Wrap through one wall and appear on the opposite side. Avoid the bombs and your own tail!</p></div>
@@ -286,6 +303,49 @@ function aiTurn(){
 }
 $('unoNew').addEventListener('click',deal);
 deal();
+})();
+</script>
+
+
+<script>
+(()=>{
+const canvas=document.getElementById('raceCanvas');if(!canvas)return;
+const ctx=canvas.getContext('2d'),$=id=>document.getElementById(id);
+const lanes=[75,180,285],carW=42,carH=68;
+let lane=1,traffic=[],score=0,best=0,running=false,over=false,last=0,spawn=0,speed=3.2,road=0,raf=0;
+try{best=Number(localStorage.getItem('gmHubRaceBest'))||0}catch(e){}
+$('raceBest').textContent=best;
+function rounded(x,y,w,h,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill()}
+function drawCar(x,y,color,player=false){
+ rounded(x-carW/2,y-carH/2,carW,carH,9,color);
+ rounded(x-carW/2+6,y-carH/2+10,carW-12,18,5,player?'#baf7ff':'#263746');
+ rounded(x-carW/2+6,y+10,carW-12,14,4,player?'#0c3445':'#111827');
+ ctx.fillStyle='#fef3c7';ctx.fillRect(x-carW/2+4,y-carH/2+4,8,5);ctx.fillRect(x+carW/2-12,y-carH/2+4,8,5);
+ ctx.fillStyle='#fb7185';ctx.fillRect(x-carW/2+4,y+carH/2-8,8,5);ctx.fillRect(x+carW/2-12,y+carH/2-8,8,5);
+}
+function paint(){
+ ctx.clearRect(0,0,360,480);ctx.fillStyle='#176044';ctx.fillRect(0,0,360,480);ctx.fillStyle='#303744';ctx.fillRect(25,0,310,480);
+ ctx.fillStyle='#f8fafc';ctx.fillRect(20,0,5,480);ctx.fillRect(335,0,5,480);
+ ctx.strokeStyle='#d8dee9';ctx.lineWidth=4;ctx.setLineDash([28,24]);ctx.lineDashOffset=-road;ctx.beginPath();ctx.moveTo(127,0);ctx.lineTo(127,480);ctx.moveTo(233,0);ctx.lineTo(233,480);ctx.stroke();ctx.setLineDash([]);
+ traffic.forEach(t=>drawCar(lanes[t.lane],t.y,t.color));
+ drawCar(lanes[lane],410,'#8b5cf6',true);
+ if(!running){ctx.fillStyle='#05070bbd';ctx.fillRect(25,0,310,480);ctx.textAlign='center';ctx.fillStyle='#fff';ctx.font='bold 25px system-ui';ctx.fillText(over?'CRASH!':'NEON RACER',180,218);ctx.font='15px system-ui';ctx.fillStyle='#b9eaff';ctx.fillText(over?'Press Restart to race again':'Press Start race',180,249)}
+}
+function reset(){lane=1;traffic=[];score=0;speed=3.2;road=0;spawn=0;over=false;running=false;$('raceScore').textContent='0';$('raceStatus').textContent='Ready when you are!';paint()}
+function end(){running=false;over=true;if(score>best){best=score;$('raceBest').textContent=best;try{localStorage.setItem('gmHubRaceBest',best)}catch(e){}}$('raceStatus').textContent='Crash! Final score: '+score+'. Hit Restart to try again.';paint()}
+function frame(time){if(!running)return;const dt=Math.min((time-last)/16.67,2)||1;last=time;road=(road+speed*dt)%52;spawn+=dt;
+ if(spawn>Math.max(25,62-score*.18)){spawn=0;let l=Math.floor(Math.random()*3);if(!traffic.some(t=>t.lane===l&&t.y<120))traffic.push({lane:l,y:-55,color:['#ef4444','#f59e0b','#06b6d4','#e879f9','#e5e7eb'][Math.floor(Math.random()*5)],passed:false})}
+ traffic.forEach(t=>{t.y+=speed*dt;if(!t.passed&&t.y>450){t.passed=true;score++;$('raceScore').textContent=score;speed=Math.min(8,3.2+score*.09)}});
+ traffic=traffic.filter(t=>t.y<540);
+ for(const t of traffic){if(t.lane===lane&&Math.abs(t.y-410)<52){end();return}}
+ paint();raf=requestAnimationFrame(frame)
+}
+function start(){if(running)return;if(over)reset();running=true;$('raceStatus').textContent='Go! Dodge the traffic!';last=performance.now();raf=requestAnimationFrame(frame)}
+function move(dir){if(running)lane=Math.max(0,Math.min(2,lane+dir));paint()}
+$('raceStart').addEventListener('click',start);$('raceRestart').addEventListener('click',()=>{cancelAnimationFrame(raf);reset();start()});
+$('raceLeft').addEventListener('click',()=>move(-1));$('raceRight').addEventListener('click',()=>move(1));
+document.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','a','A','d','D'].includes(e.key)){e.preventDefault();move(e.key==='ArrowLeft'||e.key==='a'||e.key==='A'?-1:1)}if(e.key===' '&&!running){e.preventDefault();start()}});
+paint();
 })();
 </script>
 
