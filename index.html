@@ -75,7 +75,8 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 </main>
 <footer><div class="wrap foot"><span>© <span id="year"></span> GM.HUB — Fan-made gaming hub.</span><span>Built for players, powered by imagination 💜</span></div></footer>
 <dialog id="gameDialog"><button class="close" id="closeDialog">Close ✕</button><h2 id="dialogTitle">Mission briefing</h2><p>This is a sample game card. You can replace it with a real browser game, your own project, or a link to a game you have permission to share.</p><p><strong style="color:var(--cyan)">Mission status:</strong> Ready for customization.</p></dialog>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+<script>
 const chessBoard=document.getElementById('chessBoard');
 if(chessBoard&&typeof Chess!=='undefined'){
  const chess=new Chess(),glyphs={wk:'♔',wq:'♕',wr:'♖',wb:'♗',wn:'♘',wp:'♙',bk:'♚',bq:'♛',br:'♜',bb:'♝',bn:'♞',bp:'♟︎'};
