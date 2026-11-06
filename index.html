@@ -26,6 +26,16 @@ nav{display:flex;gap:26px;color:#d9cfe5;font-size:.92rem}nav a:hover{color:var(-
 footer{border-top:1px solid #ffffff16;padding:24px 0;color:#a99eb7;font-size:.85rem}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;color:#fff;border-radius:18px;padding:24px;box-shadow:0 0 60px #a855f755}dialog::backdrop{background:#000b}dialog h2{margin-top:0}dialog p{color:var(--muted);line-height:1.7}.close{float:right;background:#ffffff12;border:1px solid #ffffff30;color:white;border-radius:8px;padding:7px 10px;cursor:pointer}
 
+
+.chess-wrap{border:1px solid var(--line);border-radius:20px;padding:22px;background:linear-gradient(135deg,#160d23,#090a12);display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,480px);gap:24px;align-items:center}
+.chess-info p{color:var(--muted);line-height:1.7}.chess-options{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}.chess-options button,.chess-controls button{border:1px solid #8d52ba;background:#21112f;color:#fff;border-radius:9px;padding:10px 14px;font-weight:800;cursor:pointer}.chess-options button.active{background:linear-gradient(110deg,#9333ea,#c026d3);border-color:#d78aff}
+.chess-board{display:grid;grid-template-columns:repeat(8,1fr);width:100%;max-width:480px;aspect-ratio:1;margin:auto;border:3px solid #6b4388;border-radius:8px;overflow:hidden;box-shadow:0 0 28px #a855f733}
+.chess-square{border:0;padding:0;display:grid;place-items:center;position:relative;aspect-ratio:1;cursor:pointer;font-family:"Segoe UI Symbol","Noto Sans Symbols 2",serif;font-size:clamp(1.4rem,5vw,2.8rem);line-height:1}
+.chess-square.light{background:#f0d9b5}.chess-square.dark{background:#b58863}.chess-square.selected{box-shadow:inset 0 0 0 4px #facc15}.chess-square.legal:after{content:"";width:25%;height:25%;border-radius:50%;background:#166534;opacity:.65;position:absolute}.chess-square.capture:after{width:85%;height:85%;background:transparent;border:4px solid #166534}
+.chess-square .white-piece{color:#fffdf4;text-shadow:1px 2px 2px #171717,-1px -1px 1px #333}.chess-square .black-piece{color:#171717;text-shadow:1px 1px 1px #fff5}
+.chess-controls{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:12px}.chess-status{text-align:center;color:var(--cyan);font-weight:800;margin:12px 0 0;min-height:1.5em}
+@media(max-width:760px){.chess-wrap{grid-template-columns:1fr;padding:16px}.chess-info{text-align:center}.chess-board{max-width: min(100%,440px)}}
+
 .snake-panel{border:1px solid var(--line);border-radius:20px;padding:24px;background:linear-gradient(135deg,#160d23,#090a12);display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,420px);gap:24px;align-items:center}
 .snake-copy p{color:var(--muted);line-height:1.7}.snake-stage{background:#05090c;border:1px solid #286b57;border-radius:14px;padding:14px;text-align:center;box-shadow:0 0 25px #10b98118}
 #snakeCanvas{display:block;width:100%;max-width:360px;height:auto;aspect-ratio:1;margin:0 auto;border:1px solid #1d5744;border-radius:8px;background:#07120f;touch-action:none}
@@ -42,7 +52,7 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="logo" href="#home">GM<span>.</span>HUB</a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="btn secondary" href="#games">Enter Hub ↗</a></div></header>
+<header><div class="wrap nav"><a class="logo" href="#home">GM<span>.</span>HUB</a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#chess">Chess</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="btn secondary" href="#games">Enter Hub ↗</a></div></header>
 <main>
 <section class="wrap hero" id="home"><div class="hero-copy"><div class="eyebrow">✦ Next-level gaming experience</div><h1>The Future of <span>Gaming Lives Here.</span></h1><p>Enter the arena. Discover your next favorite game, challenge your reflexes, and explore a neon-powered world built for players.</p><div class="actions"><a class="btn primary" href="#games">⚡ Explore Games</a><a class="btn secondary" href="#arena">▶ Play a Mini-Game</a></div></div><div class="visual" aria-label="Futuristic warrior illustration"><div class="orb"></div><div class="warrior" role="img" aria-label="Samurai mask">👾</div><div class="hud one"><strong>LEVEL UP</strong>YOUR NEXT QUEST</div><div class="hud two"><strong>GM / 001</strong>PLAYER READY</div></div></section>
 <section class="wrap section" id="games"><div class="section-head"><div><div class="eyebrow">Choose your mission</div><h2>Explore the <span style="color:var(--pink)">Game Zone</span></h2></div><p>Pick a portal and jump into the action. These cards are ready for you to customize with your own games.</p></div><div class="cards">
@@ -52,6 +62,11 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 </div></section>
 <section class="wrap section" id="arena"><div class="arcade"><div><div class="eyebrow">Playable right now</div><h2>Quick Reflex <span style="color:var(--cyan)">Challenge</span></h2><p>Test your reaction speed! Press start, wait for the screen to turn green, then click as quickly as you can. This mini-game works directly in your browser.</p><p style="font-size:.85rem">No account needed. No downloads. Just play.</p></div><div class="mini-game"><div class="game-screen" id="gameScreen">Ready when you are, player.</div><div class="game-controls"><button id="startGame">Start challenge</button><button id="resetGame">Reset</button></div><p id="gameMessage" aria-live="polite" style="font-size:.85rem;color:var(--muted)">Try to beat your best time!</p></div></div></section>
 
+
+<section class="wrap section" id="chess"><div class="section-head"><div><div class="eyebrow">Strategy • Play now</div><h2>GM.HUB <span style="color:var(--pink)">Chess</span> ♟️</h2></div><p>Challenge the computer or play face-to-face with another person on the same device.</p></div>
+<div class="chess-wrap"><div class="chess-info"><div class="tag">Choose your game mode</div><h3>One board. Two ways to play.</h3><div class="chess-options"><button id="chessAiMode" class="active">1 vs AI</button><button id="chessHumanMode">2 Players</button></div><p id="chessModeText">You play White. The computer plays Black.</p><p>Tap a piece, then tap a highlighted square to move. On a computer, you can also use a mouse. Legal moves, check, checkmate, castling and pawn promotion are supported.</p><div class="chess-controls"><button id="chessUndo">Undo</button><button id="chessRestart">New game</button></div><p id="chessStatus" class="chess-status" aria-live="polite">White to move.</p></div>
+<div><div id="chessBoard" class="chess-board" role="group" aria-label="Interactive chess board"></div></div></div></section>
+
 <section class="wrap section" id="snake"><div class="section-head"><div><div class="eyebrow">Classic arcade • Play now</div><h2>Snake <span style="color:var(--cyan)">Game</span> 🐍</h2></div><p>Eat the glowing food, grow your snake, and try not to crash. Your best score is saved on this device.</p></div>
 <div class="snake-panel"><div class="snake-copy"><div class="tag">GM.HUB arcade original</div><h3>How long can you survive?</h3><p>The game automatically adapts to your device. Use arrow keys or WASD on a computer, or swipe the board / tap the direction buttons on a phone or tablet. Grab the pink food to score points and make your snake longer.</p><p><strong style="color:var(--cyan)">Tip:</strong> Wrap through one wall and appear on the opposite side. Avoid the bombs and your own tail!</p></div>
 <div class="snake-stage"><div class="snake-stats"><span>Score: <span id="snakeScore">0</span></span><span>Best: <span id="snakeBest">0</span></span></div><canvas id="snakeCanvas" width="360" height="360" aria-label="Snake game board"></canvas><div class="snake-actions"><button id="snakeStart">Start game</button><button id="snakePause">Pause</button><button id="snakeReset">Restart</button></div><p id="snakeControlHint" style="font-size:.8rem;color:var(--muted);margin:12px 0 0">Keyboard: use arrow keys or WASD.</p><div class="snake-pad" aria-label="Touch controls"><button data-dir="up" aria-label="Up">↑</button><button data-dir="left" aria-label="Left">←</button><button data-dir="down" aria-label="Down">↓</button><button data-dir="right" aria-label="Right">→</button></div><p id="snakeMessage" aria-live="polite" style="font-size:.82rem;color:var(--muted);margin-bottom:0">Press Start game to play.</p></div></div></section>
@@ -60,6 +75,59 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 </main>
 <footer><div class="wrap foot"><span>© <span id="year"></span> GM.HUB — Fan-made gaming hub.</span><span>Built for players, powered by imagination 💜</span></div></footer>
 <dialog id="gameDialog"><button class="close" id="closeDialog">Close ✕</button><h2 id="dialogTitle">Mission briefing</h2><p>This is a sample game card. You can replace it with a real browser game, your own project, or a link to a game you have permission to share.</p><p><strong style="color:var(--cyan)">Mission status:</strong> Ready for customization.</p></dialog>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js">
+const chessBoard=document.getElementById('chessBoard');
+if(chessBoard&&typeof Chess!=='undefined'){
+ const chess=new Chess(),glyphs={wk:'♔',wq:'♕',wr:'♖',wb:'♗',wn:'♘',wp:'♙',bk:'♚',bq:'♛',br:'♜',bb:'♝',bn:'♞',bp:'♟︎'};
+ let mode='ai',selected=null,legalMoves=[],thinking=false,history=[];
+ const statusEl=document.getElementById('chessStatus'),modeText=document.getElementById('chessModeText'),aiBtn=document.getElementById('chessAiMode'),humanBtn=document.getElementById('chessHumanMode');
+ function status(){if(chess.in_checkmate())return 'Checkmate! '+(chess.turn()==='w'?'Black':'White')+' wins.';if(chess.in_stalemate()||chess.in_draw())return 'Draw game.';return (chess.turn()==='w'?'White':'Black')+' to move'+(chess.in_check()?' — Check!':'')+(thinking?' — AI thinking…':'');}
+ function render(){
+  chessBoard.innerHTML='';const board=chess.board();
+  for(let r=0;r<8;r++)for(let c=0;c<8;c++){
+   const sq='abcdefgh'[c]+(8-r),piece=board[r][c],btn=document.createElement('button');
+   btn.type='button';btn.className='chess-square '+((r+c)%2?'dark':'light');
+   if(selected===sq)btn.classList.add('selected');
+   const target=legalMoves.find(m=>m.to===sq);if(target)btn.classList.add(piece?'capture':'legal');
+   btn.setAttribute('aria-label',sq+(piece?', '+(piece.color==='w'?'white ':'black ')+piece.type:''));
+   if(piece){const span=document.createElement('span');span.className=piece.color==='w'?'white-piece':'black-piece';span.textContent=glyphs[piece.color+piece.type];btn.appendChild(span)}
+   btn.addEventListener('click',()=>tapSquare(sq));chessBoard.appendChild(btn);
+  }
+  statusEl.textContent=status();
+ }
+ function tapSquare(sq){
+  if(thinking||chess.game_over()||(mode==='ai'&&chess.turn()==='b'))return;
+  const piece=chess.get(sq);
+  if(selected){
+   const move=legalMoves.find(m=>m.to===sq);
+   if(move){const promotion=move.flags.includes('p')?'q':undefined;chess.move({from:selected,to:sq,promotion});selected=null;legalMoves=[];render();if(mode==='ai'&&!chess.game_over()&&chess.turn()==='b')setTimeout(aiMove,250);return}
+  }
+  if(piece&&piece.color===chess.turn()){selected=sq;legalMoves=chess.moves({square:sq,verbose:true})}
+  else{selected=null;legalMoves=[]}
+  render();
+ }
+ const values={p:100,n:320,b:330,r:500,q:900,k:20000};
+ function evaluateBlack(){let score=0;const b=chess.board();for(let r=0;r<8;r++)for(let c=0;c<8;c++){const p=b[r][c];if(!p)continue;const center=3.5-(Math.abs(3.5-r)+Math.abs(3.5-c))/2;score+=(p.color==='b'?1:-1)*(values[p.type]+center*(p.type==='p'?5:3));}if(chess.in_check())score+=(chess.turn()==='w'?30:-30);return score}
+ function aiMove(){
+  if(mode!=='ai'||chess.turn()!=='b'||chess.game_over())return;
+  thinking=true;render();const moves=chess.moves({verbose:true});let best=-Infinity,bestMove=moves[0];
+  for(const m of moves){
+   chess.move({from:m.from,to:m.to,promotion:'q'});let worst=Infinity;
+   if(chess.game_over())worst=evaluateBlack();
+   else{const replies=chess.moves({verbose:true});if(!replies.length)worst=evaluateBlack();else for(const reply of replies){chess.move({from:reply.from,to:reply.to,promotion:'q'});const value=evaluateBlack();if(value<worst)worst=value;chess.undo();}}
+   chess.undo();const value=worst+(Math.random()-.5)*5;if(value>best){best=value;bestMove=m}
+  }
+  chess.move({from:bestMove.from,to:bestMove.to,promotion:'q'});thinking=false;selected=null;legalMoves=[];render();
+ }
+ function setMode(next){mode=next;aiBtn.classList.toggle('active',mode==='ai');humanBtn.classList.toggle('active',mode==='human');modeText.textContent=mode==='ai'?'You play White. The computer plays Black.':'Two players share this device. White and Black take turns.';newGame()}
+ function newGame(){chess.reset();selected=null;legalMoves=[];thinking=false;render()}
+ aiBtn.addEventListener('click',()=>setMode('ai'));humanBtn.addEventListener('click',()=>setMode('human'));
+ document.getElementById('chessRestart').addEventListener('click',newGame);
+ document.getElementById('chessUndo').addEventListener('click',()=>{if(thinking)return;chess.undo();if(mode==='ai'&&chess.turn()==='b')chess.undo();selected=null;legalMoves=[];render()});
+ render();
+}else if(chessBoard){chessBoard.textContent='Chess could not load. Please check your internet connection and refresh.'}
+
+</script>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
 const dialog=document.getElementById('gameDialog');
