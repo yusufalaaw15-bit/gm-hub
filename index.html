@@ -252,7 +252,7 @@ function endIfWon(p){if(hands[p].length===0){finished=true;locked=true;clearTime
 function applyCard(p,c,chosen){
  discard.push(c);drawnId=null;
  if(c.color==='wild')currentColor=chosen||colors[Math.floor(Math.random()*4)];else currentColor=c.color;
- if(hands[p].length===1){unoCalled[p]=p===0?unoCalled[p]:true;if(p!==0)unoCalled[p]=true}
+ if(hands[p].length===1){unoCalled[p]=p===0?false:true}
  if(endIfWon(p))return;
  let skip=1;
  if(c.value==='Skip')skip=2;
@@ -276,6 +276,7 @@ $('unoCall').addEventListener('click',()=>{if(hands[0].length===1&&!unoCalled[0]
 function chooseColor(hand){const counts={red:0,yellow:0,green:0,blue:0};hand.forEach(c=>{if(c.color!=='wild')counts[c.color]++});return colors.sort((a,b)=>counts[b]-counts[a])[0]}
 function aiTurn(){
  if(finished||turn===0)return;
+ if(hands[0].length===1&&!unoCalled[0]){drawCards(0,2);unoCalled[0]=true;say('You missed UNO! Draw 2 cards.');}
  const p=turn;let choices=hands[p].filter(playable);
  if(choices.length){choices.sort((a,b)=>{const rank=c=>(c.value==='+4'?5:c.value==='+2'?4:c.value==='Skip'||c.value==='Reverse'?3:c.color==='wild'?2:1);return rank(b)-rank(a)});const c=choices[0];hands[p].splice(hands[p].findIndex(x=>x.id===c.id),1);if(hands[p].length===1)unoCalled[p]=true;applyCard(p,c,c.color==='wild'?chooseColor(hands[p]):undefined);if(!finished)say(names[p]+' played '+c.value+'.');render();return}
  const c=take();hands[p].push(c);
