@@ -155,6 +155,19 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9;opac
 @media(max-width:760px){.site-header .nav{min-height:0;display:grid;grid-template-columns:1fr auto;gap:9px 12px;padding-top:12px;padding-bottom:10px}.site-header .logo{font-size:1.35rem}.site-header .hub-cta{padding:10px 13px}.site-header .main-nav{grid-column:1/-1;grid-row:2;width:100%;overflow-x:auto;justify-content:flex-start;gap:19px;padding:0 2px 3px;font-size:.8rem}.site-header .main-nav a{padding:8px 0}.site-header .main-nav a:after{bottom:0}}
 @media(max-width:380px){.site-header .main-nav{gap:15px;font-size:.76rem}.site-header .hub-cta{font-size:.78rem;padding:9px 11px}}
 
+
+/* 20-game expansion */
+.extra-games{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.extra-game{background:linear-gradient(145deg,#1b1029,#0d0a15);border:1px solid #49305e;border-radius:16px;padding:17px;text-align:left;color:#fff;cursor:pointer;transition:.2s;min-height:145px}
+.extra-game:hover{transform:translateY(-4px);border-color:var(--cyan);box-shadow:0 0 22px #63e6ff22}
+.extra-game .eg-icon{font-size:2rem}.extra-game h3{margin:9px 0 5px;font-size:1rem}.extra-game p{margin:0;color:var(--muted);font-size:.78rem;line-height:1.45}
+.extra-game small{display:inline-block;margin-top:9px;color:var(--cyan);font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.newgame-panel{margin-top:24px;padding:22px;background:#100b19;border:1px solid #56366f;border-radius:20px;min-height:220px}
+.newgame-panel h3{margin:0 0 8px}.ng-controls{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}.ng-controls button,.ng-cell{background:#241431;border:1px solid #684486;color:#fff;border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:700}.ng-controls button:hover,.ng-cell:hover{border-color:var(--cyan)}
+.ng-board{display:grid;gap:7px;max-width:440px;margin:14px auto}.ng-cell{min-width:0;min-height:48px;font-size:1.15rem}.ng-status{text-align:center;color:var(--cyan);font-weight:700;min-height:24px}
+@media(max-width:900px){.extra-games{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.extra-games{grid-template-columns:repeat(2,minmax(0,1fr))}.extra-game{padding:13px;min-height:135px}.newgame-panel{padding:14px}}
+
 </style>
 </head>
 <body>
@@ -171,6 +184,12 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9;opac
 <a class="card" href="#flappy"><div class="art">🐤</div><div class="card-body"><div class="tag">Arcade • Skill</div><h3>Flappy Bird</h3><p>Fly through the pipes and see how high you can score.</p><span class="play">Take Flight ↗</span></div></a>
 <a class="card" href="#arena"><div class="art">⚡</div><div class="card-body"><div class="tag">Arcade • Quick reflex</div><h3>Reflex Challenge</h3><p>Test your reaction speed and beat your personal best.</p><span class="play">Test Your Reflexes ↗</span></div></a>
 </div></section>
+
+<section class="wrap section" id="moregames"><div class="section-head"><div><div class="eyebrow">✨ 20 fresh challenges</div><h2>More <span style="color:var(--pink)">Famous Games</span></h2></div><p>Five games let you play with a friend or against AI. The other fifteen are solo challenges. Pick any game to start playing right here.</p></div>
+<div class="tag" style="margin:0 0 12px">🤝 5 TWO-PLAYER + AI GAMES</div><div class="extra-games" id="duoGameList"></div>
+<div class="tag" style="margin:24px 0 12px">⚡ 15 SOLO GAMES</div><div class="extra-games" id="soloGameList"></div>
+<div class="newgame-panel" id="newGamePanel"><div class="eyebrow">GAME STATION</div><h3 id="ngTitle">Choose a game above</h3><p id="ngDesc" style="color:var(--muted)">Your new games will load here. No downloads or sign-up needed.</p><div class="ng-controls" id="ngControls"></div><div id="ngPlay"></div><div class="ng-status" id="ngStatus" aria-live="polite"></div></div>
+</section>
 <section class="wrap section" id="arena"><div class="arcade"><div><div class="eyebrow">Playable right now</div><h2>Quick Reflex <span style="color:var(--cyan)">Challenge</span></h2><p>Test your reaction speed! Press start, wait for the screen to turn green, then click as quickly as you can. This mini-game works directly in your browser.</p><p style="font-size:.85rem">No account needed. No downloads. Just play.</p></div><div class="mini-game"><div class="game-screen" id="gameScreen">Ready when you are, player.</div><div class="game-controls"><button id="startGame">Start challenge</button><button id="resetGame">Reset</button></div><p id="gameMessage" aria-live="polite" style="font-size:.85rem;color:var(--muted)">Try to beat your best time!</p></div></div></section>
 
 
@@ -580,4 +599,50 @@ reset();
 })();
 </script>
 
+
+<script>
+(()=>{
+const duo=[
+['ttt','❎','Tic-Tac-Toe','Classic 3×3 strategy','Two-player + AI'],
+['connect','🔴','Connect Four','Connect four discs in a row','Two-player + AI'],
+['rps','✊','Rock Paper Scissors','Outplay the computer or a friend','Two-player + AI'],
+['gomoku','⚫','Gomoku','Get five in a row to win','Two-player + AI'],
+['dots','🔷','Dots & Boxes','Complete more boxes than your rival','Two-player + AI']
+];
+const solo=[
+['memory','🧠','Memory Match','Find all matching pairs'],['2048','🔢','2048','Combine tiles to reach 2048'],['mines','💣','Minesweeper','Reveal safe squares and avoid mines'],['simon','🎵','Simon Says','Repeat the growing color sequence'],['whack','🔨','Whack-a-Mole','Hit the mole before it moves'],['guess','🎯','Number Guess','Find the secret number'],['hangman','🔤','Hangman','Guess the hidden word'],['scramble','🔀','Word Scramble','Unscramble the mixed-up word'],['math','➗','Math Rush','Solve quick math questions'],['clicker','👆','Mega Clicker','Click fast and build your score'],['aim','🎯','Aim Trainer','Hit the moving target'],['color','🎨','Color Match','Pick the color named by the prompt'],['lights','💡','Lights Out','Turn every light off'],['sequence','🧩','Number Sequence','Find the missing number'],['reaction','⚡','Reaction Test','Wait for green, then tap fast']
+];
+const $=id=>document.getElementById(id), panel=$('newGamePanel'), controls=$('ngControls'), play=$('ngPlay'), status=$('ngStatus');
+const btn=(label,fn)=>{let b=document.createElement('button');b.textContent=label;b.onclick=fn;controls.append(b);return b};
+function cards(arr,target,tag){arr.forEach(g=>{let b=document.createElement('button');b.className='extra-game';b.innerHTML='<div class="eg-icon">'+g[1]+'</div><h3>'+g[2]+'</h3><p>'+g[3]+'</p><small>'+tag+'</small>';b.onclick=()=>start(g[0]);$(target).append(b)})}
+cards(duo,'duoGameList','2 players / AI');cards(solo,'soloGameList','Solo game');
+let mode='ai',game='',board=[],turn=0,over=false,secret=0,seq=[],step=0,score=0,timer=null;
+function say(t){status.textContent=t}function cellBoard(n,cols,fn){play.innerHTML='';let grid=document.createElement('div');grid.className='ng-board';grid.style.gridTemplateColumns='repeat('+cols+',1fr)';for(let i=0;i<n;i++){let b=document.createElement('button');b.className='ng-cell';b.textContent=board[i]||'';b.onclick=()=>fn(i);grid.append(b)}play.append(grid)}
+function start(id){game=id;over=false;board=[];turn=0;score=0;controls.innerHTML='';play.innerHTML='';say('');let info=[...duo,...solo].find(x=>x[0]===id);$('ngTitle').textContent=info[2];$('ngDesc').textContent=info[3];panel.scrollIntoView({behavior:'smooth',block:'center'});
+if(duo.some(x=>x[0]===id)){mode='ai';btn('Play vs AI',()=>{mode='ai';start(id)});btn('2 Players',()=>{mode='2p';start(id)});say(mode==='ai'?'Your turn (X). Playing against AI.':'Player 1 (X) starts.');if(id==='ttt'||id==='gomoku')drawMarks(id);else if(id==='connect')drawConnect();else if(id==='rps')drawRps();else if(id==='dots')drawDots();return}
+soloStart(id)}
+function drawMarks(id){let n=id==='ttt'?9:225,c=id==='ttt'?3:15;board=Array(n).fill('');cellBoard(n,c,i=>{if(over||board[i])return;board[i]=turn%2?'O':'X';turn++;if(checkLine(id)){say((turn%2?'X':'O')+' wins!');over=true}else if(board.every(Boolean)){say('Draw!');over=true}else if(mode==='ai'){let choices=board.map((v,i)=>v? -1:i).filter(i=>i>=0);let pick=choices[Math.floor(Math.random()*choices.length)];board[pick]='O';turn++;if(checkLine(id)){say('AI wins!');over=true}else say('Your turn (X).')}else say('Player '+(turn%2+1)+' turn.');cellBoard(n,c,arguments.callee)}); }
+function checkLine(id){let n=id==='ttt'?3:15,need=id==='ttt'?3:5;for(let r=0;r<n;r++)for(let c=0;c<n;c++){let v=board[r*n+c];if(!v)continue;for(let [dr,dc] of [[0,1],[1,0],[1,1],[1,-1]]){let ok=true;for(let k=1;k<need;k++){let rr=r+dr*k,cc=c+dc*k;if(rr<0||rr>=n||cc<0||cc>=n||board[rr*n+cc]!==v){ok=false;break}}if(ok)return true}}return false}
+function drawConnect(){board=Array(42).fill('');let grid=document.createElement('div');grid.className='ng-board';grid.style.gridTemplateColumns='repeat(7,1fr)';for(let c=0;c<7;c++){let b=document.createElement('button');b.className='ng-cell';b.textContent='↓';b.onclick=()=>drop(c);grid.append(b)}for(let i=0;i<42;i++){let b=document.createElement('div');b.className='ng-cell';b.style.background=board[i]==='R'?'#e44':board[i]==='Y'?'#edc83e':'#21142e';b.textContent=board[i]||'·';grid.append(b)}play.append(grid)}
+function drop(c){if(over)return;let r=5;while(r>=0&&board[r*7+c])r--;if(r<0)return;board[r*7+c]=turn%2?'Y':'R';turn++;drawConnect();if(connectWin()){say('Player '+(turn%2+1)+' wins!');over=true;return}if(mode==='ai'){let cols=[0,1,2,3,4,5,6].filter(x=>!board[x]);if(cols.length){let x=cols[Math.floor(Math.random()*cols.length)],rr=5;while(rr>=0&&board[rr*7+x])rr--;board[rr*7+x]='Y';turn++;drawConnect();if(connectWin()){say('AI wins!');over=true}}}else say('Player '+(turn%2+1)+' turn.')}
+function connectWin(){for(let r=0;r<6;r++)for(let c=0;c<7;c++){let v=board[r*7+c];if(v&&[[0,1],[1,0],[1,1],[1,-1]].some(([dr,dc])=>{for(let k=1;k<4;k++){let rr=r+dr*k,cc=c+dc*k;if(rr<0||rr>=6||cc<0||cc>=7||board[rr*7+cc]!==v)return false}return true}))return true}return false}
+function drawRps(){['✊ Rock','✋ Paper','✌️ Scissors'].forEach((x,i)=>btn(x,()=>{let a=['Rock','Paper','Scissors'][i],b=['Rock','Paper','Scissors'][Math.floor(Math.random()*3)];say(a+' vs '+b+' — '+(a===b?'Draw!':(a==='Rock'&&b==='Scissors'||a==='Paper'&&b==='Rock'||a==='Scissors'&&b==='Paper'?'You win!':'Opponent wins!')))}))}
+function drawDots(){board=Array(9).fill(0);btn('New round',()=>start('dots'));say('Take turns claiming a square. Most squares wins.');cellBoard(9,3,i=>{if(board[i])return;board[i]=turn%2+1;turn++;cellBoard(9,3,arguments.callee);say('Player '+(turn%2+1)+' turn.')})}
+function soloStart(id){if(id==='memory'){let a=[1,1,2,2,3,3,4,4,5,5,6,6].sort(()=>Math.random()-.5),opened=[],done=[];cellBoard(12,4,i=>{if(opened.length===2||done.includes(i)||opened.includes(i))return;opened.push(i);play.querySelectorAll('button')[i].textContent=a[i];if(opened.length===2){if(a[opened[0]]===a[opened[1]])done.push(...opened);setTimeout(()=>{if(done.length===12)say('You matched every pair!');else{opened.forEach(j=>play.querySelectorAll('button')[j].textContent='?');opened=[]}},650)}});play.querySelectorAll('button').forEach(b=>b.textContent='?');return}
+if(id==='2048'){let a=Array(16).fill(0);a[5]=2;a[10]=2;function render(){board=a.map(x=>x||'');cellBoard(16,4,i=>{let row=Math.floor(i/4),col=i%4;let j=row*4+Math.min(3,col+1);if(a[i]&&a[j]===a[i]){a[i]*=2;a[j]=0;let z=a.indexOf(0);if(z>=0)a[z]=2;render();say('Tile merged!')}else say('Try matching equal tiles side by side.')})}render();btn('Restart',()=>start('2048'));return}
+if(id==='mines'){let bombs=new Set([2,7,13,19,22]),revealed=new Set();cellBoard(25,5,i=>{if(revealed.has(i))return;revealed.add(i);let b=play.querySelectorAll('button')[i];if(bombs.has(i)){b.textContent='💣';say('Boom! Start a new board.')}else{let count=[i-5,i+5,i-1,i+1].filter(x=>bombs.has(x)).length;b.textContent=count||'✓';if(revealed.size===20)say('Board cleared!')}});btn('New board',()=>start('mines'));return}
+if(id==='simon'){seq=[];step=0;btn('Start sequence',()=>{seq.push(1+Math.floor(Math.random()*4));say('Repeat: '+seq.join(' – '));});['🟥','🟦','🟩','🟨'].forEach((x,i)=>btn(x,()=>{if(!seq.length)return;if(i+1!==seq[step]){say('Wrong sequence!');seq=[];step=0;return}step++;if(step===seq.length){step=0;seq.push(1+Math.floor(Math.random()*4));say('Great! Next sequence: '+seq.join(' – '))}}));return}
+if(id==='whack'||id==='aim'){let target=0;function spawn(){target=Math.floor(Math.random()*9);cellBoard(9,3,i=>{if(i===target){score++;say('Hits: '+score);spawn()}else say('Miss! Try again.')});play.querySelectorAll('button')[target].textContent='🎯'}spawn();return}
+if(id==='guess'){secret=1+Math.floor(Math.random()*100);let inp=document.createElement('input');inp.type='number';inp.placeholder='Guess 1–100';inp.className='ng-cell';play.append(inp);btn('Guess',()=>say(+inp.value===secret?'Correct! You got it!':+inp.value<secret?'Too low!':'Too high!'));btn('New number',()=>start('guess'));return}
+if(id==='hangman'||id==='scramble'){let words=['GAMING','HABIBI','ARCADE','PLAYER','CHESS'],w=words[Math.floor(Math.random()*words.length)],guess=[];let inp=document.createElement('input');inp.maxLength=1;inp.placeholder='Type a letter';inp.className='ng-cell';play.append(inp);let out=document.createElement('p');play.append(out);function upd(){out.textContent=w.split('').map(x=>guess.includes(x)?x:'_').join(' ');if(w.split('').every(x=>guess.includes(x)))say('You solved it!')}upd();btn('Try letter',()=>{guess.push(inp.value.toUpperCase());upd()});return}
+if(id==='math'){let a=2+Math.floor(Math.random()*20),b=2+Math.floor(Math.random()*20),inp=document.createElement('input');inp.placeholder=a+' + '+b+' = ?';inp.className='ng-cell';play.append(inp);btn('Check',()=>say(+inp.value===a+b?'Correct!':'Try again!'));return}
+if(id==='clicker'){let n=0;btn('CLICK ME!',()=>{say('Clicks: '+(++n));});btn('Reset',()=>start(id));return}
+if(id==='color'){let c=['RED','BLUE','GREEN','YELLOW'][Math.floor(Math.random()*4)];$('ngDesc').textContent='Tap the matching color: '+c;['RED','BLUE','GREEN','YELLOW'].forEach(x=>btn(x,()=>say(x===c?'Correct!':'Not quite — try again.')));return}
+if(id==='lights'){board=Array(25).fill(0).map(()=>Math.random()<.35?1:0);function render(){cellBoard(25,5,i=>{[i,i-5,i+5,i-1,i+1].forEach(j=>{if(j>=0&&j<25)board[j]^=1});render();if(board.every(x=>!x))say('All lights out — you win!')});play.querySelectorAll('button').forEach((b,i)=>b.textContent=board[i]?'💡':'·')}render();return}
+if(id==='sequence'){let n=2+Math.floor(Math.random()*8),v=n*3;let inp=document.createElement('input');inp.placeholder='What comes next? '+(n*3-6)+', '+(n*3-3)+', '+v+', ?';inp.className='ng-cell';play.append(inp);btn('Answer',()=>say(+inp.value===v+3?'Correct!':'Not quite!'));return}
+if(id==='reaction'){let b=btn('Start',()=>{b.disabled=true;say('Wait for the signal...');setTimeout(()=>{b.disabled=false;b.textContent='TAP NOW!';let t=Date.now();b.onclick=()=>say('Reaction: '+(Date.now()-t)+' ms')},1200+Math.random()*2200)});return}
+}
+$('year').textContent=new Date().getFullYear();
+})();
+</script>
 </body></html>
