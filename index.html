@@ -383,7 +383,7 @@ if(snakeCanvas){
  function start(){if(running)return;if(ended)reset();running=true;msg.textContent='Game on! Cross the walls, collect food, and dodge the bombs.';loop=setInterval(tick,125)}
  function reset(){stop();snake=[{x:8,y:9},{x:7,y:9},{x:6,y:9}];dir={x:1,y:0};nextDir={x:1,y:0};score=0;scoreEl.textContent='0';ended=false;food=null;bombs=[];placeFood();placeBombs();draw();msg.textContent='Fresh start! Walls wrap around. Avoid the bombs!'}
  function change(d){const dirs={up:{x:0,y:-1},down:{x:0,y:1},left:{x:-1,y:0},right:{x:1,y:0}};const n=dirs[d];if(n&&!(n.x===-dir.x&&n.y===-dir.y))nextDir=n}
- document.addEventListener('keydown',e=>{const map={ArrowUp:'up',w:'up',W:'up',ArrowDown:'down',s:'down',S:'down',ArrowLeft:'left',a:'left',A:'left',ArrowRight:'right',d:'right',D:'right'};if(map[e.key]){e.preventDefault();change(map[e.key])}});
+ document.addEventListener('keydown',e=>{if(e.target&&(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)||e.target.isContentEditable))return;const map={ArrowUp:'up',w:'up',W:'up',ArrowDown:'down',s:'down',S:'down',ArrowLeft:'left',a:'left',A:'left',ArrowRight:'right',d:'right',D:'right'};if(map[e.key]){e.preventDefault();change(map[e.key])}});
  document.querySelectorAll('[data-dir]').forEach(b=>b.addEventListener('click',()=>change(b.dataset.dir)));
  // Swipe gestures make the board directly playable on touchscreens.
  let touchStart=null;
@@ -514,7 +514,7 @@ function start(){if(running)return;if(over)reset();running=true;$('raceStatus').
 function move(dir){if(running)lane=Math.max(0,Math.min(2,lane+dir));paint()}
 $('raceStart').addEventListener('click',start);$('raceRestart').addEventListener('click',()=>{cancelAnimationFrame(raf);reset();start()});
 $('raceLeft').addEventListener('click',()=>move(-1));$('raceRight').addEventListener('click',()=>move(1));
-document.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','a','A','d','D'].includes(e.key)){e.preventDefault();move(e.key==='ArrowLeft'||e.key==='a'||e.key==='A'?-1:1)}if(e.key===' '&&!running){e.preventDefault();start()}});
+document.addEventListener('keydown',e=>{if(e.target&&(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)||e.target.isContentEditable))return;if(['ArrowLeft','ArrowRight','a','A','d','D'].includes(e.key)){e.preventDefault();move(e.key==='ArrowLeft'||e.key==='a'||e.key==='A'?-1:1)}if(e.key===' '&&!running){e.preventDefault();start()}});
 paint();
 })();
 </script>
@@ -743,7 +743,7 @@ const themeBtn=$('themeToggle');let light=false;try{light=localStorage.getItem('
  async function refreshLeaderboard(){
   const host=el('leaderboardRows');host.innerHTML='';
   const {data,error}=await client.from('leaderboard_scores').select('username,game,score,created_at').order('score',{ascending:false}).limit(10);
-  if(error){const p=document.createElement('p');p.className='account-muted';p.textContent='Leaderboard setup is almost ready. Please apply the database SQL setup from ChatGPT.';host.append(p);return}
+  if(error){console.error('Leaderboard query failed:',error);const p=document.createElement('p');p.className='account-muted';p.textContent='Leaderboard error: '+(error.message||error.code||'Unknown error');host.append(p);return}
   if(!data.length){const p=document.createElement('p');p.className='account-muted';p.textContent='No scores yet. Be the first on the board!';host.append(p);return}
   data.forEach((r,i)=>{const row=document.createElement('div');row.className='leader-row';const rank=document.createElement('strong');rank.textContent=['🥇','🥈','🥉'][i]||('#'+(i+1));const name=document.createElement('span');name.textContent=(r.username||'Player')+' · '+(r.game||'Game');const score=document.createElement('strong');score.textContent=Number(r.score).toLocaleString();row.append(rank,name,score);host.append(row)});
  }
