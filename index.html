@@ -729,7 +729,7 @@ const themeBtn=$('themeToggle');let light=false;try{light=localStorage.getItem('
    if(signingUp){
     const username=el('habibiUsername').value.trim();
     if(!username){say(status,'Choose a player name first.');return}
-    const {data,error}=await client.auth.signUp({email,password,options:{data:{username}}});
+    const {data,error}=await client.auth.signUp({email,password,options:{data:{username},emailRedirectTo:'https://yusufalaaw15-bit.github.io/gm-hub/'} });
     if(error)throw error;
     if(data.session){say(status,'Account created! You are signed in.')}
     else{say(status,'Account created! Check your email to confirm, then log in.')}
