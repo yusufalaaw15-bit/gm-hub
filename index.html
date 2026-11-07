@@ -98,10 +98,22 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 .gk-status{color:#a7f3d0;font-weight:800;min-height:1.5em;margin:10px 0 0}
 @media(max-width:760px){.gk-panel{grid-template-columns:1fr;padding:16px}.gk-copy{text-align:center}}
 
+
+/* Flappy Bird mini-game */
+.flappy-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,400px);gap:24px;align-items:center;background:linear-gradient(135deg,rgba(34,18,75,.9),rgba(8,25,48,.95));border:1px solid rgba(167,139,250,.35);border-radius:22px;padding:22px;box-shadow:0 15px 45px rgba(0,0,0,.22)}
+.flappy-copy .tag{display:inline-block;padding:6px 10px;border-radius:99px;background:rgba(34,211,238,.12);color:#67e8f9;font-size:.78rem;font-weight:700}
+.flappy-copy h3{font-size:1.65rem;margin:12px 0}.flappy-copy p{color:#cbd5e1;line-height:1.65}
+.flappy-actions{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.flappy-stage{max-width:400px;width:100%;margin:auto}
+#flappyCanvas{display:block;width:100%;height:auto;aspect-ratio:4/5;border:2px solid rgba(103,232,249,.45);border-radius:16px;background:#7dd3fc;touch-action:manipulation}
+.flappy-stats{display:flex;justify-content:space-between;color:#e2e8f0;font-weight:700;margin-bottom:9px}
+.flappy-status{min-height:28px;color:#a5f3fc;font-weight:700}
+@media(max-width:760px){.flappy-panel{grid-template-columns:1fr;padding:15px}.flappy-stage{max-width:340px}.flappy-copy h3{font-size:1.35rem}}
+
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="logo" href="#home">GM<span>.</span>HUB</a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#chess">Chess</a><a href="#uno">UNO</a><a href="#carrace">Car Race</a><a href="#football">Football</a><a href="#gkgame">Goalkeeper</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="btn secondary" href="#games">Enter Hub ↗</a></div></header>
+<header><div class="wrap nav"><a class="logo" href="#home">GM<span>.</span>HUB</a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#chess">Chess</a><a href="#uno">UNO</a><a href="#carrace">Car Race</a><a href="#football">Football</a><a href="#gkgame">Goalkeeper</a><a href="#flappy">Flappy Bird</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="btn secondary" href="#games">Enter Hub ↗</a></div></header>
 <main>
 <section class="wrap hero" id="home"><div class="hero-copy"><div class="eyebrow">✦ Next-level gaming experience</div><h1>The Future of <span>Gaming Lives Here.</span></h1><p>Enter the arena. Discover your next favorite game, challenge your reflexes, and explore a neon-powered world built for players.</p><div class="actions"><a class="btn primary" href="#games">⚡ Explore Games</a><a class="btn secondary" href="#arena">▶ Play a Mini-Game</a></div></div><div class="visual" aria-label="Futuristic warrior illustration"><div class="orb"></div><div class="warrior" role="img" aria-label="Samurai mask">👾</div><div class="hud one"><strong>LEVEL UP</strong>YOUR NEXT QUEST</div><div class="hud two"><strong>GM / 001</strong>PLAYER READY</div></div></section>
 <section class="wrap section" id="games"><div class="section-head"><div><div class="eyebrow">Choose your mission</div><h2>Explore the <span style="color:var(--pink)">Game Zone</span></h2></div><p>Pick a portal and jump into the action. These cards are ready for you to customize with your own games.</p></div><div class="cards">
@@ -131,6 +143,11 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 <div class="football-panel"><div class="football-copy"><div class="tag">GM.HUB sports challenge</div><h3>Can you beat the keeper?</h3><p>Choose where to aim, then take your shot. The goalkeeper will dive left, middle, or right to try to save it. You get five penalties per round.</p><p><strong>How to play:</strong> Select Left, Center, or Right, then press Shoot.</p><div class="football-actions"><button id="footballShoot">⚽ Shoot!</button><button id="footballReset">New shootout</button></div><p id="footballStatus" class="football-status" aria-live="polite">Choose your target and take your first shot!</p></div>
 <div class="football-stage"><div class="football-stats"><span>Goals: <b id="footballGoals">0</b></span><span>Shots: <b id="footballShots">0 / 5</b></span></div><canvas id="footballCanvas" width="400" height="300" aria-label="Football penalty shootout"></canvas><div class="football-controls"><button data-aim="0" class="active">↖ Left</button><button data-aim="1">↑ Center</button><button data-aim="2">↗ Right</button></div></div></div></section>
 
+
+
+<section class="wrap section" id="flappy"><div class="section-head"><div><div class="eyebrow">Classic arcade • Fly and dodge</div><h2>Flappy <span style="color:var(--cyan)">Bird</span> 🐤</h2></div><p>Tap to flap through the pipes. Don't hit the pipes or the ground, and try to beat your best score!</p></div>
+<div class="flappy-panel"><div class="flappy-copy"><div class="tag">GM.HUB flying challenge</div><h3>How far can you fly?</h3><p>Tap or click the game to flap. On a computer, you can also press Space or the Up Arrow. Fly through the gaps between the pipes to score points.</p><p><strong>Controls:</strong> Tap / click / Space / ↑ to flap.</p><div class="flappy-actions"><button id="flappyStart">Start game</button><button id="flappyRestart">Restart</button></div><p id="flappyStatus" class="flappy-status" aria-live="polite">Press Start game, then flap your way through!</p></div>
+<div class="flappy-stage"><div class="flappy-stats"><span>Score: <b id="flappyScore">0</b></span><span>Best: <b id="flappyBest">0</b></span></div><canvas id="flappyCanvas" width="320" height="400" aria-label="Flappy Bird style flying game"></canvas></div></div></section>
 
 <section class="wrap section" id="gkgame"><div class="section-head"><div><div class="eyebrow">Goalkeeper challenge • 5 shots</div><h2>Goalkeeper <span style="color:#86efac">Hero</span> 🧤</h2></div><p>Now it's your turn to guard the goal! Read the striker, choose where to dive, and save as many penalties as you can.</p></div>
 <div class="gk-panel"><div class="gk-copy"><div class="tag">GM.HUB goalkeeper challenge</div><h3>Can you keep a clean sheet?</h3><p>You are the goalkeeper. The striker will shoot left, center, or right. Pick your dive direction before the shot. Save at least one and aim for all five!</p><p><strong>How to play:</strong> Choose Left, Center, or Right, then press Dive!</p><div class="gk-actions"><button id="gkDive">🧤 Dive!</button><button id="gkReset">New match</button></div><p id="gkStatus" class="gk-status" aria-live="polite">Choose a direction and get ready!</p></div>
@@ -471,6 +488,45 @@ function attempt(){
 function reset(){if(anim)cancelAnimationFrame(anim);anim=null;dive=0;saves=0;shots=0;done=false;shot=null;$('gkSaves').textContent='0';$('gkShots').textContent='0 / 5';$('gkStatus').textContent='Choose a direction and get ready!';document.querySelectorAll('.gk-controls button').forEach(b=>b.classList.toggle('active',Number(b.dataset.dive)===0));draw()}
 document.querySelectorAll('.gk-controls button').forEach(b=>b.addEventListener('click',()=>choose(Number(b.dataset.dive))));
 $('gkDive').addEventListener('click',attempt);$('gkReset').addEventListener('click',reset);draw();
+})();
+</script>
+
+
+<script>
+(()=> {
+const canvas=document.getElementById('flappyCanvas'); if(!canvas)return;
+const ctx=canvas.getContext('2d'),$=id=>document.getElementById(id);
+const W=canvas.width,H=canvas.height;
+let bird, pipes, score, running=false, over=false, raf=0, last=0, spawn=0;
+let best=0;try{best=Number(localStorage.getItem('gmFlappyBest')||0)}catch(e){}
+$('flappyBest').textContent=best;
+function reset(){cancelAnimationFrame(raf);bird={x:76,y:180,vy:0,r:12};pipes=[];score=0;spawn=0;running=false;over=false;last=0;$('flappyScore').textContent='0';$('flappyStatus').textContent='Tap the game or press Space to flap!';draw()}
+function flap(){if(over){reset();running=true;bird.vy=-5.4;$('flappyStatus').textContent='Keep flying!';return}if(!running){running=true;$('flappyStatus').textContent='Keep flying!';}bird.vy=-5.4}
+function start(){if(over)reset();if(!running){running=true;flap();}}
+function addPipe(){const gap=116,top=35+Math.random()*(H-gap-115);pipes.push({x:W+8,top, gap,passed:false})}
+function draw(){
+ const sky=ctx.createLinearGradient(0,0,0,H);sky.addColorStop(0,'#38bdf8');sky.addColorStop(1,'#dbeafe');ctx.fillStyle=sky;ctx.fillRect(0,0,W,H);
+ ctx.fillStyle='rgba(255,255,255,.5)';for(let i=0;i<4;i++){let x=(i*105+25-(score*2)%105);ctx.beginPath();ctx.ellipse(x,55+i%2*38,23,8,0,0,Math.PI*2);ctx.fill()}
+ pipes.forEach(p=>{ctx.fillStyle='#16a34a';ctx.fillRect(p.x,0,48,p.top);ctx.fillRect(p.x,p.top-14,54,14);ctx.fillRect(p.x,p.top+p.gap,48,H-p.top-p.gap);ctx.fillRect(p.x-3,p.top+p.gap,54,14);ctx.fillStyle='#4ade80';ctx.fillRect(p.x+7,0,7,p.top-14);ctx.fillRect(p.x+7,p.top+p.gap+14,7,H-p.top-p.gap-14)});
+ ctx.fillStyle='#facc15';ctx.beginPath();ctx.arc(bird.x,bird.y,bird.r,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#ca8a04';ctx.lineWidth=2;ctx.stroke();
+ ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(bird.x+5,bird.y-4,4,0,Math.PI*2);ctx.fill();ctx.fillStyle='#111827';ctx.beginPath();ctx.arc(bird.x+6,bird.y-4,1.8,0,Math.PI*2);ctx.fill();
+ ctx.fillStyle='#f97316';ctx.beginPath();ctx.moveTo(bird.x+10,bird.y+1);ctx.lineTo(bird.x+20,bird.y+5);ctx.lineTo(bird.x+10,bird.y+8);ctx.fill();
+ ctx.fillStyle='#a16207';ctx.fillRect(0,H-10,W,10);
+ if(!running&&!over){ctx.fillStyle='rgba(15,23,42,.78)';ctx.font='bold 19px system-ui';ctx.textAlign='center';ctx.fillText('TAP TO FLY',W/2,H/2+72)}
+ if(over){ctx.fillStyle='rgba(15,23,42,.7)';ctx.fillRect(25,145,W-50,100);ctx.fillStyle='white';ctx.textAlign='center';ctx.font='bold 24px system-ui';ctx.fillText('GAME OVER',W/2,185);ctx.font='15px system-ui';ctx.fillText('Tap or press Restart to try again',W/2,215)}
+}
+function end(){running=false;over=true;if(score>best){best=score;$('flappyBest').textContent=best;try{localStorage.setItem('gmFlappyBest',String(best))}catch(e){}}$('flappyStatus').textContent='Game over! You scored '+score+'. Try again!';draw()}
+function loop(t){if(!running)return;const dt=Math.min((t-last)/16.67||1,2);last=t;bird.vy+=.27*dt;bird.y+=bird.vy*dt;spawn+=dt;if(spawn>92){addPipe();spawn=0}
+ pipes.forEach(p=>{p.x-=2.15*dt;if(!p.passed&&p.x+48<bird.x){p.passed=true;score++;$('flappyScore').textContent=score}});
+ pipes=pipes.filter(p=>p.x>-60);
+ if(bird.y-bird.r<0||bird.y+bird.r>H-10||pipes.some(p=>bird.x+bird.r>p.x&&bird.x-bird.r<p.x+48&&(bird.y-bird.r<p.top||bird.y+bird.r>p.top+p.gap))){end();return}
+ draw();raf=requestAnimationFrame(loop)}
+function launch(){if(over)reset();if(!running){running=true;last=0;raf=requestAnimationFrame(loop)}flap()}
+canvas.addEventListener('pointerdown',e=>{e.preventDefault();launch()});
+$('flappyStart').addEventListener('click',()=>{if(!running){if(over)reset();running=true;last=0;raf=requestAnimationFrame(loop)}flap()});
+$('flappyRestart').addEventListener('click',()=>{reset();running=true;last=0;raf=requestAnimationFrame(loop);flap()});
+document.addEventListener('keydown',e=>{if(['Space','ArrowUp'].includes(e.code)&&document.getElementById('flappy').getBoundingClientRect().top<window.innerHeight&&document.getElementById('flappy').getBoundingClientRect().bottom>0){e.preventDefault();launch()}});
+reset();
 })();
 </script>
 
