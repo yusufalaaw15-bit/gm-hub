@@ -136,10 +136,29 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9;opac
 @media(max-width:950px){.game-library{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.game-library{grid-template-columns:1fr 1fr;gap:10px}.game-library .art{height:105px;font-size:2.8rem}.game-library .card-body{padding:12px}.game-library .card p{font-size:.82rem;min-height:84px}.game-library .card h3{font-size:.98rem}.game-library .play{font-size:.78rem;padding:9px 5px}.hero{min-height:auto;padding-top:48px}}
 
+
+/* Premium Habibi navigation bar */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(7,5,16,.88);backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);border-bottom:1px solid rgba(190,120,255,.2);box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.site-header:after{content:"";position:absolute;bottom:-1px;left:5%;right:5%;height:1px;background:linear-gradient(90deg,transparent,#a855f7aa,#54eaff88,transparent)}
+.site-header .nav{min-height:78px;height:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:10px;padding-bottom:10px}
+.site-header .logo{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;color:#fff;font-size:1.5rem;font-weight:1000;letter-spacing:2.5px;text-shadow:0 0 20px #d946ef66}
+.site-header .logo .logo-star{color:var(--cyan);font-size:.85rem;text-shadow:0 0 14px var(--cyan)}
+.site-header .main-nav{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:clamp(8px,1.25vw,18px);white-space:nowrap;color:#cfc5dc;font-size:.82rem;font-weight:700}
+.site-header .main-nav a{position:relative;padding:10px 0;transition:color .2s,text-shadow .2s}
+.site-header .main-nav a:after{content:"";position:absolute;left:50%;right:50%;bottom:3px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--pink),var(--cyan));transition:left .2s,right .2s}
+.site-header .main-nav a:hover{color:#fff;text-shadow:0 0 14px #d946ef99}
+.site-header .main-nav a:hover:after{left:0;right:0}
+.site-header .hub-cta{flex:0 0 auto;display:inline-flex;align-items:center;gap:12px;padding:12px 17px;border:1px solid #c084fc88;border-radius:12px;background:linear-gradient(115deg,#7e22ce,#a21caf 60%,#155e75);color:#fff;font-size:.83rem;font-weight:900;letter-spacing:.2px;box-shadow:0 0 22px #a855f733,inset 0 1px #ffffff30;transition:transform .2s,box-shadow .2s}
+.site-header .hub-cta span{font-size:1rem;color:#a5f3fc}
+.site-header .hub-cta:hover{transform:translateY(-2px);box-shadow:0 0 28px #c026d366}
+@media(max-width:1100px){.site-header .nav{gap:13px}.site-header .main-nav{justify-content:flex-start;overflow-x:auto;scrollbar-width:none;gap:14px}.site-header .main-nav::-webkit-scrollbar{display:none}}
+@media(max-width:760px){.site-header .nav{min-height:0;display:grid;grid-template-columns:1fr auto;gap:9px 12px;padding-top:12px;padding-bottom:10px}.site-header .logo{font-size:1.35rem}.site-header .hub-cta{padding:10px 13px}.site-header .main-nav{grid-column:1/-1;grid-row:2;width:100%;overflow-x:auto;justify-content:flex-start;gap:19px;padding:0 2px 3px;font-size:.8rem}.site-header .main-nav a{padding:8px 0}.site-header .main-nav a:after{bottom:0}}
+@media(max-width:380px){.site-header .main-nav{gap:15px;font-size:.76rem}.site-header .hub-cta{font-size:.78rem;padding:9px 11px}}
+
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="logo" href="#home">GM<span>.</span>HUB</a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#chess">Chess</a><a href="#uno">UNO</a><a href="#carrace">Car Race</a><a href="#football">Football</a><a href="#gkgame">Goalkeeper</a><a href="#flappy">Flappy Bird</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="btn secondary" href="#games">Enter Hub ↗</a></div></header>
+<header class="site-header"><div class="wrap nav"><a class="logo" href="#home" aria-label="Habibi home">HABIBI<span class="logo-star">✦</span></a><nav class="main-nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#chess">Chess</a><a href="#uno">UNO</a><a href="#carrace">Car Race</a><a href="#football">Football</a><a href="#gkgame">Goalkeeper</a><a href="#flappy">Flappy Bird</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="hub-cta" href="#games">Enter Hub <span>↗</span></a></div></header>
 <main>
 <section class="wrap hero" id="home"><div class="hero-copy"><div class="eyebrow">✦ Next-level gaming experience</div><h1>The Future of <span>Gaming Lives Here.</span></h1><p>Enter the arena. Discover your next favorite game, challenge your reflexes, and explore a neon-powered world built for players.</p><div class="actions"><a class="btn primary" href="#games">⚡ Explore Games</a><a class="btn secondary" href="#arena">▶ Play a Mini-Game</a></div></div><div class="visual" aria-label="Futuristic warrior illustration"><div class="orb"></div><div class="warrior" role="img" aria-label="Samurai mask">👾</div><div class="hud one"><strong>LEVEL UP</strong>YOUR NEXT QUEST</div><div class="hud two"><strong>GM / 001</strong>PLAYER READY</div></div></section>
 <section class="wrap section" id="games"><div class="section-head"><div><div class="eyebrow">🎮 Select your game</div><h2>The <span style="color:var(--pink)">Game Library</span></h2></div><p>Eight games. One place to play. Pick a challenge, chase a new high score, and come back for another round.</p></div><div class="cards game-library">
