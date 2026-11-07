@@ -164,7 +164,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9;opac
 .extra-game small{display:inline-block;margin-top:9px;color:var(--cyan);font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
 .newgame-panel{margin-top:24px;padding:22px;background:#100b19;border:1px solid #56366f;border-radius:20px;min-height:220px}
 .newgame-panel h3{margin:0 0 8px}.ng-controls{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}.ng-controls button,.ng-cell{background:#241431;border:1px solid #684486;color:#fff;border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:700}.ng-controls button:hover,.ng-cell:hover{border-color:var(--cyan)}
-.ng-board{display:grid;gap:7px;max-width:440px;margin:14px auto}.ng-cell{min-width:0;min-height:48px;font-size:1.15rem}.ng-status{text-align:center;color:var(--cyan);font-weight:700;min-height:24px}
+.wheel-stage{position:relative;width:min(360px,88vw);aspect-ratio:1;margin:24px auto 18px}.lucky-wheel{display:block;width:100%;height:100%;border-radius:50%;filter:drop-shadow(0 8px 18px #0008)}.wheel-pointer{position:absolute;z-index:2;top:-13px;left:50%;transform:translateX(-50%);font-size:30px;line-height:1;color:#fff;text-shadow:0 2px 8px #000;filter:drop-shadow(0 0 5px #f0abfc)}.ng-board{display:grid;gap:7px;max-width:440px;margin:14px auto}.ng-cell{min-width:0;min-height:48px;font-size:1.15rem}.ng-status{text-align:center;color:var(--cyan);font-weight:700;min-height:24px}
 @media(max-width:900px){.extra-games{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:560px){.extra-games{grid-template-columns:repeat(2,minmax(0,1fr))}.extra-game{padding:13px;min-height:135px}.newgame-panel{padding:14px}}
 
@@ -682,7 +682,19 @@ function soloStart(id){if(id==='memory'){let a=[1,1,2,2,3,3,4,4,5,5,6,6].sort(()
 if(id==='coin'){['Heads','Tails'].forEach(x=>btn(x,()=>{let result=Math.random()<.5?'Heads':'Tails';say(result===x?'You guessed right! 🎉':'It was '+result+'. Try again!')}));return}
 if(id==='dice'){btn('Roll dice 🎲',()=>{let n=1+Math.floor(Math.random()*6);say('You rolled '+n+'! '+(n===6?'Amazing roll!':'Roll again to get a 6.'))});return}
 if(id==='treasure'){let prize=Math.floor(Math.random()*3);['Chest 1','Chest 2','Chest 3'].forEach((x,i)=>btn(x,()=>say(i===prize?'You found the treasure! 🏆':'Empty chest! Try another round.')));return}
-if(id==='wheel'){btn('SPIN 🎡',()=>{let prizes=['10 points','20 points','A bonus','Try again','JACKPOT!'];say('The wheel says: '+prizes[Math.floor(Math.random()*prizes.length)])});return}
+if(id==='wheel'){
+ const prizes=['10 points','20 points','A bonus','Try again','JACKPOT!','50 points','Extra turn','Mystery prize'];
+ const colors=['#8b5cf6','#ec4899','#06b6d4','#f59e0b','#22c55e','#6366f1','#e879f9','#14b8a6'];
+ const stage=document.createElement('div');stage.className='wheel-stage';
+ const pointer=document.createElement('div');pointer.className='wheel-pointer';pointer.textContent='▼';
+ const canvas=document.createElement('canvas');canvas.width=canvas.height=360;canvas.className='lucky-wheel';
+ const ctx=canvas.getContext('2d'),cx=180,cy=180,r=166;
+ prizes.forEach((prize,i)=>{const a=-Math.PI/2+i*Math.PI/4,b=a+Math.PI/4;ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,r,a,b);ctx.closePath();ctx.fillStyle=colors[i];ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.stroke();ctx.save();ctx.translate(cx,cy);ctx.rotate(a+Math.PI/8);ctx.textAlign='right';ctx.textBaseline='middle';ctx.fillStyle='#fff';ctx.font='bold 14px system-ui';ctx.shadowColor='#000';ctx.shadowBlur=3;ctx.fillText(prize, r-13,0,112);ctx.restore()});
+ ctx.beginPath();ctx.arc(cx,cy,25,0,Math.PI*2);ctx.fillStyle='#160d22';ctx.fill();ctx.lineWidth=4;ctx.strokeStyle='#fff';ctx.stroke();
+ stage.append(pointer,canvas);play.append(stage);
+ let spinning=false;
+ btn('SPIN 🎡',()=>{if(spinning)return;spinning=true;say('The wheel is spinning…');const extra=1800+Math.random()*1440;const rotation=extra+Math.random()*360;canvas.style.transition='none';canvas.style.transform='rotate(0deg)';requestAnimationFrame(()=>requestAnimationFrame(()=>{canvas.style.transition='transform 5s cubic-bezier(.12,.72,.12,1)';canvas.style.transform='rotate('+rotation+'deg)'}));canvas.ontransitionend=()=>{const angle=((360-(rotation%360))%360);const index=Math.floor(angle/45)%prizes.length;spinning=false;say('🎉 The wheel landed on: '+prizes[index]+'!');canvas.ontransitionend=null}});
+ return}
 if(id==='taprace'){let n=0;btn('TAP!',()=>{n++;say('Taps: '+n+' / 10');if(n>=10){say('You won the tap race! 🏆');celebrate()}});btn('Restart',()=>start(id));return}
 if(id==='mines'){let bombs=new Set([2,7,13,19,22]),revealed=new Set();cellBoard(25,5,i=>{if(revealed.has(i))return;revealed.add(i);let b=play.querySelectorAll('button')[i];if(bombs.has(i)){b.textContent='💣';say('Boom! Start a new board.')}else{let count=[i-5,i+5,i-1,i+1].filter(x=>bombs.has(x)).length;b.textContent=count||'✓';if(revealed.size===20)say('Board cleared!')}});btn('New board',()=>start('mines'));return}
 if(id==='simon'){seq=[];step=0;btn('Start sequence',()=>{seq.push(1+Math.floor(Math.random()*4));say('Repeat: '+seq.join(' – '));});['🟥','🟦','🟩','🟨'].forEach((x,i)=>btn(x,()=>{if(!seq.length)return;if(i+1!==seq[step]){say('Wrong sequence!');seq=[];step=0;return}step++;if(step===seq.length){step=0;seq.push(1+Math.floor(Math.random()*4));say('Great! Next sequence: '+seq.join(' – '))}}));return}
