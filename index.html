@@ -73,10 +73,23 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 .race-status{color:var(--cyan);font-weight:800;min-height:1.4em;margin:10px 0 0}
 @media(max-width:760px){.race-panel{grid-template-columns:1fr;padding:16px}.race-copy{text-align:center}}
 
+
+/* Football penalty shootout */
+.football-panel{border:1px solid var(--line);border-radius:20px;padding:22px;background:linear-gradient(135deg,#14251e,#090a12);display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,440px);gap:22px;align-items:center}
+.football-copy p{color:var(--muted);line-height:1.7}.football-stage{background:#07140e;border:1px solid #26734b;border-radius:15px;padding:12px;text-align:center}
+#footballCanvas{display:block;width:100%;max-width:400px;height:auto;aspect-ratio:4/3;margin:auto;border:1px solid #43885d;border-radius:8px;background:#17623d}
+.football-stats{display:flex;justify-content:space-between;gap:8px;max-width:400px;margin:0 auto 10px;color:#a7f3d0;font-weight:850}
+.football-controls{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:12px}
+.football-controls button,.football-actions button{border:1px solid #398c60;background:#123c29;color:#fff;border-radius:9px;padding:10px 14px;font-weight:800;cursor:pointer}
+.football-controls button.active,.football-controls button:hover,.football-actions button:hover{background:#167247;border-color:#7cf0aa}
+.football-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:10px}
+.football-status{color:#a7f3d0;font-weight:800;min-height:1.5em;margin:10px 0 0}
+@media(max-width:760px){.football-panel{grid-template-columns:1fr;padding:16px}.football-copy{text-align:center}}
+
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="logo" href="#home">GM<span>.</span>HUB</a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#chess">Chess</a><a href="#uno">UNO</a><a href="#carrace">Car Race</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="btn secondary" href="#games">Enter Hub ↗</a></div></header>
+<header><div class="wrap nav"><a class="logo" href="#home">GM<span>.</span>HUB</a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#chess">Chess</a><a href="#uno">UNO</a><a href="#carrace">Car Race</a><a href="#football">Football</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="btn secondary" href="#games">Enter Hub ↗</a></div></header>
 <main>
 <section class="wrap hero" id="home"><div class="hero-copy"><div class="eyebrow">✦ Next-level gaming experience</div><h1>The Future of <span>Gaming Lives Here.</span></h1><p>Enter the arena. Discover your next favorite game, challenge your reflexes, and explore a neon-powered world built for players.</p><div class="actions"><a class="btn primary" href="#games">⚡ Explore Games</a><a class="btn secondary" href="#arena">▶ Play a Mini-Game</a></div></div><div class="visual" aria-label="Futuristic warrior illustration"><div class="orb"></div><div class="warrior" role="img" aria-label="Samurai mask">👾</div><div class="hud one"><strong>LEVEL UP</strong>YOUR NEXT QUEST</div><div class="hud two"><strong>GM / 001</strong>PLAYER READY</div></div></section>
 <section class="wrap section" id="games"><div class="section-head"><div><div class="eyebrow">Choose your mission</div><h2>Explore the <span style="color:var(--pink)">Game Zone</span></h2></div><p>Pick a portal and jump into the action. These cards are ready for you to customize with your own games.</p></div><div class="cards">
@@ -100,6 +113,11 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 <section class="wrap section" id="carrace"><div class="section-head"><div><div class="eyebrow">Arcade racer • Dodge traffic</div><h2>Neon <span style="color:var(--cyan)">Car Race</span> 🏎️</h2></div><p>Hit the highway, dodge traffic, and see how long you can survive. The road gets faster as your score climbs!</p></div>
 <div class="race-panel"><div class="race-copy"><div class="tag">GM.HUB racing challenge</div><h3>Can you beat your high score?</h3><p>Steer your car between lanes and avoid the oncoming cars. Use the arrow keys or A/D on a computer, or the touch buttons on your phone.</p><p><strong>Controls:</strong> ← → or A / D to steer. Avoid every car!</p><div class="race-actions"><button id="raceStart">Start race</button><button id="raceRestart">Restart</button></div><p id="raceStatus" class="race-status" aria-live="polite">Press Start race to begin.</p></div>
 <div class="race-stage"><div class="race-stats"><span>Score: <b id="raceScore">0</b></span><span>Best: <b id="raceBest">0</b></span></div><canvas id="raceCanvas" width="360" height="480" aria-label="Car racing game"></canvas><div class="race-pad"><button id="raceLeft" aria-label="Steer left">◀</button><button id="raceRight" aria-label="Steer right">▶</button></div></div></div></section>
+
+
+<section class="wrap section" id="football"><div class="section-head"><div><div class="eyebrow">Penalty shootout • 5 shots</div><h2>Football <span style="color:#86efac">Challenge</span> ⚽</h2></div><p>Step up and take the winning penalty! Pick a corner, shoot past the goalkeeper, and score as many goals as you can from five shots.</p></div>
+<div class="football-panel"><div class="football-copy"><div class="tag">GM.HUB sports challenge</div><h3>Can you beat the keeper?</h3><p>Choose where to aim, then take your shot. The goalkeeper will dive left, middle, or right to try to save it. You get five penalties per round.</p><p><strong>How to play:</strong> Select Left, Center, or Right, then press Shoot.</p><div class="football-actions"><button id="footballShoot">⚽ Shoot!</button><button id="footballReset">New shootout</button></div><p id="footballStatus" class="football-status" aria-live="polite">Choose your target and take your first shot!</p></div>
+<div class="football-stage"><div class="football-stats"><span>Goals: <b id="footballGoals">0</b></span><span>Shots: <b id="footballShots">0 / 5</b></span></div><canvas id="footballCanvas" width="400" height="300" aria-label="Football penalty shootout"></canvas><div class="football-controls"><button data-aim="0" class="active">↖ Left</button><button data-aim="1">↑ Center</button><button data-aim="2">↗ Right</button></div></div></div></section>
 
 <section class="wrap section" id="snake"><div class="section-head"><div><div class="eyebrow">Classic arcade • Play now</div><h2>Snake <span style="color:var(--cyan)">Game</span> 🐍</h2></div><p>Eat the glowing food, grow your snake, and try not to crash. Your best score is saved on this device.</p></div>
 <div class="snake-panel"><div class="snake-copy"><div class="tag">GM.HUB arcade original</div><h3>How long can you survive?</h3><p>The game automatically adapts to your device. Use arrow keys or WASD on a computer, or swipe the board / tap the direction buttons on a phone or tablet. Grab the pink food to score points and make your snake longer.</p><p><strong style="color:var(--cyan)">Tip:</strong> Wrap through one wall and appear on the opposite side. Avoid the bombs and your own tail!</p></div>
@@ -346,6 +364,56 @@ $('raceStart').addEventListener('click',start);$('raceRestart').addEventListener
 $('raceLeft').addEventListener('click',()=>move(-1));$('raceRight').addEventListener('click',()=>move(1));
 document.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','a','A','d','D'].includes(e.key)){e.preventDefault();move(e.key==='ArrowLeft'||e.key==='a'||e.key==='A'?-1:1)}if(e.key===' '&&!running){e.preventDefault();start()}});
 paint();
+})();
+</script>
+
+
+<script>
+(()=>{
+const canvas=document.getElementById('footballCanvas');if(!canvas)return;
+const ctx=canvas.getContext('2d'),$=id=>document.getElementById(id);
+let aim=0,goals=0,shots=0,done=false,anim=null,keeperLane=1,shot=null;
+const targets=[105,200,295];
+function draw(){
+ ctx.clearRect(0,0,400,300);
+ const grass=ctx.createLinearGradient(0,0,0,300);grass.addColorStop(0,'#27834e');grass.addColorStop(1,'#145333');ctx.fillStyle=grass;ctx.fillRect(0,0,400,300);
+ ctx.strokeStyle='#d9fbe5';ctx.lineWidth=3;ctx.strokeRect(24,18,352,264);ctx.strokeRect(105,18,190,95);
+ // goal frame and net
+ ctx.fillStyle='#e8f4ed';ctx.fillRect(92,18,216,9);ctx.fillRect(92,18,8,105);ctx.fillRect(300,18,8,105);
+ ctx.strokeStyle='#c9ded2';ctx.lineWidth=1;for(let x=105;x<300;x+=15){ctx.beginPath();ctx.moveTo(x,29);ctx.lineTo(x,115);ctx.stroke()}for(let y=40;y<116;y+=15){ctx.beginPath();ctx.moveTo(101,y);ctx.lineTo(299,y);ctx.stroke()}
+ // penalty spot and arc
+ ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(200,248,3,0,Math.PI*2);ctx.fill();
+ ctx.strokeStyle='#d9fbe5';ctx.beginPath();ctx.arc(200,248,48,Math.PI*1.15,Math.PI*1.85);ctx.stroke();
+ // goalkeeper
+ const gx=targets[keeperLane],gy=shot?Math.max(42,70-shot.progress*18):75;
+ ctx.save();if(shot&&shot.saved){ctx.translate(gx,gy);ctx.rotate(shot.dive*.55);ctx.translate(-gx,-gy)}
+ ctx.strokeStyle='#fbbf24';ctx.lineWidth=10;ctx.lineCap='round';
+ ctx.beginPath();ctx.moveTo(gx,gy+12);ctx.lineTo(gx-25,gy+25);ctx.moveTo(gx,gy+12);ctx.lineTo(gx+25,gy+25);ctx.stroke();
+ ctx.fillStyle='#facc15';ctx.fillRect(gx-11,gy+8,22,32);ctx.fillStyle='#f3c9a5';ctx.beginPath();ctx.arc(gx,gy,10,0,Math.PI*2);ctx.fill();
+ ctx.strokeStyle='#f3c9a5';ctx.lineWidth=8;ctx.beginPath();ctx.moveTo(gx-9,gy+14);ctx.lineTo(gx-31,gy+24);ctx.moveTo(gx+9,gy+14);ctx.lineTo(gx+31,gy+24);ctx.stroke();
+ ctx.restore();
+ // kicker
+ ctx.fillStyle='#e5e7eb';ctx.beginPath();ctx.arc(200,225,9,0,Math.PI*2);ctx.fill();ctx.fillStyle='#2563eb';ctx.fillRect(191,235,18,26);ctx.strokeStyle='#111827';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(195,258);ctx.lineTo(187,275);ctx.moveTo(205,258);ctx.lineTo(213,275);ctx.stroke();
+ // ball
+ let bx=200,by=215,r=9;if(shot){const p=Math.min(1,shot.progress);bx=200+(targets[shot.aim]-200)*p;by=215-175*p;r=9-3*p}
+ ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(bx,by,r,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#111827';ctx.lineWidth=1.5;ctx.stroke();ctx.fillStyle='#111827';ctx.beginPath();ctx.arc(bx,by,3,0,Math.PI*2);ctx.fill();
+ if(shot&&shot.result){ctx.fillStyle='#06130bdd';ctx.fillRect(90,135,220,48);ctx.textAlign='center';ctx.font='bold 24px system-ui';ctx.fillStyle=shot.result==='GOAL!'?'#86efac':'#fecaca';ctx.fillText(shot.result,200,167)}
+ if(done){ctx.fillStyle='#06130ddd';ctx.fillRect(55,115,290,75);ctx.textAlign='center';ctx.fillStyle='#fff';ctx.font='bold 22px system-ui';ctx.fillText('SHOOTOUT OVER',200,145);ctx.font='bold 17px system-ui';ctx.fillStyle='#86efac';ctx.fillText('You scored '+goals+' / 5',200,173)}
+}
+function selectAim(n){if(done||shot)return;aim=n;document.querySelectorAll('.football-controls button').forEach(b=>b.classList.toggle('active',Number(b.dataset.aim)===n))}
+function takeShot(){
+ if(done||shot)return;
+ shots++;keeperLane=Math.floor(Math.random()*3);
+ const saved=keeperLane===aim;
+ shot={aim,progress:0,saved,dive:aim-keeperLane,result:''};
+ $('footballShots').textContent=shots+' / 5';
+ $('footballStatus').textContent='You take the shot...';
+ const tick=()=>{shot.progress=Math.min(1,shot.progress+.055);draw();if(shot.progress>=1){shot.result=saved?'SAVED!':'GOAL!';if(!saved)goals++;$('footballGoals').textContent=goals;$('footballStatus').textContent=saved?'The keeper saved it! Try another corner.':'GOAL! What a finish!';draw();anim=null;shot=null;setTimeout(()=>{if(shots>=5){done=true;$('footballStatus').textContent='Full time! You scored '+goals+' out of 5. Start a new shootout to play again.';draw()}},850)}else anim=requestAnimationFrame(tick)};
+ anim=requestAnimationFrame(tick);
+}
+function reset(){if(anim)cancelAnimationFrame(anim);anim=null;aim=0;goals=0;shots=0;done=false;shot=null;keeperLane=1;$('footballGoals').textContent='0';$('footballShots').textContent='0 / 5';$('footballStatus').textContent='Choose your target and take your first shot!';document.querySelectorAll('.football-controls button').forEach(b=>b.classList.toggle('active',Number(b.dataset.aim)===0));draw()}
+document.querySelectorAll('.football-controls button').forEach(b=>b.addEventListener('click',()=>selectAim(Number(b.dataset.aim))));
+$('footballShoot').addEventListener('click',takeShot);$('footballReset').addEventListener('click',reset);draw();
 })();
 </script>
 
