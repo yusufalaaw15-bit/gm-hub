@@ -177,10 +177,20 @@ body.light-mode header{background:#ffffffdf;border-color:#cbb8df}body.light-mode
 @keyframes winGlow{0%,100%{box-shadow:0 0 0 rgba(232,121,249,0)}45%{box-shadow:0 0 34px rgba(232,121,249,.9),inset 0 0 22px rgba(168,85,247,.22)}}
 @keyframes winPop{0%{opacity:0;transform:scale(.35) rotate(-12deg)}55%{opacity:1;transform:scale(1.18) rotate(5deg)}100%{opacity:0;transform:scale(1)}}
 @media(max-width:760px){.site-header .theme-toggle{grid-column:1;grid-row:1;justify-self:start;padding:7px 9px;font-size:.7rem}.site-header .logo{grid-column:2;grid-row:1;justify-self:center}.site-header .hub-cta{grid-column:3;grid-row:1;justify-self:end}}
+
+.account-section{margin:42px auto;padding:28px;border:1px solid #6f3a91;border-radius:22px;background:linear-gradient(135deg,#1b1029,#100b19);box-shadow:0 18px 55px #0005}
+.account-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.account-card{padding:20px;border:1px solid #ffffff20;border-radius:16px;background:#ffffff08}
+.account-section input,.account-section select{width:100%;padding:12px;margin:7px 0 12px;border-radius:10px;border:1px solid #76538d;background:#0d0914;color:#fff}
+.account-section button{padding:11px 16px;border:0;border-radius:10px;background:linear-gradient(90deg,#a855f7,#e879f9);color:#fff;font-weight:800;cursor:pointer}
+.account-muted{color:var(--muted);font-size:.9rem}.account-status{min-height:1.4em;color:var(--cyan);font-size:.9rem}
+#leaderboardRows{display:grid;gap:8px}.leader-row{display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:center;padding:10px;border-radius:10px;background:#ffffff0b}.leader-row strong{color:var(--pink)}
+body.light-mode .account-section{background:#f5eaff;color:#241633;border-color:#b58acb}body.light-mode .account-card{background:#fff;border-color:#d8c3e8}body.light-mode .account-section input,body.light-mode .account-section select{background:#fff;color:#241633;border-color:#b99acb}body.light-mode .account-muted{color:#594d68}
+@media(max-width:700px){.account-grid{grid-template-columns:1fr}.account-section{padding:18px}}
+
 </style>
 </head>
 <body>
-<header class="site-header"><div class="wrap nav"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color theme">☀️ Light mode</button><a class="logo" href="#home" aria-label="Habibi home">HABIBI<span class="logo-star">✦</span></a><nav class="main-nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#chess">Chess</a><a href="#uno">UNO</a><a href="#carrace">Car Race</a><a href="#football">Football</a><a href="#gkgame">Goalkeeper</a><a href="#flappy">Flappy Bird</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="hub-cta" href="#games">Enter Hub <span>↗</span></a></div></header>
+<header class="site-header"><div class="wrap nav"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color theme">☀️ Light mode</button><a class="logo" href="#home" aria-label="Habibi home">HABIBI<span class="logo-star">✦</span></a><nav class="main-nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#chess">Chess</a><a href="#uno">UNO</a><a href="#carrace">Car Race</a><a href="#football">Football</a><a href="#gkgame">Goalkeeper</a><a href="#flappy">Flappy Bird</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="hub-cta" href="#account">Player Account <span>↗</span></a></div></header>
 <main>
 <section class="wrap hero" id="home"><div class="hero-copy"><div class="eyebrow">✦ Next-level gaming experience</div><h1>The Future of <span>Gaming Lives Here.</span></h1><p>Enter the arena. Discover your next favorite game, challenge your reflexes, and explore a neon-powered world built for players.</p><div class="actions"><a class="btn primary" href="#games">⚡ Explore Games</a><a class="btn secondary" href="#arena">▶ Play a Mini-Game</a></div></div><div class="visual" aria-label="Futuristic warrior illustration"><div class="orb"></div><div class="warrior" role="img" aria-label="Samurai mask">👾</div><div class="hud one"><strong>LEVEL UP</strong>YOUR NEXT QUEST</div><div class="hud two"><strong>GM / 001</strong>PLAYER READY</div></div></section>
 <section class="wrap section" id="games"><div class="section-head"><div><div class="eyebrow">🎮 Select your game</div><h2>The <span style="color:var(--pink)">Game Library</span></h2></div><p>Eight games. One place to play. Pick a challenge, chase a new high score, and come back for another round.</p></div><div class="cards game-library">
@@ -236,6 +246,36 @@ body.light-mode header{background:#ffffffdf;border-color:#cbb8df}body.light-mode
 <div class="snake-stage"><div class="snake-stats"><span>Score: <span id="snakeScore">0</span></span><span>Best: <span id="snakeBest">0</span></span></div><canvas id="snakeCanvas" width="360" height="360" aria-label="Snake game board"></canvas><div class="snake-actions"><button id="snakeStart">Start game</button><button id="snakePause">Pause</button><button id="snakeReset">Restart</button></div><p id="snakeControlHint" style="font-size:.8rem;color:var(--muted);margin:12px 0 0">Keyboard: use arrow keys or WASD.</p><div class="snake-pad" aria-label="Touch controls"><button data-dir="up" aria-label="Up">↑</button><button data-dir="left" aria-label="Left">←</button><button data-dir="down" aria-label="Down">↓</button><button data-dir="right" aria-label="Right">→</button></div><p id="snakeMessage" aria-live="polite" style="font-size:.82rem;color:var(--muted);margin-bottom:0">Press Start game to play.</p></div></div></section>
 
 <section class="wrap join" id="community"><div class="eyebrow">Your next chapter starts here</div><h2>Ready to Join the Battle?</h2><p>Habibi is your portal to games, challenges, and good times.<br>Stay sharp. Play fair. Keep leveling up.</p><a class="btn" href="#games">Find Your Next Game ✦</a></section>
+
+<section class="wrap account-section" id="account">
+ <div class="eyebrow">Player account</div><h2>Join HABIBI Gaming</h2>
+ <p class="account-muted">Create an account to keep your player identity and compete on the shared leaderboard.</p>
+ <div class="account-grid">
+  <div class="account-card">
+   <h3 id="accountFormTitle">Create your account</h3>
+   <form id="habibiAuthForm">
+    <label for="habibiUsername">Player name</label><input id="habibiUsername" maxlength="20" placeholder="Your gaming name" autocomplete="nickname">
+    <label for="habibiEmail">Email</label><input id="habibiEmail" type="email" required placeholder="you@example.com" autocomplete="email">
+    <label for="habibiPassword">Password</label><input id="habibiPassword" type="password" required minlength="6" placeholder="At least 6 characters" autocomplete="current-password">
+    <button id="habibiAuthSubmit" type="submit">Sign up</button>
+   </form>
+   <p class="account-muted"><span id="authSwitchText">Already have an account?</span> <a href="#" id="authSwitch" style="color:var(--cyan);font-weight:800">Log in</a></p>
+   <button id="habibiLogout" type="button" style="display:none;background:#49305e">Log out</button>
+   <p id="habibiAuthStatus" class="account-status" aria-live="polite"></p>
+  </div>
+  <div class="account-card">
+   <h3>Global leaderboard 🏆</h3><p class="account-muted" id="leaderboardHint">Top scores from HABIBI players.</p>
+   <div id="leaderboardRows"><p class="account-muted">Loading leaderboard…</p></div>
+   <form id="habibiScoreForm" style="margin-top:16px;display:none">
+    <label for="scoreGame">Game</label><input id="scoreGame" required maxlength="40" placeholder="e.g. Snake">
+    <label for="scoreValue">Your score</label><input id="scoreValue" type="number" required min="0" max="100000000" placeholder="Your score">
+    <button type="submit">Submit score</button>
+   </form>
+   <p id="scoreStatus" class="account-status" aria-live="polite"></p>
+  </div>
+ </div>
+</section>
+
 </main>
 <footer><div class="wrap foot"><span>© <span id="year"></span> Habibi — Fan-made gaming hub.</span><span>Built for players, powered by imagination 💜</span></div></footer>
 <dialog id="gameDialog"><button class="close" id="closeDialog">Close ✕</button><h2 id="dialogTitle">Mission briefing</h2><p>This is a sample game card. You can replace it with a real browser game, your own project, or a link to a game you have permission to share.</p><p><strong style="color:var(--cyan)">Mission status:</strong> Ready for customization.</p></dialog>
@@ -659,4 +699,73 @@ if(id==='reaction'){let b=btn('Start',()=>{b.disabled=true;say('Wait for the sig
 const themeBtn=$('themeToggle');let light=false;try{light=localStorage.getItem('habibiTheme')==='light'}catch(e){}document.body.classList.toggle('light-mode',light);themeBtn.textContent=light?'🌙 Dark mode':'☀️ Light mode';themeBtn.addEventListener('click',()=>{light=!light;document.body.classList.toggle('light-mode',light);themeBtn.textContent=light?'🌙 Dark mode':'☀️ Light mode';try{localStorage.setItem('habibiTheme',light?'light':'dark')}catch(e){}});$('year').textContent=new Date().getFullYear();
 })();
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(()=>{
+ const SUPABASE_URL='https://iagedjpjsrzvcfdrdzgn.supabase.co';
+ const SUPABASE_PUBLISHABLE_KEY='sb_publishable__Lbj00nBf67_zlgVBtpGCQ_vwVMuwTi';
+ const status=document.getElementById('habibiAuthStatus');
+ const scoreStatus=document.getElementById('scoreStatus');
+ const form=document.getElementById('habibiAuthForm');
+ if(!form||!window.supabase)return;
+ const client=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+ let signingUp=true,currentUser=null;
+ const el=id=>document.getElementById(id);
+ const say=(node,msg)=>{if(node)node.textContent=msg};
+ function showMode(){
+  el('accountFormTitle').textContent=signingUp?'Create your account':'Welcome back';
+  el('habibiAuthSubmit').textContent=signingUp?'Sign up':'Log in';
+  el('habibiUsername').style.display=signingUp?'block':'none';
+  el('authSwitchText').textContent=signingUp?'Already have an account?':'New to HABIBI?';
+  el('authSwitch').textContent=signingUp?'Log in':'Sign up';
+  el('habibiPassword').autocomplete=signingUp?'new-password':'current-password';
+ }
+ el('authSwitch').addEventListener('click',e=>{e.preventDefault();signingUp=!signingUp;say(status,'');showMode()});
+ form.addEventListener('submit',async e=>{
+  e.preventDefault();say(status,'Please wait…');el('habibiAuthSubmit').disabled=true;
+  const email=el('habibiEmail').value.trim(),password=el('habibiPassword').value;
+  try{
+   if(signingUp){
+    const username=el('habibiUsername').value.trim();
+    if(!username){say(status,'Choose a player name first.');return}
+    const {data,error}=await client.auth.signUp({email,password,options:{data:{username}}});
+    if(error)throw error;
+    if(data.session){say(status,'Account created! You are signed in.')}
+    else{say(status,'Account created! Check your email to confirm, then log in.')}
+   }else{
+    const {error}=await client.auth.signInWithPassword({email,password});if(error)throw error;say(status,'Welcome back!');
+   }
+  }catch(err){say(status,err.message||'Could not complete sign in.')}
+  finally{el('habibiAuthSubmit').disabled=false}
+ });
+ el('habibiLogout').addEventListener('click',async()=>{const {error}=await client.auth.signOut();say(status,error?error.message:'You are logged out.')});
+ async function refreshLeaderboard(){
+  const host=el('leaderboardRows');host.innerHTML='';
+  const {data,error}=await client.from('leaderboard_scores').select('username,game,score,created_at').order('score',{ascending:false}).limit(10);
+  if(error){const p=document.createElement('p');p.className='account-muted';p.textContent='Leaderboard setup is almost ready. Please apply the database SQL setup from ChatGPT.';host.append(p);return}
+  if(!data.length){const p=document.createElement('p');p.className='account-muted';p.textContent='No scores yet. Be the first on the board!';host.append(p);return}
+  data.forEach((r,i)=>{const row=document.createElement('div');row.className='leader-row';const rank=document.createElement('strong');rank.textContent=['🥇','🥈','🥉'][i]||('#'+(i+1));const name=document.createElement('span');name.textContent=(r.username||'Player')+' · '+(r.game||'Game');const score=document.createElement('strong');score.textContent=Number(r.score).toLocaleString();row.append(rank,name,score);host.append(row)});
+ }
+ el('habibiScoreForm').addEventListener('submit',async e=>{
+  e.preventDefault();if(!currentUser){say(scoreStatus,'Log in before submitting a score.');return}
+  const game=el('scoreGame').value.trim(),score=Number(el('scoreValue').value);
+  const username=currentUser.user_metadata?.username||currentUser.email?.split('@')[0]||'Player';
+  const {error}=await client.from('leaderboard_scores').insert({user_id:currentUser.id,username,game,score});
+  say(scoreStatus,error?error.message:'Score submitted!');if(!error){el('habibiScoreForm').reset();refreshLeaderboard()}
+ });
+ async function updateUser(user){
+  currentUser=user;const logged=!!user;
+  el('habibiLogout').style.display=logged?'inline-block':'none';
+  el('habibiScoreForm').style.display=logged?'block':'none';
+  el('habibiUsername').required=signingUp;
+  if(logged)say(status,'Signed in as '+(user.user_metadata?.username||user.email)+'.');
+  refreshLeaderboard();
+ }
+ client.auth.getSession().then(({data})=>updateUser(data.session?.user||null));
+ client.auth.onAuthStateChange((_event,session)=>updateUser(session?.user||null));
+ showMode();
+})();
+</script>
+
 </body></html>
