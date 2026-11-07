@@ -86,10 +86,22 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 .football-status{color:#a7f3d0;font-weight:800;min-height:1.5em;margin:10px 0 0}
 @media(max-width:760px){.football-panel{grid-template-columns:1fr;padding:16px}.football-copy{text-align:center}}
 
+
+/* Goalkeeper penalty challenge */
+.gk-panel{border:1px solid var(--line);border-radius:20px;padding:22px;background:linear-gradient(135deg,#14251e,#090a12);display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,440px);gap:22px;align-items:center}
+.gk-copy p{color:var(--muted);line-height:1.7}.gk-stage{background:#07140e;border:1px solid #26734b;border-radius:15px;padding:12px;text-align:center}
+#gkCanvas{display:block;width:100%;max-width:400px;height:auto;aspect-ratio:4/3;margin:auto;border:1px solid #43885d;border-radius:8px;background:#17623d}
+.gk-stats{display:flex;justify-content:space-between;gap:8px;max-width:400px;margin:0 auto 10px;color:#a7f3d0;font-weight:850}
+.gk-controls,.gk-actions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:12px}
+.gk-controls button,.gk-actions button{border:1px solid #398c60;background:#123c29;color:#fff;border-radius:9px;padding:10px 14px;font-weight:800;cursor:pointer}
+.gk-controls button.active,.gk-controls button:hover,.gk-actions button:hover{background:#167247;border-color:#7cf0aa}
+.gk-status{color:#a7f3d0;font-weight:800;min-height:1.5em;margin:10px 0 0}
+@media(max-width:760px){.gk-panel{grid-template-columns:1fr;padding:16px}.gk-copy{text-align:center}}
+
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="logo" href="#home">GM<span>.</span>HUB</a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#chess">Chess</a><a href="#uno">UNO</a><a href="#carrace">Car Race</a><a href="#football">Football</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="btn secondary" href="#games">Enter Hub ↗</a></div></header>
+<header><div class="wrap nav"><a class="logo" href="#home">GM<span>.</span>HUB</a><nav aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#chess">Chess</a><a href="#uno">UNO</a><a href="#carrace">Car Race</a><a href="#football">Football</a><a href="#gkgame">Goalkeeper</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="btn secondary" href="#games">Enter Hub ↗</a></div></header>
 <main>
 <section class="wrap hero" id="home"><div class="hero-copy"><div class="eyebrow">✦ Next-level gaming experience</div><h1>The Future of <span>Gaming Lives Here.</span></h1><p>Enter the arena. Discover your next favorite game, challenge your reflexes, and explore a neon-powered world built for players.</p><div class="actions"><a class="btn primary" href="#games">⚡ Explore Games</a><a class="btn secondary" href="#arena">▶ Play a Mini-Game</a></div></div><div class="visual" aria-label="Futuristic warrior illustration"><div class="orb"></div><div class="warrior" role="img" aria-label="Samurai mask">👾</div><div class="hud one"><strong>LEVEL UP</strong>YOUR NEXT QUEST</div><div class="hud two"><strong>GM / 001</strong>PLAYER READY</div></div></section>
 <section class="wrap section" id="games"><div class="section-head"><div><div class="eyebrow">Choose your mission</div><h2>Explore the <span style="color:var(--pink)">Game Zone</span></h2></div><p>Pick a portal and jump into the action. These cards are ready for you to customize with your own games.</p></div><div class="cards">
@@ -118,6 +130,11 @@ dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;col
 <section class="wrap section" id="football"><div class="section-head"><div><div class="eyebrow">Penalty shootout • 5 shots</div><h2>Football <span style="color:#86efac">Challenge</span> ⚽</h2></div><p>Step up and take the winning penalty! Pick a corner, shoot past the goalkeeper, and score as many goals as you can from five shots.</p></div>
 <div class="football-panel"><div class="football-copy"><div class="tag">GM.HUB sports challenge</div><h3>Can you beat the keeper?</h3><p>Choose where to aim, then take your shot. The goalkeeper will dive left, middle, or right to try to save it. You get five penalties per round.</p><p><strong>How to play:</strong> Select Left, Center, or Right, then press Shoot.</p><div class="football-actions"><button id="footballShoot">⚽ Shoot!</button><button id="footballReset">New shootout</button></div><p id="footballStatus" class="football-status" aria-live="polite">Choose your target and take your first shot!</p></div>
 <div class="football-stage"><div class="football-stats"><span>Goals: <b id="footballGoals">0</b></span><span>Shots: <b id="footballShots">0 / 5</b></span></div><canvas id="footballCanvas" width="400" height="300" aria-label="Football penalty shootout"></canvas><div class="football-controls"><button data-aim="0" class="active">↖ Left</button><button data-aim="1">↑ Center</button><button data-aim="2">↗ Right</button></div></div></div></section>
+
+
+<section class="wrap section" id="gkgame"><div class="section-head"><div><div class="eyebrow">Goalkeeper challenge • 5 shots</div><h2>Goalkeeper <span style="color:#86efac">Hero</span> 🧤</h2></div><p>Now it's your turn to guard the goal! Read the striker, choose where to dive, and save as many penalties as you can.</p></div>
+<div class="gk-panel"><div class="gk-copy"><div class="tag">GM.HUB goalkeeper challenge</div><h3>Can you keep a clean sheet?</h3><p>You are the goalkeeper. The striker will shoot left, center, or right. Pick your dive direction before the shot. Save at least one and aim for all five!</p><p><strong>How to play:</strong> Choose Left, Center, or Right, then press Dive!</p><div class="gk-actions"><button id="gkDive">🧤 Dive!</button><button id="gkReset">New match</button></div><p id="gkStatus" class="gk-status" aria-live="polite">Choose a direction and get ready!</p></div>
+<div class="gk-stage"><div class="gk-stats"><span>Saves: <b id="gkSaves">0</b></span><span>Shots: <b id="gkShots">0 / 5</b></span></div><canvas id="gkCanvas" width="400" height="300" aria-label="Goalkeeper penalty saving game"></canvas><div class="gk-controls"><button data-dive="0" class="active">↖ Left</button><button data-dive="1">↑ Center</button><button data-dive="2">↗ Right</button></div></div></div></section>
 
 <section class="wrap section" id="snake"><div class="section-head"><div><div class="eyebrow">Classic arcade • Play now</div><h2>Snake <span style="color:var(--cyan)">Game</span> 🐍</h2></div><p>Eat the glowing food, grow your snake, and try not to crash. Your best score is saved on this device.</p></div>
 <div class="snake-panel"><div class="snake-copy"><div class="tag">GM.HUB arcade original</div><h3>How long can you survive?</h3><p>The game automatically adapts to your device. Use arrow keys or WASD on a computer, or swipe the board / tap the direction buttons on a phone or tablet. Grab the pink food to score points and make your snake longer.</p><p><strong style="color:var(--cyan)">Tip:</strong> Wrap through one wall and appear on the opposite side. Avoid the bombs and your own tail!</p></div>
@@ -414,6 +431,46 @@ function takeShot(){
 function reset(){if(anim)cancelAnimationFrame(anim);anim=null;aim=0;goals=0;shots=0;done=false;shot=null;keeperLane=1;$('footballGoals').textContent='0';$('footballShots').textContent='0 / 5';$('footballStatus').textContent='Choose your target and take your first shot!';document.querySelectorAll('.football-controls button').forEach(b=>b.classList.toggle('active',Number(b.dataset.aim)===0));draw()}
 document.querySelectorAll('.football-controls button').forEach(b=>b.addEventListener('click',()=>selectAim(Number(b.dataset.aim))));
 $('footballShoot').addEventListener('click',takeShot);$('footballReset').addEventListener('click',reset);draw();
+})();
+</script>
+
+
+<script>
+(()=>{
+const canvas=document.getElementById('gkCanvas');if(!canvas)return;
+const ctx=canvas.getContext('2d'),$=id=>document.getElementById(id);
+let dive=0,saves=0,shots=0,done=false,anim=null,shot=null;
+const xs=[105,200,295];
+function draw(){
+ ctx.clearRect(0,0,400,300);
+ const grass=ctx.createLinearGradient(0,0,0,300);grass.addColorStop(0,'#27834e');grass.addColorStop(1,'#145333');ctx.fillStyle=grass;ctx.fillRect(0,0,400,300);
+ ctx.strokeStyle='#d9fbe5';ctx.lineWidth=3;ctx.strokeRect(24,18,352,264);ctx.strokeRect(105,18,190,95);
+ ctx.fillStyle='#e8f4ed';ctx.fillRect(92,18,216,9);ctx.fillRect(92,18,8,105);ctx.fillRect(300,18,8,105);
+ ctx.strokeStyle='#c9ded2';ctx.lineWidth=1;for(let x=105;x<300;x+=15){ctx.beginPath();ctx.moveTo(x,29);ctx.lineTo(x,115);ctx.stroke()}for(let y=40;y<116;y+=15){ctx.beginPath();ctx.moveTo(101,y);ctx.lineTo(299,y);ctx.stroke()}
+ // Keeper stays in goal, diving toward the selected side
+ const gx=shot?xs[shot.dive]:xs[1],gy=shot?80:76;
+ ctx.save();if(shot){ctx.translate(gx,gy);ctx.rotate(shot.progress*.22*(shot.dive-1));ctx.translate(-gx,-gy)}
+ ctx.strokeStyle='#f3c9a5';ctx.lineWidth=11;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(gx-8,gy+12);ctx.lineTo(gx-32,gy+24);ctx.moveTo(gx+8,gy+12);ctx.lineTo(gx+32,gy+24);ctx.stroke();
+ ctx.fillStyle='#22c55e';ctx.fillRect(gx-12,gy+8,24,37);ctx.fillStyle='#f3c9a5';ctx.beginPath();ctx.arc(gx,gy,10,0,Math.PI*2);ctx.fill();
+ ctx.strokeStyle='#f3c9a5';ctx.lineWidth=8;ctx.beginPath();ctx.moveTo(gx-10,gy+17);ctx.lineTo(gx-35,gy+24);ctx.moveTo(gx+10,gy+17);ctx.lineTo(gx+35,gy+24);ctx.stroke();
+ ctx.fillStyle='#facc15';ctx.beginPath();ctx.arc(gx-37,gy+24,7,0,Math.PI*2);ctx.arc(gx+37,gy+24,7,0,Math.PI*2);ctx.fill();ctx.restore();
+ // penalty taker
+ ctx.fillStyle='#e5e7eb';ctx.beginPath();ctx.arc(200,225,9,0,Math.PI*2);ctx.fill();ctx.fillStyle='#dc2626';ctx.fillRect(191,235,18,26);ctx.strokeStyle='#111827';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(195,258);ctx.lineTo(187,275);ctx.moveTo(205,258);ctx.lineTo(213,275);ctx.stroke();
+ if(shot){let p=Math.min(1,shot.progress),bx=200+(xs[shot.target]-200)*p,by=215-175*p,r=9-3*p;ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(bx,by,r,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#111827';ctx.lineWidth=1.5;ctx.stroke();ctx.fillStyle='#111827';ctx.beginPath();ctx.arc(bx,by,3,0,Math.PI*2);ctx.fill()}
+ if(shot&&shot.result){ctx.fillStyle='#06130bdd';ctx.fillRect(90,135,220,48);ctx.textAlign='center';ctx.font='bold 24px system-ui';ctx.fillStyle=shot.result==='SAVED!'?'#86efac':'#fecaca';ctx.fillText(shot.result,200,167)}
+ if(done){ctx.fillStyle='#06130ddd';ctx.fillRect(55,115,290,75);ctx.textAlign='center';ctx.fillStyle='#fff';ctx.font='bold 22px system-ui';ctx.fillText('MATCH OVER',200,145);ctx.font='bold 17px system-ui';ctx.fillStyle='#86efac';ctx.fillText('You saved '+saves+' / 5',200,173)}
+}
+function choose(n){if(done||shot)return;dive=n;document.querySelectorAll('.gk-controls button').forEach(b=>b.classList.toggle('active',Number(b.dataset.dive)===n))}
+function attempt(){
+ if(done||shot)return;
+ shots++;const target=Math.floor(Math.random()*3),saved=target===dive;
+ shot={target,dive,progress:0,result:''};$('gkShots').textContent=shots+' / 5';$('gkStatus').textContent='The striker shoots...';
+ const tick=()=>{shot.progress=Math.min(1,shot.progress+.055);draw();if(shot.progress>=1){shot.result=saved?'SAVED!':'GOAL!';if(saved)saves++;$('gkSaves').textContent=saves;$('gkStatus').textContent=saved?'Amazing save! You stopped the shot!':'Goal conceded! Pick the right direction next time.';draw();anim=null;shot=null;setTimeout(()=>{if(shots>=5){done=true;$('gkStatus').textContent='Full time! You saved '+saves+' out of 5 shots. Start a new match to play again.';draw()}},850)}else anim=requestAnimationFrame(tick)};
+ anim=requestAnimationFrame(tick);
+}
+function reset(){if(anim)cancelAnimationFrame(anim);anim=null;dive=0;saves=0;shots=0;done=false;shot=null;$('gkSaves').textContent='0';$('gkShots').textContent='0 / 5';$('gkStatus').textContent='Choose a direction and get ready!';document.querySelectorAll('.gk-controls button').forEach(b=>b.classList.toggle('active',Number(b.dataset.dive)===0));draw()}
+document.querySelectorAll('.gk-controls button').forEach(b=>b.addEventListener('click',()=>choose(Number(b.dataset.dive))));
+$('gkDive').addEventListener('click',attempt);$('gkReset').addEventListener('click',reset);draw();
 })();
 </script>
 
