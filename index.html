@@ -63,6 +63,9 @@ footer{border-top:1px solid #d8b36a2a;padding:27px 0;color:var(--muted);font-siz
 (()=>{
  const SUPABASE_URL='https://iagedjpjsrzvcfdrdzgn.supabase.co';
  const SUPABASE_PUBLISHABLE_KEY='sb_publishable__Lbj00nBf67_zlgVBtpGCQ_vwVMuwTi';
+ const OWNER_EMAIL='lazyturtulew2@gmail.com';
+ $('ownerEmail').value=OWNER_EMAIL;
+ $('ownerEmail').readOnly=true;
  const client=window.supabase?.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
  const $=id=>document.getElementById(id);
  const say=(id,msg,kind='')=>{const n=$(id);if(n){n.textContent=msg;n.className='status '+kind}};
@@ -92,12 +95,13 @@ footer{border-top:1px solid #d8b36a2a;padding:27px 0;color:var(--muted);font-siz
  });
  $('loginForm').addEventListener('submit',async e=>{
   e.preventDefault();if(!client){say('loginStatus','Could not connect to the account service.','bad');return;}
-  const {error}=await client.auth.signInWithPassword({email:$('ownerEmail').value.trim(),password:$('ownerPassword').value});
+  const {error}=await client.auth.signInWithPassword({email:OWNER_EMAIL,password:$('ownerPassword').value});
   if(error){say('loginStatus',error.message,'bad');return;}await refreshSession();
  });
  async function refreshSession(){
   if(!client)return;
   const {data}=await client.auth.getSession();currentUser=data.session?.user||null;
+  if(currentUser && String(currentUser.email||'').toLowerCase()!==OWNER_EMAIL){await client.auth.signOut();currentUser=null;say('loginStatus','This account is not authorised to access the owner studio.','bad');}
   $('loginCard').classList.toggle('hidden',!!currentUser);$('dashboard').classList.toggle('hidden',!currentUser);$('logoutBtn').classList.toggle('hidden',!currentUser);
   if(currentUser){await Promise.all([loadGallery(),loadOrders()]);renderManage();}
  }
