@@ -84,8 +84,8 @@ footer{border-top:1px solid #d8b36a2a;padding:27px 0;color:var(--muted);font-siz
   const btn=$('orderSubmit');btn.disabled=true;btn.textContent='Sending request…';
   try{
    const file=$('referencePhoto').files[0];let photoUrl=null;
-   if(file){if(file.size>5*1024*1024)throw new Error('Please choose a photo smaller than 5 MB.');const path='customer-refs/'+crypto.randomUUID()+'-'+file.name.replace(/[^a-zA-Z0-9._-]/g,'_');const up=await client.storage.from('drawing-requests').upload(path,file,{upsert:false});if(up.error)throw up.error;photoUrl=client.storage.from('drawing-requests').getPublicUrl(path).data.publicUrl;}
-   const payload={customer_name:$('customerName').value.trim(),customer_email:$('customerEmail').value.trim(),drawing_type:$('drawingType').value,size_preference:$('size').value,details:$('details').value.trim(),reference_photo_url:photoUrl};
+   if(file){if(file.size>5*1024*1024)throw new Error('Please choose a photo smaller than 5 MB.');const path='customer-refs/'+crypto.randomUUID()+'-'+file.name.replace(/[^a-zA-Z0-9._-]/g,'_');const up=await client.storage.from('drawing-requests').upload(path,file,{upsert:false});if(up.error)throw up.error;photoUrl=path;}
+   const payload={customer_name:$('customerName').value.trim(),customer_email:$('customerEmail').value.trim(),drawing_type:$('drawingType').value,size_preference:$('size').value,details:$('details').value.trim(),reference_photo_path:photoUrl};
    const {error}=await client.from('drawing_requests').insert(payload);if(error)throw error;
    $('orderForm').reset();say('orderStatus','Thank you! Your drawing request has been sent. I’ll review it and get back to you.','good');
   }catch(err){say('orderStatus',err.message||'Could not send your request. Please try again.','bad');}
@@ -132,7 +132,7 @@ footer{border-top:1px solid #d8b36a2a;padding:27px 0;color:var(--muted);font-siz
  async function loadOrders(){
   const {data,error}=await client.from('drawing_requests').select('*').order('created_at',{ascending:false}).limit(100);
   if(error){$('ordersList').innerHTML='<p class="hint">Could not load requests. Check the database setup.</p>';say('ordersStatus',error.message,'bad');return;}
-  $('ordersList').innerHTML=(data||[]).length?data.map(o=>'<article class="order-item"><h4>'+escapeHtml(o.drawing_type)+' · '+escapeHtml(o.customer_name)+'</h4><p><b>Email:</b> '+escapeHtml(o.customer_email)+' · <b>Size:</b> '+escapeHtml(o.size_preference||'Not specified')+'</p><p>'+escapeHtml(o.details)+'</p>'+(o.reference_photo_url?'<a href="'+escapeHtml(o.reference_photo_url)+'" target="_blank" rel="noopener">View reference photo</a>':'')+'<p class="hint">'+new Date(o.created_at).toLocaleString()+'</p></article>').join(''):'<p class="hint">No custom drawing requests yet.</p>';
+  const rows=await Promise.all((data||[]).map(async o=>{let photo='';if(o.reference_photo_path){const signed=await client.storage.from('drawing-requests').createSignedUrl(o.reference_photo_path,3600);if(signed.data?.signedUrl)photo='<a href="'+escapeHtml(signed.data.signedUrl)+'" target="_blank" rel="noopener">View private reference photo</a>';}return '<article class="order-item"><h4>'+escapeHtml(o.drawing_type)+' · '+escapeHtml(o.customer_name)+'</h4><p><b>Email:</b> '+escapeHtml(o.customer_email)+' · <b>Size:</b> '+escapeHtml(o.size_preference||'Not specified')+'</p><p>'+escapeHtml(o.details)+'</p>'+photo+'<p class="hint">'+new Date(o.created_at).toLocaleString()+'</p></article>';}));$('ordersList').innerHTML=rows.length?rows.join(''):'<p class="hint">No custom drawing requests yet.</p>';
  }
  async function boot(){await loadGallery();if(location.hash==='#studio')studio();}
  boot();studio();
