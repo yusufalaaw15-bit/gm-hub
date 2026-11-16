@@ -57,7 +57,7 @@ footer{border-top:1px solid #d8b36a2a;padding:27px 0;color:var(--muted);font-siz
 <div class="admin-card"><div class="eyebrow">Manage your work</div><h2 style="font:600 1.65rem 'Playfair Display',serif">Published artwork</h2><div class="manage-list" id="manageList"><p class="hint">Your uploaded drawings will appear here.</p></div></div>
 </div><div class="admin-card" style="margin-top:22px"><div class="eyebrow">Customer messages</div><h2 style="font:600 1.65rem 'Playfair Display',serif">Custom drawing requests</h2><div class="orders-list" id="ordersList"><p class="hint">New customer requests will appear here.</p></div><div class="status" id="ordersStatus" role="status"></div></div></div>
 </div></section>
-<footer><div class="wrap footer-row"><span>© <span id="year"></span> FAHADPAINTER · Original art, made with care.</span><a class="owner-link" href="#studio" id="ownerAccess">Owner access</a></div></footer>
+<footer><div class="wrap footer-row"><span>© <span id="year"></span> FAHADPAINTER · Original art, made with care.</span></div></footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 (()=>{
@@ -71,7 +71,6 @@ footer{border-top:1px solid #d8b36a2a;padding:27px 0;color:var(--muted);font-siz
  let currentUser=null,artworks=[];
  const studio=()=>{const on=location.hash==='#studio';$('publicSite').classList.toggle('hidden',on);$('siteHeader').classList.toggle('hidden',on);$('studio').classList.toggle('active',on);if(on)refreshSession();};
  window.addEventListener('hashchange',studio);
- $('ownerAccess').addEventListener('click',()=>{});
  async function loadGallery(){
   if(!client)return;
   const {data,error}=await client.from('artworks').select('*').order('created_at',{ascending:false});
