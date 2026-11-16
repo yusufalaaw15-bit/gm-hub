@@ -2,782 +2,141 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#10051c">
-<meta name="description" content="Habibi Gaming — play free browser games, challenge friends, and beat your high scores.">
-<title>Habibi Gaming — Play. Compete. Repeat.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0908">
+<meta name="description" content="FAHADPAINTER — original pencil portraits, hand drawings and custom artwork by Fahad.">
+<title>FAHADPAINTER — Custom Drawings & Portraits</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#08070d;--panel:#120b1d;--purple:#a855f7;--pink:#e879f9;--cyan:#63e6ff;--muted:#b8afc5;--line:#49305e}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% 0%,#28103e 0%,#0a0710 48%,#050509 100%);color:#fff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
-a{color:inherit;text-decoration:none}.wrap{width:min(1180px,92%);margin:auto}
-header{position:sticky;top:0;z-index:10;background:#090610dd;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff12}
-.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:14px}.logo{font-weight:950;letter-spacing:1.5px;font-size:1.45rem}.logo span{color:var(--pink);text-shadow:0 0 18px #d946ef99}
-nav{display:flex;gap:26px;color:#d9cfe5;font-size:.92rem}nav a:hover{color:var(--pink)}.menu{display:none}
-.hero{min-height:610px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:30px;padding:70px 0 60px;position:relative}
-.eyebrow{color:var(--cyan);font-size:.78rem;font-weight:800;letter-spacing:3px;text-transform:uppercase}.hero h1{font-size:clamp(2.6rem,5.5vw,5.3rem);line-height:.98;letter-spacing:-2.8px;margin:18px 0 22px}.hero h1 span{background:linear-gradient(100deg,#fff,#d78aff 55%,#7deaff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{max-width:520px;color:var(--muted);font-size:1.05rem;line-height:1.8}.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}.btn{border:1px solid #8d52ba;border-radius:10px;padding:13px 20px;font-weight:800;display:inline-flex;align-items:center;gap:9px;transition:.2s}.btn.primary{background:linear-gradient(110deg,#9333ea,#c026d3);box-shadow:0 0 28px #a855f744}.btn:hover{transform:translateY(-3px);box-shadow:0 0 28px #a855f766}.btn.secondary{background:#ffffff08;border-color:#ffffff30}
-.visual{min-height:430px;position:relative;display:grid;place-items:center;isolation:isolate}.orb{position:absolute;width:min(390px,80vw);aspect-ratio:1;border:1px solid #b45aff99;border-radius:50%;box-shadow:0 0 35px #a855f733,inset 0 0 45px #a855f722;animation:pulse 4s ease-in-out infinite}.orb:before,.orb:after{content:"";position:absolute;inset:22px;border:1px solid #6ceaff77;border-radius:50%;transform:rotateX(68deg) rotateZ(25deg)}.orb:after{inset:52px;transform:rotateX(68deg) rotateZ(-35deg);border-color:#e879f988}
-.warrior{font-size:clamp(9rem,22vw,17rem);filter:drop-shadow(0 0 28px #a855f7aa);z-index:1;animation:float 4s ease-in-out infinite}.hud{position:absolute;background:#10091de8;border:1px solid #a855f766;padding:13px 16px;border-radius:12px;box-shadow:0 0 24px #a855f722;font-size:.82rem}.hud strong{display:block;font-size:1.25rem;color:var(--cyan)}.hud.one{right:0;top:22%}.hud.two{left:0;bottom:15%}
-@keyframes float{50%{transform:translateY(-12px)}}@keyframes pulse{50%{transform:scale(1.04);opacity:.7}}
-.section{padding:45px 0 72px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:25px}.section h2{font-size:clamp(1.8rem,3vw,2.5rem);margin:8px 0}.section-head p{color:var(--muted);margin:0;max-width:500px;line-height:1.6}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid var(--line);background:linear-gradient(145deg,#1b1029dd,#0d0a13);border-radius:17px;overflow:hidden;transition:.25s}.card:hover{transform:translateY(-5px);border-color:#b45aff;box-shadow:0 15px 40px #0006,0 0 24px #a855f722}.art{height:165px;display:grid;place-items:center;font-size:4rem;background:radial-gradient(circle at 50% 40%,#6d28d966,transparent 60%),linear-gradient(135deg,#21102e,#080a13);border-bottom:1px solid #ffffff12}.card:nth-child(2) .art{background:radial-gradient(circle,#0e749066,transparent 60%),linear-gradient(135deg,#10272e,#080a13)}.card:nth-child(3) .art{background:radial-gradient(circle,#be185d66,transparent 60%),linear-gradient(135deg,#301026,#080a13)}.card-body{padding:20px}.tag{font-size:.72rem;color:var(--cyan);text-transform:uppercase;letter-spacing:1.5px;font-weight:800}.card h3{margin:9px 0}.card p{color:var(--muted);font-size:.9rem;line-height:1.6;min-height:44px}.play{width:100%;cursor:pointer;background:#ffffff08;border:1px solid #714391;color:#fff;border-radius:9px;padding:11px;font-weight:800}.play:hover{background:#8b2be2}
-.arcade{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center;border:1px solid var(--line);border-radius:20px;padding:28px;background:linear-gradient(115deg,#1a0d2a,#0b0a11)}.arcade p{color:var(--muted);line-height:1.7}.mini-game{background:#08060d;border:1px solid #603d7b;border-radius:14px;padding:18px;text-align:center}.game-screen{font-size:1.1rem;min-height:100px;display:grid;place-items:center;color:#f0d8ff}.game-screen strong{font-size:2.3rem;color:var(--cyan)}.game-controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.game-controls button{border:1px solid #8d52ba;background:#21112f;color:white;border-radius:9px;padding:10px 15px;cursor:pointer}
-.join{margin:20px auto 70px;border-radius:20px;padding:35px;min-height:300px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(110deg,#6b21a8,#86198f 55%,#155e75);box-shadow:0 15px 60px #0005}.join h2{font-size:clamp(1.8rem,4vw,3rem);margin:5px}.join p{color:#f2ddff;line-height:1.6}.join .btn{border-color:#ffffff88;background:#ffffff17}
-footer{border-top:1px solid #ffffff16;padding:24px 0;color:#a99eb7;font-size:.85rem}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-dialog{max-width:560px;width:90%;border:1px solid #a855f7;background:#10091a;color:#fff;border-radius:18px;padding:24px;box-shadow:0 0 60px #a855f755}dialog::backdrop{background:#000b}dialog h2{margin-top:0}dialog p{color:var(--muted);line-height:1.7}.close{float:right;background:#ffffff12;border:1px solid #ffffff30;color:white;border-radius:8px;padding:7px 10px;cursor:pointer}
-
-
-.chess-wrap{border:1px solid var(--line);border-radius:20px;padding:22px;background:linear-gradient(135deg,#160d23,#090a12);display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,480px);gap:24px;align-items:center}
-.chess-info p{color:var(--muted);line-height:1.7}.chess-options{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}.chess-options button,.chess-controls button{border:1px solid #8d52ba;background:#21112f;color:#fff;border-radius:9px;padding:10px 14px;font-weight:800;cursor:pointer}.chess-options button.active{background:linear-gradient(110deg,#9333ea,#c026d3);border-color:#d78aff}
-.chess-board{display:grid;grid-template-columns:repeat(8,1fr);width:100%;max-width:480px;aspect-ratio:1;margin:auto;border:3px solid #6b4388;border-radius:8px;overflow:hidden;box-shadow:0 0 28px #a855f733}
-.chess-square{border:0;padding:0;display:grid;place-items:center;position:relative;aspect-ratio:1;cursor:pointer;font-family:"Segoe UI Symbol","Noto Sans Symbols 2",serif;font-size:clamp(1.4rem,5vw,2.8rem);line-height:1}
-.chess-square.light{background:#f0d9b5}.chess-square.dark{background:#b58863}.chess-square.selected{box-shadow:inset 0 0 0 4px #facc15}.chess-square.legal:after{content:"";width:25%;height:25%;border-radius:50%;background:#166534;opacity:.65;position:absolute}.chess-square.capture:after{width:85%;height:85%;background:transparent;border:4px solid #166534}
-.chess-square .white-piece{color:#fffdf4;text-shadow:1px 2px 2px #171717,-1px -1px 1px #333}.chess-square .black-piece{color:#171717;text-shadow:1px 1px 1px #fff5}
-.chess-controls{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:12px}.chess-status{text-align:center;color:var(--cyan);font-weight:800;margin:12px 0 0;min-height:1.5em}
-@media(max-width:760px){.chess-wrap{grid-template-columns:1fr;padding:16px}.chess-info{text-align:center}.chess-board{max-width: min(100%,440px)}}
-
-.snake-panel{border:1px solid var(--line);border-radius:20px;padding:24px;background:linear-gradient(135deg,#160d23,#090a12);display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,420px);gap:24px;align-items:center}
-.snake-copy p{color:var(--muted);line-height:1.7}.snake-stage{background:#05090c;border:1px solid #286b57;border-radius:14px;padding:14px;text-align:center;box-shadow:0 0 25px #10b98118}
-#snakeCanvas{display:block;width:100%;max-width:360px;height:auto;aspect-ratio:1;margin:0 auto;border:1px solid #1d5744;border-radius:8px;background:#07120f;touch-action:none}
-.snake-stats{display:flex;justify-content:space-between;color:var(--cyan);font-weight:800;margin:0 auto 10px;max-width:360px}
-.snake-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:12px}
-.snake-actions button,.snake-pad button{border:1px solid #287d60;background:#10291f;color:#fff;border-radius:9px;padding:10px 15px;font-weight:800;cursor:pointer}
-.snake-actions button:hover,.snake-pad button:hover{background:#176343}
-.snake-pad{display:none;grid-template-columns:repeat(3,42px);gap:6px;justify-content:center;margin:12px auto 0}body.touch-device .snake-pad{display:grid}
-.snake-pad button{padding:8px 0;font-size:1.1rem}.snake-pad button:nth-child(1){grid-column:2}.snake-pad button:nth-child(2){grid-column:1;grid-row:2}.snake-pad button:nth-child(3){grid-column:2;grid-row:2}.snake-pad button:nth-child(4){grid-column:3;grid-row:2}
-@media(max-width:760px){.snake-panel{grid-template-columns:1fr;padding:18px}}
-
-@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:50px}.visual{min-height:330px;grid-row:1}.hero-copy{grid-row:2}.cards{grid-template-columns:1fr}.art{height:130px}.arcade{grid-template-columns:1fr}.nav{height:65px}nav{gap:12px;font-size:.78rem}.hero h1{letter-spacing:-1.5px}.hud.one{right:2%}.hud.two{left:2%}.section-head{display:block}.section-head p{margin-top:10px}}
-@media(max-width:430px){nav a:nth-child(2),nav a:nth-child(4){display:none}.warrior{font-size:9rem}.visual{min-height:290px}.hud{padding:9px 11px}.hero{gap:0}}
-
-/* UNO card table */
-.uno-table{border:1px solid var(--line);border-radius:20px;padding:22px;background:radial-gradient(ellipse at 50% 45%,#1c1530,#090a12 75%);display:grid;grid-template-columns:1fr minmax(280px,500px);gap:22px;align-items:center}
-.uno-info p{color:var(--muted);line-height:1.7}.uno-seats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0}
-.uno-seat{background:#ffffff09;border:1px solid #ffffff20;border-radius:10px;padding:10px;text-align:center;font-size:.82rem}.uno-seat.active{border-color:var(--cyan);box-shadow:0 0 15px #63e6ff33}.uno-seat strong{display:block;color:#fff;margin-bottom:3px}
-.uno-arena{min-width:0}.uno-opponents{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
-.uno-player{border:1px solid #70428b;background:#160e22;border-radius:11px;padding:9px;text-align:center;font-size:.8rem}.uno-player.active{border-color:var(--cyan);box-shadow:0 0 14px #63e6ff33}.uno-player b{display:block;color:var(--pink);font-size:.9rem}.uno-center{display:flex;align-items:center;justify-content:center;gap:16px;min-height:150px;background:#08070d99;border:1px solid #ffffff17;border-radius:14px;padding:12px}
-.uno-pile{text-align:center}.uno-pile small{display:block;color:var(--muted);margin-top:7px}.uno-card{width:66px;height:98px;border:3px solid #fff;border-radius:11px;display:inline-flex;flex-direction:column;justify-content:center;align-items:center;color:white;font-weight:950;font-size:1.8rem;text-shadow:1px 2px 2px #0008;box-shadow:0 4px 12px #0007;position:relative;transform:rotate(-4deg);background:#333}.uno-card.red{background:#e53935}.uno-card.yellow{background:#f5c928;color:#241b00;text-shadow:none}.uno-card.green{background:#169b62}.uno-card.blue{background:#2864d7}.uno-card.wild{background:conic-gradient(#e53935 0 25%,#f5c928 0 50%,#169b62 0 75%,#2864d7 0)}.uno-card small{font-size:.55rem;position:absolute;top:5px;left:6px}.uno-card.back{background:radial-gradient(circle,#b026d3,#4c1d95 65%,#180b2a);font-size:1.3rem;transform:none}.uno-hand{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin:14px 0;min-height:104px}
-.uno-hand .uno-card{width:57px;height:86px;font-size:1.45rem;cursor:pointer;transition:transform .15s}.uno-hand .uno-card:hover:not(:disabled){transform:translateY(-9px) rotate(0)}.uno-hand .uno-card:disabled{opacity:.42;cursor:not-allowed}.uno-hand .uno-card small{font-size:.48rem}
-.uno-controls{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.uno-controls button,.uno-color-picker button{border:1px solid #8d52ba;background:#21112f;color:#fff;border-radius:9px;padding:10px 14px;font-weight:800;cursor:pointer}.uno-controls button:disabled{opacity:.4;cursor:not-allowed}.uno-controls .uno-call{background:linear-gradient(110deg,#9333ea,#c026d3)}.uno-status{text-align:center;color:var(--cyan);font-weight:800;min-height:2.5em;margin:12px 0 0}.uno-color-picker{display:flex;gap:8px;justify-content:center;margin-top:10px;flex-wrap:wrap}.uno-color-picker button{min-width:72px}.uno-color-picker .red{background:#b91c1c}.uno-color-picker .yellow{background:#a98200}.uno-color-picker .green{background:#087443}.uno-color-picker .blue{background:#1d4ed8}
-@media(max-width:760px){.uno-table{grid-template-columns:1fr;padding:15px}.uno-info{text-align:center}.uno-card{width:58px;height:88px}.uno-hand .uno-card{width:48px;height:74px;font-size:1.2rem}.uno-center{min-height:125px}}
-
-
-/* Neon highway car game */
-.race-panel{border:1px solid #4c3764;border-radius:20px;padding:22px;background:linear-gradient(135deg,#171027,#080a12);display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,420px);gap:22px;align-items:center}
-.race-copy p{color:var(--muted);line-height:1.7}.race-stage{background:#05080d;border:1px solid #376078;border-radius:15px;padding:12px;text-align:center;box-shadow:0 0 25px #22d3ee18}
-#raceCanvas{display:block;width:100%;max-width:360px;height:auto;aspect-ratio:3/4;margin:auto;border:1px solid #34566a;border-radius:8px;background:#101820}
-.race-stats{display:flex;justify-content:space-between;gap:10px;max-width:360px;margin:0 auto 10px;color:var(--cyan);font-weight:850}
-.race-actions,.race-pad{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:12px}
-.race-actions button,.race-pad button{border:1px solid #397b9b;background:#102638;color:#fff;border-radius:9px;padding:10px 15px;font-weight:800;cursor:pointer}
-.race-actions button:hover,.race-pad button:hover{background:#15506b}.race-pad button{min-width:58px;font-size:1.1rem;touch-action: manipulation}
-.race-status{color:var(--cyan);font-weight:800;min-height:1.4em;margin:10px 0 0}
-@media(max-width:760px){.race-panel{grid-template-columns:1fr;padding:16px}.race-copy{text-align:center}}
-
-
-/* Football penalty shootout */
-.football-panel{border:1px solid var(--line);border-radius:20px;padding:22px;background:linear-gradient(135deg,#14251e,#090a12);display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,440px);gap:22px;align-items:center}
-.football-copy p{color:var(--muted);line-height:1.7}.football-stage{background:#07140e;border:1px solid #26734b;border-radius:15px;padding:12px;text-align:center}
-#footballCanvas{display:block;width:100%;max-width:400px;height:auto;aspect-ratio:4/3;margin:auto;border:1px solid #43885d;border-radius:8px;background:#17623d}
-.football-stats{display:flex;justify-content:space-between;gap:8px;max-width:400px;margin:0 auto 10px;color:#a7f3d0;font-weight:850}
-.football-controls{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:12px}
-.football-controls button,.football-actions button{border:1px solid #398c60;background:#123c29;color:#fff;border-radius:9px;padding:10px 14px;font-weight:800;cursor:pointer}
-.football-controls button.active,.football-controls button:hover,.football-actions button:hover{background:#167247;border-color:#7cf0aa}
-.football-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:10px}
-.football-status{color:#a7f3d0;font-weight:800;min-height:1.5em;margin:10px 0 0}
-@media(max-width:760px){.football-panel{grid-template-columns:1fr;padding:16px}.football-copy{text-align:center}}
-
-
-/* Goalkeeper penalty challenge */
-.gk-panel{border:1px solid var(--line);border-radius:20px;padding:22px;background:linear-gradient(135deg,#14251e,#090a12);display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,440px);gap:22px;align-items:center}
-.gk-copy p{color:var(--muted);line-height:1.7}.gk-stage{background:#07140e;border:1px solid #26734b;border-radius:15px;padding:12px;text-align:center}
-#gkCanvas{display:block;width:100%;max-width:400px;height:auto;aspect-ratio:4/3;margin:auto;border:1px solid #43885d;border-radius:8px;background:#17623d}
-.gk-stats{display:flex;justify-content:space-between;gap:8px;max-width:400px;margin:0 auto 10px;color:#a7f3d0;font-weight:850}
-.gk-controls,.gk-actions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:12px}
-.gk-controls button,.gk-actions button{border:1px solid #398c60;background:#123c29;color:#fff;border-radius:9px;padding:10px 14px;font-weight:800;cursor:pointer}
-.gk-controls button.active,.gk-controls button:hover,.gk-actions button:hover{background:#167247;border-color:#7cf0aa}
-.gk-status{color:#a7f3d0;font-weight:800;min-height:1.5em;margin:10px 0 0}
-@media(max-width:760px){.gk-panel{grid-template-columns:1fr;padding:16px}.gk-copy{text-align:center}}
-
-
-/* Flappy Bird mini-game */
-.flappy-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,400px);gap:24px;align-items:center;background:linear-gradient(135deg,rgba(34,18,75,.9),rgba(8,25,48,.95));border:1px solid rgba(167,139,250,.35);border-radius:22px;padding:22px;box-shadow:0 15px 45px rgba(0,0,0,.22)}
-.flappy-copy .tag{display:inline-block;padding:6px 10px;border-radius:99px;background:rgba(34,211,238,.12);color:#67e8f9;font-size:.78rem;font-weight:700}
-.flappy-copy h3{font-size:1.65rem;margin:12px 0}.flappy-copy p{color:#cbd5e1;line-height:1.65}
-.flappy-actions{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
-.flappy-stage{max-width:400px;width:100%;margin:auto}
-#flappyCanvas{display:block;width:100%;height:auto;aspect-ratio:4/5;border:2px solid rgba(103,232,249,.45);border-radius:16px;background:#7dd3fc;touch-action:manipulation}
-.flappy-stats{display:flex;justify-content:space-between;color:#e2e8f0;font-weight:700;margin-bottom:9px}
-.flappy-status{min-height:28px;color:#a5f3fc;font-weight:700}
-@media(max-width:760px){.flappy-panel{grid-template-columns:1fr;padding:15px}.flappy-stage{max-width:340px}.flappy-copy h3{font-size:1.35rem}}
-
-
-/* Habibi gaming-site upgrade */
-:root{--bg:#070611;--panel:#110b20;--purple:#a855f7;--pink:#f05bdb;--cyan:#54eaff;--muted:#b8afc5;--line:#49305e}
-body{background-image:radial-gradient(ellipse at 12% 8%,rgba(124,58,237,.2),transparent 34%),radial-gradient(ellipse at 88% 28%,rgba(6,182,212,.12),transparent 32%),linear-gradient(180deg,#090613 0%,#06050b 100%)}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9;opacity:.12;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.035) 4px)}
-.logo{font-size:1.55rem;letter-spacing:2px;text-transform:uppercase;text-shadow:0 0 22px #d946ef66}
-.logo:before{content:"✦";color:var(--cyan);font-size:.8em;margin-right:8px}
-.hero{min-height:580px}
-.hero-copy{position:relative;z-index:2}
-.hero .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border:1px solid #8b5cf655;border-radius:99px;background:#170d28aa}
-.hero h1 span{filter:drop-shadow(0 0 18px #d946ef33)}
-.hero .actions .btn{min-height:48px}
-.game-library{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.game-library .card{display:block;min-width:0}
-.game-library .art{height:138px;font-size:3.7rem;position:relative;overflow:hidden}
-.game-library .art:after{content:"";position:absolute;width:120px;height:120px;border:1px solid #ffffff22;border-radius:50%;box-shadow:0 0 35px #a855f733}
-.game-library .card-body{padding:17px}
-.game-library .card h3{font-size:1.12rem}
-.game-library .card p{min-height:68px}
-.game-library .play{display:block;text-align:center}
-.game-library a.card:hover .play{background:linear-gradient(100deg,#9333ea,#c026d3);border-color:#d78aff}
-.section-head{margin-bottom:30px}
-#games{padding-top:30px}
-@media(max-width:950px){.game-library{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:560px){.game-library{grid-template-columns:1fr 1fr;gap:10px}.game-library .art{height:105px;font-size:2.8rem}.game-library .card-body{padding:12px}.game-library .card p{font-size:.82rem;min-height:84px}.game-library .card h3{font-size:.98rem}.game-library .play{font-size:.78rem;padding:9px 5px}.hero{min-height:auto;padding-top:48px}}
-
-
-/* Premium Habibi navigation bar */
-.site-header{position:sticky;top:0;z-index:50;background:rgba(7,5,16,.88);backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);border-bottom:1px solid rgba(190,120,255,.2);box-shadow:0 8px 30px rgba(0,0,0,.25)}
-.site-header:after{content:"";position:absolute;bottom:-1px;left:5%;right:5%;height:1px;background:linear-gradient(90deg,transparent,#a855f7aa,#54eaff88,transparent)}
-.site-header .nav{min-height:78px;height:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:10px;padding-bottom:10px}
-.site-header .logo{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;color:#fff;font-size:1.5rem;font-weight:1000;letter-spacing:2.5px;text-shadow:0 0 20px #d946ef66}
-.site-header .logo .logo-star{color:var(--cyan);font-size:.85rem;text-shadow:0 0 14px var(--cyan)}
-.site-header .main-nav{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:clamp(8px,1.25vw,18px);white-space:nowrap;color:#cfc5dc;font-size:.82rem;font-weight:700}
-.site-header .main-nav a{position:relative;padding:10px 0;transition:color .2s,text-shadow .2s}
-.site-header .main-nav a:after{content:"";position:absolute;left:50%;right:50%;bottom:3px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--pink),var(--cyan));transition:left .2s,right .2s}
-.site-header .main-nav a:hover{color:#fff;text-shadow:0 0 14px #d946ef99}
-.site-header .main-nav a:hover:after{left:0;right:0}
-.site-header .hub-cta{flex:0 0 auto;display:inline-flex;align-items:center;gap:12px;padding:12px 17px;border:1px solid #c084fc88;border-radius:12px;background:linear-gradient(115deg,#7e22ce,#a21caf 60%,#155e75);color:#fff;font-size:.83rem;font-weight:900;letter-spacing:.2px;box-shadow:0 0 22px #a855f733,inset 0 1px #ffffff30;transition:transform .2s,box-shadow .2s}
-.site-header .hub-cta span{font-size:1rem;color:#a5f3fc}
-.site-header .hub-cta:hover{transform:translateY(-2px);box-shadow:0 0 28px #c026d366}
-@media(max-width:1100px){.site-header .nav{gap:13px}.site-header .main-nav{justify-content:flex-start;overflow-x:auto;scrollbar-width:none;gap:14px}.site-header .main-nav::-webkit-scrollbar{display:none}}
-@media(max-width:760px){.site-header .nav{min-height:0;display:grid;grid-template-columns:1fr auto;gap:9px 12px;padding-top:12px;padding-bottom:10px}.site-header .logo{font-size:1.35rem}.site-header .hub-cta{padding:10px 13px}.site-header .main-nav{grid-column:1/-1;grid-row:2;width:100%;overflow-x:auto;justify-content:flex-start;gap:19px;padding:0 2px 3px;font-size:.8rem}.site-header .main-nav a{padding:8px 0}.site-header .main-nav a:after{bottom:0}}
-@media(max-width:380px){.site-header .main-nav{gap:15px;font-size:.76rem}.site-header .hub-cta{font-size:.78rem;padding:9px 11px}}
-
-
-/* 20-game expansion */
-.extra-games{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
-.extra-game{background:linear-gradient(145deg,#1b1029,#0d0a15);border:1px solid #49305e;border-radius:16px;padding:17px;text-align:left;color:#fff;cursor:pointer;transition:.2s;min-height:145px}
-.extra-game:hover{transform:translateY(-4px);border-color:var(--cyan);box-shadow:0 0 22px #63e6ff22}.extra-game:focus-visible,.theme-toggle:focus-visible,.ng-controls button:focus-visible,.ng-cell:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
-.extra-game .eg-icon{font-size:2rem}.extra-game h3{margin:9px 0 5px;font-size:1rem}.extra-game p{margin:0;color:var(--muted);font-size:.78rem;line-height:1.45}
-.extra-game small{display:inline-block;margin-top:9px;color:var(--cyan);font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-.newgame-panel{margin-top:24px;padding:22px;background:#100b19;border:1px solid #56366f;border-radius:20px;min-height:220px}
-.newgame-panel h3{margin:0 0 8px}.ng-controls{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}.ng-controls button,.ng-cell{background:#241431;border:1px solid #684486;color:#fff;border-radius:10px;padding:10px 14px;cursor:pointer;font-weight:700}.ng-controls button:hover,.ng-cell:hover{border-color:var(--cyan)}
-.wheel-stage{position:relative;width:min(360px,88vw);aspect-ratio:1;margin:24px auto 18px}.lucky-wheel{display:block;width:100%;height:100%;border-radius:50%;filter:drop-shadow(0 8px 18px #0008)}.wheel-stage.jackpot-win .lucky-wheel{animation:jackpot-wheel-glow .7s ease-in-out infinite alternate}.jackpot-banner{position:absolute;z-index:5;inset:50% auto auto 50%;transform:translate(-50%,-50%);width:max-content;max-width:90%;padding:17px 24px;border:2px solid #ffe66d;border-radius:18px;background:linear-gradient(135deg,#7c2d12ee,#a21cafee);color:#fff;text-align:center;box-shadow:0 0 22px #facc15,0 0 55px #f59e0b;animation:jackpot-pop .55s cubic-bezier(.2,1.5,.4,1) both;pointer-events:none}.jackpot-banner strong{display:block;font-size:clamp(2rem,9vw,3.4rem);line-height:1.1;color:#fff36b;text-shadow:0 3px 0 #9a3412,0 0 18px #facc15}.jackpot-banner span{display:block;margin-top:7px;font-weight:900;font-size:.8rem}.jackpot-confetti{position:absolute;z-index:4;left:var(--x);top:5%;font-style:normal;font-size:23px;pointer-events:none;animation:jackpot-rain 2.3s ease-in var(--delay) both}@keyframes jackpot-pop{from{opacity:0;scale:.25}to{opacity:1;scale:1}}@keyframes jackpot-wheel-glow{from{filter:drop-shadow(0 0 8px #facc15)}to{filter:drop-shadow(0 0 28px #f59e0b) drop-shadow(0 0 14px #fff)}}@keyframes jackpot-rain{0%{translate:0 -20px;rotate:0deg;opacity:0}12%{opacity:1}100%{translate:var(--drift) 390px;rotate:540deg;opacity:0}}.wheel-pointer{position:absolute;z-index:2;top:-13px;left:50%;transform:translateX(-50%);font-size:30px;line-height:1;color:#fff;text-shadow:0 2px 8px #000;filter:drop-shadow(0 0 5px #f0abfc)}.ng-board{display:grid;gap:7px;max-width:440px;margin:14px auto}.ng-cell{min-width:0;min-height:48px;font-size:1.15rem}.ng-status{text-align:center;color:var(--cyan);font-weight:700;min-height:24px}
-@media(max-width:900px){.extra-games{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:560px){.extra-games{grid-template-columns:repeat(2,minmax(0,1fr))}.extra-game{padding:13px;min-height:135px}.newgame-panel{padding:14px}}
-
-
-/* Theme switch and win celebration */
-.theme-toggle{position:relative;z-index:40;flex:0 0 auto;border:1px solid #a855f7;background:#170d25;color:#fff;border-radius:999px;padding:9px 12px;font-size:.78rem;font-weight:850;white-space:nowrap;cursor:pointer;box-shadow:0 0 18px #a855f755}
-body.light-mode{background:linear-gradient(135deg,#f5efff,#e9f8ff);color:#20132d;--muted:#594d68;--panel:#fff;--line:#c8b7dc}
-body.light-mode header{background:#ffffffdf;border-color:#cbb8df}body.light-mode nav{color:#30223e}body.light-mode .card,body.light-mode .extra-game,body.light-mode .newgame-panel,body.light-mode .arcade,body.light-mode .chess-wrap,body.light-mode .uno-table,body.light-mode .race-panel{background:linear-gradient(145deg,#fff,#eee7f8);color:#241633;border-color:#c7b2df}body.light-mode .extra-game p,body.light-mode .newgame-panel p{color:#594d68}body.light-mode .ng-controls button,body.light-mode .ng-cell{background:#e7daf5;color:#241633;border-color:#aa8bc9}body.light-mode .ng-status{color:#63338a}body.light-mode footer{color:#382747}body.light-mode .theme-toggle{background:#fff;color:#29153d;border-color:#8c4bc2}body.light-mode .section-head p,body.light-mode .hero p{color:#594d68}body.light-mode .tag{color:#6c368e}
-.win-flash{animation:winGlow .75s ease}.win-confetti{position:fixed;inset:0;pointer-events:none;z-index:100;display:grid;place-items:center;font-size:clamp(2rem,8vw,5rem);animation:winPop 1s ease both;text-shadow:0 0 25px #ff4de1}
-@keyframes winGlow{0%,100%{box-shadow:0 0 0 rgba(232,121,249,0)}45%{box-shadow:0 0 34px rgba(232,121,249,.9),inset 0 0 22px rgba(168,85,247,.22)}}
-@keyframes winPop{0%{opacity:0;transform:scale(.35) rotate(-12deg)}55%{opacity:1;transform:scale(1.18) rotate(5deg)}100%{opacity:0;transform:scale(1)}}
-@media(max-width:760px){.site-header .theme-toggle{grid-column:1;grid-row:1;justify-self:start;padding:7px 9px;font-size:.7rem}.site-header .logo{grid-column:2;grid-row:1;justify-self:center}.site-header .hub-cta{grid-column:3;grid-row:1;justify-self:end}}
-
-.account-section{margin:42px auto;padding:28px;border:1px solid #6f3a91;border-radius:22px;background:linear-gradient(135deg,#1b1029,#100b19);box-shadow:0 18px 55px #0005}
-.account-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.account-card{padding:20px;border:1px solid #ffffff20;border-radius:16px;background:#ffffff08}
-.account-section input,.account-section select{width:100%;padding:12px;margin:7px 0 12px;border-radius:10px;border:1px solid #76538d;background:#0d0914;color:#fff}
-.account-section button{padding:11px 16px;border:0;border-radius:10px;background:linear-gradient(90deg,#a855f7,#e879f9);color:#fff;font-weight:800;cursor:pointer}
-.account-muted{color:var(--muted);font-size:.9rem}.account-status{min-height:1.4em;color:var(--cyan);font-size:.9rem}
-#leaderboardRows{display:grid;gap:8px}.leader-row{display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:center;padding:10px;border-radius:10px;background:#ffffff0b}.leader-row strong{color:var(--pink)}
-body.light-mode .account-section{background:#f5eaff;color:#241633;border-color:#b58acb}body.light-mode .account-card{background:#fff;border-color:#d8c3e8}body.light-mode .account-section input,body.light-mode .account-section select{background:#fff;color:#241633;border-color:#b99acb}body.light-mode .account-muted{color:#594d68}
-@media(max-width:700px){.account-grid{grid-template-columns:1fr}.account-section{padding:18px}}
-
+:root{--bg:#0b0908;--panel:#15110e;--panel2:#1c1712;--gold:#d8b36a;--gold2:#f0d59a;--cream:#f5eee2;--muted:#b8ad9d;--line:#493a27;--red:#d98b77}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--cream);font-family:'DM Sans',sans-serif}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}.wrap{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:#0b0908ed;backdrop-filter:blur(16px);border-bottom:1px solid #d8b36a25}.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-family:'Playfair Display',serif;font-size:1.3rem;letter-spacing:2px;font-weight:700}.brand-mark{width:39px;height:39px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:1.2rem}.brand span:last-child{color:var(--gold)}nav{display:flex;gap:27px;color:#d6cbbb;font-size:.9rem}nav a:hover{color:var(--gold)}.nav-cta,.btn{border:1px solid var(--gold);background:var(--gold);color:#17110a;padding:12px 19px;border-radius:3px;font-weight:700;cursor:pointer;display:inline-flex;justify-content:center;align-items:center;gap:8px;transition:.2s}.nav-cta:hover,.btn:hover{background:var(--gold2);transform:translateY(-2px)}.btn.secondary{background:transparent;color:var(--gold)}.btn.small{padding:8px 12px;font-size:.86rem}.btn.danger{background:transparent;border-color:#a75c4d;color:#e5a394}
+.hero{padding:92px 0 86px;background:radial-gradient(ellipse at 78% 38%,#72552a22,transparent 44%),linear-gradient(110deg,#0b0908,#15100b 60%,#0b0908);border-bottom:1px solid #d8b36a22}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:55px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:.74rem;font-weight:700}.hero h1{font:600 clamp(2.8rem,6vw,5.5rem)/1.04 'Playfair Display',serif;margin:18px 0 22px;max-width:700px}.hero h1 em{color:var(--gold);font-style:normal}.hero p{color:var(--muted);font-size:1.08rem;line-height:1.8;max-width:560px}.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}.hero-art{position:relative;min-height:440px;border:1px solid #d8b36a55;padding:14px;background:#17120d;box-shadow:22px 22px 0 #d8b36a12}.hero-art img{width:100%;height:410px;object-fit:cover;display:block;filter:sepia(.16) brightness(.85)}.art-label{position:absolute;bottom:28px;left:28px;background:#0b0908e8;border-left:2px solid var(--gold);padding:13px 18px}.art-label strong{display:block;font:600 1.1rem 'Playfair Display',serif}.art-label small{color:var(--muted);letter-spacing:1px}
+section{padding:82px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:32px}.section-head h2,.about h2,.order h2{font:600 clamp(2rem,4vw,3.2rem) 'Playfair Display',serif;margin:9px 0}.section-head p{color:var(--muted);max-width:440px;line-height:1.7;margin:0}.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.art-card{background:var(--panel);border:1px solid #d8b36a22;overflow:hidden;transition:.25s}.art-card:hover{transform:translateY(-5px);border-color:#d8b36a88}.art-card img{width:100%;height:310px;object-fit:cover;display:block;background:#211b14}.art-info{padding:17px 18px 19px}.art-info h3{font:600 1.25rem 'Playfair Display',serif;margin:0 0 7px}.art-info p{color:var(--muted);font-size:.9rem;line-height:1.6;margin:0}.art-meta{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:14px;color:var(--gold);font-weight:700}.empty-gallery{grid-column:1/-1;border:1px dashed #80683e;padding:42px;text-align:center;color:var(--muted);line-height:1.8}
+.about{background:#120e0a;border-top:1px solid #d8b36a1d;border-bottom:1px solid #d8b36a1d}.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}.about-mark{min-height:290px;border:1px solid #d8b36a66;display:grid;place-items:center;background:radial-gradient(circle,#4a351b55,transparent 65%);font:700 5rem 'Playfair Display',serif;color:var(--gold)}.about p{color:var(--muted);line-height:1.9}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}.step{padding:18px;border:1px solid #d8b36a25;background:#0e0b08}.step b{color:var(--gold);font:600 1.2rem 'Playfair Display',serif}.step span{display:block;color:var(--muted);font-size:.88rem;margin-top:7px;line-height:1.5}
+.order{background:radial-gradient(ellipse at 90% 10%,#6d51201a,transparent 45%),#0b0908}.order-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:55px;align-items:start}.order-copy p{color:var(--muted);line-height:1.8}.contact-note{border-left:2px solid var(--gold);padding:12px 16px;margin-top:25px;color:#d8c8ac;background:#17120d}.form-card,.admin-card{background:var(--panel);border:1px solid #d8b36a35;padding:27px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:7px;margin-bottom:15px}.field.full{grid-column:1/-1}.field label{color:#e2d4be;font-size:.84rem}.field input,.field textarea,.field select{width:100%;background:#0c0a08;border:1px solid #57452b;color:var(--cream);padding:13px;border-radius:2px;outline:none}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold)}.field textarea{min-height:112px;resize:vertical}.field input[type=file]{padding:10px}.hint,.status{color:var(--muted);font-size:.84rem;line-height:1.5}.status{margin-top:12px;min-height:22px}.status.good{color:#a8d6a0}.status.bad{color:#e5a394}
+footer{border-top:1px solid #d8b36a2a;padding:27px 0;color:var(--muted);font-size:.85rem}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}.owner-link{color:#776c5b;font-size:.75rem}.owner-link:hover{color:var(--gold)}
+#studio{display:none;min-height:75vh;padding:70px 0;background:radial-gradient(ellipse at 50% 0%,#5b421d22,transparent 55%)}#studio.active{display:block}.studio-head{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:28px}.studio-head h1{font:600 2.5rem 'Playfair Display',serif;margin:8px 0}.studio-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.manage-list{display:grid;gap:12px;margin-top:18px}.manage-item{display:flex;gap:13px;align-items:center;background:#0c0a08;padding:10px;border:1px solid #493a27}.manage-item img{width:64px;height:70px;object-fit:cover}.manage-item div{flex:1;min-width:0}.manage-item b{display:block}.manage-item small{color:var(--muted)}.orders-list{display:grid;gap:12px;margin-top:15px}.order-item{background:#0c0a08;border:1px solid #493a27;padding:15px}.order-item h4{margin:0 0 7px;color:var(--gold)}.order-item p{color:var(--muted);white-space:pre-wrap;line-height:1.55;margin:6px 0}.order-item a{color:var(--gold);text-decoration:underline}.hidden{display:none!important}
+@media(max-width:850px){nav{gap:13px;font-size:.82rem}.hero-grid,.about-grid,.order-grid{grid-template-columns:1fr}.hero-art{max-width:580px}.gallery-grid{grid-template-columns:repeat(2,1fr)}.studio-grid{grid-template-columns:1fr}.about-mark{min-height:190px}}
+@media(max-width:600px){.nav{min-height:68px;flex-wrap:wrap;padding:12px 0}.brand{font-size:1.1rem}nav{order:3;width:100%;overflow:auto;padding:5px 0 8px;white-space:nowrap}.nav-cta{padding:9px 12px;font-size:.82rem}.hero{padding:58px 0}.hero-art{min-height:300px}.hero-art img{height:280px}.gallery-grid{grid-template-columns:1fr}.art-card img{height:330px}.section-head{display:block}.section-head p{margin-top:10px}.steps{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}section{padding:60px 0}.footer-row,.studio-head{align-items:flex-start;flex-direction:column}.form-card,.admin-card{padding:19px}}
 </style>
 </head>
 <body>
-<header class="site-header"><div class="wrap nav"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color theme">☀️ Light mode</button><a class="logo" href="#home" aria-label="Habibi home">HABIBI<span class="logo-star">✦</span></a><nav class="main-nav" aria-label="Main navigation"><a href="#home">Home</a><a href="#games">Games</a><a href="#chess">Chess</a><a href="#uno">UNO</a><a href="#carrace">Car Race</a><a href="#football">Football</a><a href="#gkgame">Goalkeeper</a><a href="#flappy">Flappy Bird</a><a href="#snake">Snake</a><a href="#arena">Mini Arcade</a><a href="#community">Community</a></nav><a class="hub-cta" href="#account">Player Account <span>↗</span></a></div></header>
-<main>
-<section class="wrap hero" id="home"><div class="hero-copy"><div class="eyebrow">✦ Next-level gaming experience</div><h1>The Future of <span>Gaming Lives Here.</span></h1><p>Enter the arena. Discover your next favorite game, challenge your reflexes, and explore a neon-powered world built for players.</p><div class="actions"><a class="btn primary" href="#games">⚡ Explore Games</a><a class="btn secondary" href="#arena">▶ Play a Mini-Game</a></div></div><div class="visual" aria-label="Futuristic warrior illustration"><div class="orb"></div><div class="warrior" role="img" aria-label="Samurai mask">👾</div><div class="hud one"><strong>LEVEL UP</strong>YOUR NEXT QUEST</div><div class="hud two"><strong>GM / 001</strong>PLAYER READY</div></div></section>
-<section class="wrap section" id="games"><div class="section-head"><div><div class="eyebrow">🎮 Select your game</div><h2>The <span style="color:var(--pink)">Game Library</span></h2></div><p>Eight games. One place to play. Pick a challenge, chase a new high score, and come back for another round.</p></div><div class="cards game-library">
-<a class="card" href="#chess"><div class="art">♟️</div><div class="card-body"><div class="tag">Strategy • 1–2 players</div><h3>Chess Battle</h3><p>Outsmart the computer or challenge someone beside you.</p><span class="play">Play Chess ↗</span></div></a>
-<a class="card" href="#uno"><div class="art">🃏</div><div class="card-body"><div class="tag">Cards • 4 players</div><h3>UNO Showdown</h3><p>Take on three AI rivals and be the first to empty your hand.</p><span class="play">Play UNO ↗</span></div></a>
-<a class="card" href="#carrace"><div class="art">🏎️</div><div class="card-body"><div class="tag">Racing • Reflex</div><h3>Neon Car Race</h3><p>Dodge traffic, switch lanes, and push for a new record.</p><span class="play">Start Racing ↗</span></div></a>
-<a class="card" href="#football"><div class="art">⚽</div><div class="card-body"><div class="tag">Sports • Penalties</div><h3>Penalty Shootout</h3><p>Pick your shot and try to beat the AI goalkeeper.</p><span class="play">Play Football ↗</span></div></a>
-<a class="card" href="#gkgame"><div class="art">🧤</div><div class="card-body"><div class="tag">Sports • Goalkeeper</div><h3>Goalkeeper Hero</h3><p>Read the striker and dive to keep the ball out.</p><span class="play">Guard the Goal ↗</span></div></a>
-<a class="card" href="#snake"><div class="art">🐍</div><div class="card-body"><div class="tag">Arcade • Classic</div><h3>Snake</h3><p>Eat, grow, dodge bombs, and survive for as long as you can.</p><span class="play">Play Snake ↗</span></div></a>
-<a class="card" href="#flappy"><div class="art">🐤</div><div class="card-body"><div class="tag">Arcade • Skill</div><h3>Flappy Bird</h3><p>Fly through the pipes and see how high you can score.</p><span class="play">Take Flight ↗</span></div></a>
-<a class="card" href="#arena"><div class="art">⚡</div><div class="card-body"><div class="tag">Arcade • Quick reflex</div><h3>Reflex Challenge</h3><p>Test your reaction speed and beat your personal best.</p><span class="play">Test Your Reflexes ↗</span></div></a>
+<header id="siteHeader"><div class="wrap nav">
+<a class="brand" href="#home" aria-label="FAHADPAINTER home"><span class="brand-mark">F</span><span>FAHAD<span>PAINTER</span></span></a>
+<nav><a href="#home">Home</a><a href="#gallery">Artwork</a><a href="#about">About</a><a href="#order">Custom order</a></nav>
+<a class="nav-cta" href="#order">Request a drawing ↗</a>
+</div></header>
+<main id="publicSite">
+<section class="hero" id="home"><div class="wrap hero-grid">
+<div><div class="eyebrow">Original art · Made with care</div><h1>Every face has a story. <em>Let’s draw yours.</em></h1><p>Welcome to FAHADPAINTER. Explore pencil portraits, detailed hand drawings and original sketches. Have an idea in mind? Request a custom drawing made especially for you.</p><div class="hero-actions"><a class="btn" href="#gallery">Explore my artwork</a><a class="btn secondary" href="#order">Order a custom drawing</a></div></div>
+<div class="hero-art"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1000&q=85" alt="Artist drawing and art materials"><div class="art-label"><strong>Art made personal</strong><small>PORTRAITS · SKETCHES · CUSTOM ART</small></div></div>
 </div></section>
-
-<section class="wrap section" id="moregames"><div class="section-head"><div><div class="eyebrow">✨ 20 fresh challenges</div><h2>More <span style="color:var(--pink)">Famous Games</span></h2></div><p>Five games let you play with a friend or against AI. The other fifteen are solo challenges. Pick any game to start playing right here.</p></div>
-<div class="tag" style="margin:0 0 12px">🤝 5 TWO-PLAYER + AI GAMES</div><div class="extra-games" id="duoGameList"></div>
-<div class="tag" style="margin:24px 0 12px">⚡ 15 SOLO GAMES</div><div class="extra-games" id="soloGameList"></div>
-<div class="newgame-panel" id="newGamePanel"><div class="eyebrow">GAME STATION</div><h3 id="ngTitle">Choose a game above</h3><p id="ngDesc" style="color:var(--muted)">Your new games will load here. No downloads or sign-up needed.</p><div class="ng-controls" id="ngControls"></div><div id="ngPlay"></div><div class="ng-status" id="ngStatus" aria-live="polite"></div></div>
-</section>
-<section class="wrap section" id="arena"><div class="arcade"><div><div class="eyebrow">Playable right now</div><h2>Quick Reflex <span style="color:var(--cyan)">Challenge</span></h2><p>Test your reaction speed! Press start, wait for the screen to turn green, then click as quickly as you can. This mini-game works directly in your browser.</p><p style="font-size:.85rem">No account needed. No downloads. Just play.</p></div><div class="mini-game"><div class="game-screen" id="gameScreen">Ready when you are, player.</div><div class="game-controls"><button id="startGame">Start challenge</button><button id="resetGame">Reset</button></div><p id="gameMessage" aria-live="polite" style="font-size:.85rem;color:var(--muted)">Try to beat your best time!</p></div></div></section>
-
-
-<section class="wrap section" id="chess"><div class="section-head"><div><div class="eyebrow">Strategy • Play now</div><h2>Habibi <span style="color:var(--pink)">Chess</span> ♟️</h2></div><p>Challenge the computer or play face-to-face with another person on the same device.</p></div>
-<div class="chess-wrap"><div class="chess-info"><div class="tag">Choose your game mode</div><h3>One board. Two ways to play.</h3><div class="chess-options"><button id="chessAiMode" class="active">1 vs AI</button><button id="chessHumanMode">2 Players</button></div><p id="chessModeText">You play White. The computer plays Black.</p><p>Tap a piece, then tap a highlighted square to move. On a computer, you can also use a mouse. Legal moves, check, checkmate, castling and pawn promotion are supported.</p><div class="chess-controls"><button id="chessUndo">Undo</button><button id="chessRestart">New game</button></div><p id="chessStatus" class="chess-status" aria-live="polite">White to move.</p></div>
-<div><div id="chessBoard" class="chess-board" role="group" aria-label="Interactive chess board"></div></div></div></section>
-
-
-<section class="wrap section" id="uno"><div class="section-head"><div><div class="eyebrow">Card battle • 4 players</div><h2>Habibi <span style="color:var(--pink)">UNO</span> 🃏</h2></div><p>Four players at the table: you against three computer opponents. Match colors or numbers, use action cards, and be the first to empty your hand.</p></div>
-<div class="uno-table"><div class="uno-info"><div class="tag">1 human + 3 AI players</div><h3>Ready to shout UNO?</h3><p>Play cards that match the discard pile by color, number, or symbol. Draw a card if you cannot play. Skip, Reverse, Draw Two, Wild and Wild Draw Four cards are included.</p><div class="uno-seats"><div class="uno-seat"><strong>You</strong>Human</div><div class="uno-seat"><strong>Nova</strong>AI</div><div class="uno-seat"><strong>Pixel</strong>AI</div></div><div class="uno-seat"><strong>Glitch</strong>AI</div><div class="uno-controls" style="margin-top:15px"><button id="unoNew">New game</button></div></div>
-<div class="uno-arena"><div class="uno-opponents" id="unoOpponents"></div><div class="uno-center"><div class="uno-pile"><div class="uno-card back">GM</div><small>Draw pile</small></div><div class="uno-pile"><div id="unoDiscard" class="uno-card red">7</div><small>Discard pile</small></div></div><div class="uno-status" id="unoStatus" aria-live="polite">Dealing cards…</div><div class="uno-hand" id="unoHand" aria-label="Your cards"></div><div class="uno-controls"><button id="unoDraw">Draw card</button><button id="unoKeep" disabled>Keep drawn card</button><button id="unoCall" class="uno-call" disabled>UNO!</button></div><div id="unoColorPicker" class="uno-color-picker" hidden><button class="red" data-color="red">Red</button><button class="yellow" data-color="yellow">Yellow</button><button class="green" data-color="green">Green</button><button class="blue" data-color="blue">Blue</button></div></div></div></section>
-
-
-<section class="wrap section" id="carrace"><div class="section-head"><div><div class="eyebrow">Arcade racer • Dodge traffic</div><h2>Neon <span style="color:var(--cyan)">Car Race</span> 🏎️</h2></div><p>Hit the highway, dodge traffic, and see how long you can survive. The road gets faster as your score climbs!</p></div>
-<div class="race-panel"><div class="race-copy"><div class="tag">Habibi racing challenge</div><h3>Can you beat your high score?</h3><p>Steer your car between lanes and avoid the oncoming cars. Use the arrow keys or A/D on a computer, or the touch buttons on your phone.</p><p><strong>Controls:</strong> ← → or A / D to steer. Avoid every car!</p><div class="race-actions"><button id="raceStart">Start race</button><button id="raceRestart">Restart</button></div><p id="raceStatus" class="race-status" aria-live="polite">Press Start race to begin.</p></div>
-<div class="race-stage"><div class="race-stats"><span>Score: <b id="raceScore">0</b></span><span>Best: <b id="raceBest">0</b></span></div><canvas id="raceCanvas" width="360" height="480" aria-label="Car racing game"></canvas><div class="race-pad"><button id="raceLeft" aria-label="Steer left">◀</button><button id="raceRight" aria-label="Steer right">▶</button></div></div></div></section>
-
-
-<section class="wrap section" id="football"><div class="section-head"><div><div class="eyebrow">Penalty shootout • 5 shots</div><h2>Football <span style="color:#86efac">Challenge</span> ⚽</h2></div><p>Step up and take the winning penalty! Pick a corner, shoot past the goalkeeper, and score as many goals as you can from five shots.</p></div>
-<div class="football-panel"><div class="football-copy"><div class="tag">Habibi sports challenge</div><h3>Can you beat the keeper?</h3><p>Choose where to aim, then take your shot. The goalkeeper will dive left, middle, or right to try to save it. You get five penalties per round.</p><p><strong>How to play:</strong> Select Left, Center, or Right, then press Shoot.</p><div class="football-actions"><button id="footballShoot">⚽ Shoot!</button><button id="footballReset">New shootout</button></div><p id="footballStatus" class="football-status" aria-live="polite">Choose your target and take your first shot!</p></div>
-<div class="football-stage"><div class="football-stats"><span>Goals: <b id="footballGoals">0</b></span><span>Shots: <b id="footballShots">0 / 5</b></span></div><canvas id="footballCanvas" width="400" height="300" aria-label="Football penalty shootout"></canvas><div class="football-controls"><button data-aim="0" class="active">↖ Left</button><button data-aim="1">↑ Center</button><button data-aim="2">↗ Right</button></div></div></div></section>
-
-
-
-<section class="wrap section" id="flappy"><div class="section-head"><div><div class="eyebrow">Classic arcade • Fly and dodge</div><h2>Flappy <span style="color:var(--cyan)">Bird</span> 🐤</h2></div><p>Tap to flap through the pipes. Don't hit the pipes or the ground, and try to beat your best score!</p></div>
-<div class="flappy-panel"><div class="flappy-copy"><div class="tag">Habibi flying challenge</div><h3>How far can you fly?</h3><p>Tap or click the game to flap. On a computer, you can also press Space or the Up Arrow. Fly through the gaps between the pipes to score points.</p><p><strong>Controls:</strong> Tap / click / Space / ↑ to flap.</p><div class="flappy-actions"><button id="flappyStart">Start game</button><button id="flappyRestart">Restart</button></div><p id="flappyStatus" class="flappy-status" aria-live="polite">Press Start game, then flap your way through!</p></div>
-<div class="flappy-stage"><div class="flappy-stats"><span>Score: <b id="flappyScore">0</b></span><span>Best: <b id="flappyBest">0</b></span></div><canvas id="flappyCanvas" width="320" height="400" aria-label="Flappy Bird style flying game"></canvas></div></div></section>
-
-<section class="wrap section" id="gkgame"><div class="section-head"><div><div class="eyebrow">Goalkeeper challenge • 5 shots</div><h2>Goalkeeper <span style="color:#86efac">Hero</span> 🧤</h2></div><p>Now it's your turn to guard the goal! Read the striker, choose where to dive, and save as many penalties as you can.</p></div>
-<div class="gk-panel"><div class="gk-copy"><div class="tag">Habibi goalkeeper challenge</div><h3>Can you keep a clean sheet?</h3><p>You are the goalkeeper. The striker will shoot left, center, or right. Pick your dive direction before the shot. Save at least one and aim for all five!</p><p><strong>How to play:</strong> Choose Left, Center, or Right, then press Dive!</p><div class="gk-actions"><button id="gkDive">🧤 Dive!</button><button id="gkReset">New match</button></div><p id="gkStatus" class="gk-status" aria-live="polite">Choose a direction and get ready!</p></div>
-<div class="gk-stage"><div class="gk-stats"><span>Saves: <b id="gkSaves">0</b></span><span>Shots: <b id="gkShots">0 / 5</b></span></div><canvas id="gkCanvas" width="400" height="300" aria-label="Goalkeeper penalty saving game"></canvas><div class="gk-controls"><button data-dive="0" class="active">↖ Left</button><button data-dive="1">↑ Center</button><button data-dive="2">↗ Right</button></div></div></div></section>
-
-<section class="wrap section" id="snake"><div class="section-head"><div><div class="eyebrow">Classic arcade • Play now</div><h2>Snake <span style="color:var(--cyan)">Game</span> 🐍</h2></div><p>Eat the glowing food, grow your snake, and try not to crash. Your best score is saved on this device.</p></div>
-<div class="snake-panel"><div class="snake-copy"><div class="tag">Habibi arcade original</div><h3>How long can you survive?</h3><p>The game automatically adapts to your device. Use arrow keys or WASD on a computer, or swipe the board / tap the direction buttons on a phone or tablet. Grab the pink food to score points and make your snake longer.</p><p><strong style="color:var(--cyan)">Tip:</strong> Wrap through one wall and appear on the opposite side. Avoid the bombs and your own tail!</p></div>
-<div class="snake-stage"><div class="snake-stats"><span>Score: <span id="snakeScore">0</span></span><span>Best: <span id="snakeBest">0</span></span></div><canvas id="snakeCanvas" width="360" height="360" aria-label="Snake game board"></canvas><div class="snake-actions"><button id="snakeStart">Start game</button><button id="snakePause">Pause</button><button id="snakeReset">Restart</button></div><p id="snakeControlHint" style="font-size:.8rem;color:var(--muted);margin:12px 0 0">Keyboard: use arrow keys or WASD.</p><div class="snake-pad" aria-label="Touch controls"><button data-dir="up" aria-label="Up">↑</button><button data-dir="left" aria-label="Left">←</button><button data-dir="down" aria-label="Down">↓</button><button data-dir="right" aria-label="Right">→</button></div><p id="snakeMessage" aria-live="polite" style="font-size:.82rem;color:var(--muted);margin-bottom:0">Press Start game to play.</p></div></div></section>
-
-<section class="wrap join" id="community"><div class="eyebrow">Your next chapter starts here</div><h2>Ready to Join the Battle?</h2><p>Habibi is your portal to games, challenges, and good times.<br>Stay sharp. Play fair. Keep leveling up.</p><a class="btn" href="#games">Find Your Next Game ✦</a></section>
-
-<section class="wrap account-section" id="account">
- <div class="eyebrow">Player account</div><h2>Join HABIBI Gaming</h2>
- <p class="account-muted">Create an account to keep your player identity and compete on the shared leaderboard.</p>
- <div class="account-grid">
-  <div class="account-card">
-   <h3 id="accountFormTitle">Create your account</h3>
-   <form id="habibiAuthForm">
-    <label for="habibiUsername">Player name</label><input id="habibiUsername" maxlength="20" placeholder="Your gaming name" autocomplete="nickname">
-    <label for="habibiEmail">Email</label><input id="habibiEmail" type="email" required placeholder="you@example.com" autocomplete="email">
-    <label for="habibiPassword">Password</label><input id="habibiPassword" type="password" required minlength="6" placeholder="At least 6 characters" autocomplete="current-password">
-    <button id="habibiAuthSubmit" type="submit">Sign up</button>
-   </form>
-   <p class="account-muted"><span id="authSwitchText">Already have an account?</span> <a href="#" id="authSwitch" style="color:var(--cyan);font-weight:800">Log in</a></p>
-   <button id="habibiLogout" type="button" style="display:none;background:#49305e">Log out</button>
-   <p id="habibiAuthStatus" class="account-status" aria-live="polite"></p>
-  </div>
-  <div class="account-card">
-   <h3>Global leaderboard 🏆</h3><p class="account-muted" id="leaderboardHint">Top scores from HABIBI players.</p>
-   <div id="leaderboardRows"><p class="account-muted">Loading leaderboard…</p></div>
-   <form id="habibiScoreForm" style="margin-top:16px;display:none">
-    <label for="scoreGame">Game</label><input id="scoreGame" required maxlength="40" placeholder="e.g. Snake">
-    <label for="scoreValue">Your score</label><input id="scoreValue" type="number" required min="0" max="100000000" placeholder="Your score">
-    <button type="submit">Submit score</button>
-   </form>
-   <p id="scoreStatus" class="account-status" aria-live="polite"></p>
-  </div>
- </div>
-</section>
-
+<section id="gallery"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Selected creations</div><h2>The artwork gallery</h2></div><p>A collection of drawings and portraits. Each piece is created by hand, one line at a time.</p></div>
+<div class="gallery-grid" id="galleryGrid"><div class="empty-gallery">The gallery is ready for Fahad’s artwork.<br>New drawings will appear here when the owner uploads them.</div></div>
+</div></section>
+<section class="about" id="about"><div class="wrap about-grid"><div class="about-mark">FP</div><div><div class="eyebrow">A little about the artist</div><h2>Turning your ideas into art.</h2><p>FAHADPAINTER is a place for thoughtful, hand-drawn artwork. From a detailed portrait of someone special to a close-up drawing of a hand or eye, every custom request starts with your idea and a reference photo.</p><div class="steps"><div class="step"><b>01 · Share</b><span>Tell me what you would like drawn and attach a reference photo.</span></div><div class="step"><b>02 · Discuss</b><span>We can agree on the details, size, style and price.</span></div><div class="step"><b>03 · Create</b><span>Your drawing is made with care, especially for you.</span></div></div></div></div></section>
+<section class="order" id="order"><div class="wrap order-grid"><div class="order-copy"><div class="eyebrow">Made just for you</div><h2>Request a custom drawing</h2><p>Have a photo or an idea you want turned into a drawing? Fill in the form and tell me what you have in mind. You can request a face portrait, hand, eye, pet, couple, or another subject.</p><div class="contact-note">Sending a request does not confirm a booking. I’ll review the details and get back to you to discuss the price and timing.</div></div>
+<form class="form-card" id="orderForm"><div class="form-grid">
+<div class="field"><label for="customerName">Your name *</label><input id="customerName" name="customerName" required maxlength="90" placeholder="Your name"></div>
+<div class="field"><label for="customerEmail">Email address *</label><input id="customerEmail" name="customerEmail" type="email" required maxlength="160" placeholder="you@example.com"></div>
+<div class="field"><label for="drawingType">What would you like drawn? *</label><select id="drawingType" name="drawingType" required><option value="">Choose a drawing</option><option>Face / portrait</option><option>Hand drawing</option><option>Eye drawing</option><option>Couple / family portrait</option><option>Pet / animal</option><option>Something else</option></select></div>
+<div class="field"><label for="size">Preferred size</label><select id="size" name="size"><option>Not sure yet</option><option>Small</option><option>Medium</option><option>Large</option></select></div>
+<div class="field full"><label for="details">Describe your idea *</label><textarea id="details" name="details" required maxlength="2000" placeholder="Tell me who or what you want drawn, the style you like, and any details..."></textarea></div>
+<div class="field full"><label for="referencePhoto">Reference photo (optional)</label><input id="referencePhoto" name="referencePhoto" type="file" accept="image/*"><span class="hint">You can attach one photo, up to 5 MB. Please only share a photo you have permission to use.</span></div>
+<div class="field full"><button class="btn" id="orderSubmit" type="submit">Send drawing request ↗</button><div class="status" id="orderStatus" role="status"></div></div>
+</div></form></div></section>
 </main>
-<footer><div class="wrap foot"><span>© <span id="year"></span> Habibi — Fan-made gaming hub.</span><span>Built for players, powered by imagination 💜</span></div></footer>
-<dialog id="gameDialog"><button class="close" id="closeDialog">Close ✕</button><h2 id="dialogTitle">Mission briefing</h2><p>This is a sample game card. You can replace it with a real browser game, your own project, or a link to a game you have permission to share.</p><p><strong style="color:var(--cyan)">Mission status:</strong> Ready for customization.</p></dialog>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
-<script>
-const chessBoard=document.getElementById('chessBoard');
-if(chessBoard&&typeof Chess!=='undefined'){
- const chess=new Chess(),glyphs={wk:'♔',wq:'♕',wr:'♖',wb:'♗',wn:'♘',wp:'♙',bk:'♚',bq:'♛',br:'♜',bb:'♝',bn:'♞',bp:'♟︎'};
- let mode='ai',selected=null,legalMoves=[],thinking=false,history=[];
- const statusEl=document.getElementById('chessStatus'),modeText=document.getElementById('chessModeText'),aiBtn=document.getElementById('chessAiMode'),humanBtn=document.getElementById('chessHumanMode');
- function status(){if(chess.in_checkmate())return 'Checkmate! '+(chess.turn()==='w'?'Black':'White')+' wins.';if(chess.in_stalemate()||chess.in_draw())return 'Draw game.';return (chess.turn()==='w'?'White':'Black')+' to move'+(chess.in_check()?' — Check!':'')+(thinking?' — AI thinking…':'');}
- function render(){
-  chessBoard.innerHTML='';const board=chess.board();
-  for(let r=0;r<8;r++)for(let c=0;c<8;c++){
-   const sq='abcdefgh'[c]+(8-r),piece=board[r][c],btn=document.createElement('button');
-   btn.type='button';btn.className='chess-square '+((r+c)%2?'dark':'light');
-   if(selected===sq)btn.classList.add('selected');
-   const target=legalMoves.find(m=>m.to===sq);if(target)btn.classList.add(piece?'capture':'legal');
-   btn.setAttribute('aria-label',sq+(piece?', '+(piece.color==='w'?'white ':'black ')+piece.type:''));
-   if(piece){const span=document.createElement('span');span.className=piece.color==='w'?'white-piece':'black-piece';span.textContent=glyphs[piece.color+piece.type];btn.appendChild(span)}
-   btn.addEventListener('click',()=>tapSquare(sq));chessBoard.appendChild(btn);
-  }
-  statusEl.textContent=status();
- }
- function tapSquare(sq){
-  if(thinking||chess.game_over()||(mode==='ai'&&chess.turn()==='b'))return;
-  const piece=chess.get(sq);
-  if(selected){
-   const move=legalMoves.find(m=>m.to===sq);
-   if(move){const promotion=move.flags.includes('p')?'q':undefined;chess.move({from:selected,to:sq,promotion});selected=null;legalMoves=[];render();if(mode==='ai'&&!chess.game_over()&&chess.turn()==='b')setTimeout(aiMove,250);return}
-  }
-  if(piece&&piece.color===chess.turn()){selected=sq;legalMoves=chess.moves({square:sq,verbose:true})}
-  else{selected=null;legalMoves=[]}
-  render();
- }
- const values={p:100,n:320,b:330,r:500,q:900,k:20000};
- function evaluateBlack(){let score=0;const b=chess.board();for(let r=0;r<8;r++)for(let c=0;c<8;c++){const p=b[r][c];if(!p)continue;const center=3.5-(Math.abs(3.5-r)+Math.abs(3.5-c))/2;score+=(p.color==='b'?1:-1)*(values[p.type]+center*(p.type==='p'?5:3));}if(chess.in_check())score+=(chess.turn()==='w'?30:-30);return score}
- function aiMove(){
-  if(mode!=='ai'||chess.turn()!=='b'||chess.game_over())return;
-  thinking=true;render();const moves=chess.moves({verbose:true});let best=-Infinity,bestMove=moves[0];
-  for(const m of moves){
-   chess.move({from:m.from,to:m.to,promotion:'q'});let worst=Infinity;
-   if(chess.game_over())worst=evaluateBlack();
-   else{const replies=chess.moves({verbose:true});if(!replies.length)worst=evaluateBlack();else for(const reply of replies){chess.move({from:reply.from,to:reply.to,promotion:'q'});const value=evaluateBlack();if(value<worst)worst=value;chess.undo();}}
-   chess.undo();const value=worst+(Math.random()-.5)*5;if(value>best){best=value;bestMove=m}
-  }
-  chess.move({from:bestMove.from,to:bestMove.to,promotion:'q'});thinking=false;selected=null;legalMoves=[];render();
- }
- function setMode(next){mode=next;aiBtn.classList.toggle('active',mode==='ai');humanBtn.classList.toggle('active',mode==='human');modeText.textContent=mode==='ai'?'You play White. The computer plays Black.':'Two players share this device. White and Black take turns.';newGame()}
- function newGame(){chess.reset();selected=null;legalMoves=[];thinking=false;render()}
- aiBtn.addEventListener('click',()=>setMode('ai'));humanBtn.addEventListener('click',()=>setMode('human'));
- document.getElementById('chessRestart').addEventListener('click',newGame);
- document.getElementById('chessUndo').addEventListener('click',()=>{if(thinking)return;chess.undo();if(mode==='ai'&&chess.turn()==='b')chess.undo();selected=null;legalMoves=[];render()});
- render();
-}else if(chessBoard){chessBoard.textContent='Chess could not load. Please check your internet connection and refresh.'}
-
-</script>
-<script>
-document.getElementById('year').textContent=new Date().getFullYear();
-const dialog=document.getElementById('gameDialog');
-document.querySelectorAll('[data-game]').forEach(btn=>btn.addEventListener('click',()=>{document.getElementById('dialogTitle').textContent=btn.dataset.game+' — Mission Briefing';dialog.showModal()}));
-document.getElementById('closeDialog').addEventListener('click',()=>dialog.close());
-let startTime=0,timer=null,state='idle';
-const screen=document.getElementById('gameScreen'),message=document.getElementById('gameMessage'),startBtn=document.getElementById('startGame');
-function reset(){clearTimeout(timer);state='idle';screen.style.background='transparent';screen.innerHTML='Ready when you are, player.';message.textContent='Try to beat your best time!';startBtn.disabled=false}
-startBtn.addEventListener('click',()=>{if(state==='waiting')return;reset();state='waiting';screen.textContent='Wait for green…';message.textContent='Don’t click too early!';startBtn.disabled=true;timer=setTimeout(()=>{state='go';startTime=performance.now();screen.style.background='#064e3b';screen.innerHTML='<strong>CLICK NOW!</strong>';},1200+Math.random()*3000)});
-screen.addEventListener('click',()=>{if(state==='waiting'){clearTimeout(timer);state='early';screen.textContent='Too soon!';message.textContent='False start — press Start challenge to try again.';startBtn.disabled=false}else if(state==='go'){const elapsed=Math.round(performance.now()-startTime);state='done';screen.style.background='transparent';screen.innerHTML='<strong>'+elapsed+' ms</strong>';message.textContent=elapsed<250?'Lightning reflexes! ⚡':elapsed<400?'Nice reaction, player!':'Good try — can you go faster?';startBtn.disabled=false}});
-document.getElementById('resetGame').addEventListener('click',reset);
-
-const snakeCanvas=document.getElementById('snakeCanvas');
-if(snakeCanvas){
- const ctx=snakeCanvas.getContext('2d'),grid=18,cell=20;
- let snake=[{x:8,y:9},{x:7,y:9},{x:6,y:9}],dir={x:1,y:0},nextDir={x:1,y:0},food={x:13,y:9},bombs=[],score=0,best=0,running=false,ended=false,loop=null;
- const scoreEl=document.getElementById('snakeScore'),bestEl=document.getElementById('snakeBest'),msg=document.getElementById('snakeMessage'),controlHint=document.getElementById('snakeControlHint');
- const touchMode=()=>window.matchMedia('(pointer: coarse)').matches||window.matchMedia('(max-width: 760px)').matches;
- function updateDeviceControls(){document.body.classList.toggle('touch-device',touchMode());if(controlHint)controlHint.textContent=touchMode()?'Phone/tablet controls: swipe on the board or tap the arrows.':'Computer controls: use the arrow keys or WASD.'}
- updateDeviceControls();window.matchMedia('(pointer: coarse)').addEventListener?.('change',updateDeviceControls);window.matchMedia('(max-width: 760px)').addEventListener?.('change',updateDeviceControls);
- try{best=Number(localStorage.getItem('gmhubSnakeBest')||0)}catch(e){}
- bestEl.textContent=best;
- function occupied(p){return snake.some(s=>s.x===p.x&&s.y===p.y)|| (food&&food.x===p.x&&food.y===p.y)||bombs.some(b=>b.x===p.x&&b.y===p.y)}
- function randomEmpty(){let p;do{p={x:Math.floor(Math.random()*grid),y:Math.floor(Math.random()*grid)}}while(occupied(p));return p}
- function placeFood(){food=null;food=randomEmpty()}
- function placeBombs(){bombs=[];for(let i=0;i<4;i++){const p=randomEmpty();bombs.push(p)}}
- function draw(){
-  ctx.fillStyle='#07120f';ctx.fillRect(0,0,360,360);
-  ctx.strokeStyle='#10291f';ctx.lineWidth=1;for(let i=0;i<=grid;i++){ctx.beginPath();ctx.moveTo(i*cell,0);ctx.lineTo(i*cell,360);ctx.stroke();ctx.beginPath();ctx.moveTo(0,i*cell);ctx.lineTo(360,i*cell);ctx.stroke()}
-  if(food){ctx.fillStyle='#fb7185';ctx.shadowColor='#fb7185';ctx.shadowBlur=14;ctx.beginPath();ctx.arc(food.x*cell+10,food.y*cell+10,7,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0}
-  bombs.forEach(b=>{const x=b.x*cell+10,y=b.y*cell+11;ctx.save();ctx.shadowColor='#f97316';ctx.shadowBlur=10;ctx.fillStyle='#f97316';ctx.beginPath();ctx.arc(x,y,7,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;ctx.strokeStyle='#fde68a';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x+3,y-6);ctx.lineTo(x+7,y-11);ctx.stroke();ctx.fillStyle='#fde68a';ctx.beginPath();ctx.arc(x+8,y-12,2,0,Math.PI*2);ctx.fill();ctx.restore()});
-  snake.forEach((p,i)=>{ctx.fillStyle=i===0?'#6ee7b7':'#10b981';ctx.shadowColor='#10b981';ctx.shadowBlur=i===0?10:0;ctx.fillRect(p.x*cell+2,p.y*cell+2,16,16)});ctx.shadowBlur=0;
- }
- function stop(){running=false;clearInterval(loop);loop=null}
- function finish(reason){stop();ended=true;msg.textContent=reason+' Game over! Score: '+score+'. Press Restart or Start game to try again.'}
- function tick(){
-  dir=nextDir;
-  // Crossing an edge wraps the snake to the opposite side.
-  const head={x:(snake[0].x+dir.x+grid)%grid,y:(snake[0].y+dir.y+grid)%grid};
-  const eating=food&&head.x===food.x&&head.y===food.y;
-  if(snake.some((p,i)=>i<snake.length-(eating?0:1)&&p.x===head.x&&p.y===head.y)){finish('You hit yourself!');return}
-  if(bombs.some(b=>b.x===head.x&&b.y===head.y)){finish('💥 You hit a bomb!');return}
-  snake.unshift(head);
-  if(eating){score+=10;scoreEl.textContent=score;if(score>best){best=score;bestEl.textContent=best;try{localStorage.setItem('gmhubSnakeBest',String(best))}catch(e){}}placeFood();if(score%50===0){bombs.push(randomEmpty());msg.textContent='More danger! A new bomb appeared.'}}
-  else snake.pop();
-  draw();
- }
- function start(){if(running)return;if(ended)reset();running=true;msg.textContent='Game on! Cross the walls, collect food, and dodge the bombs.';loop=setInterval(tick,125)}
- function reset(){stop();snake=[{x:8,y:9},{x:7,y:9},{x:6,y:9}];dir={x:1,y:0};nextDir={x:1,y:0};score=0;scoreEl.textContent='0';ended=false;food=null;bombs=[];placeFood();placeBombs();draw();msg.textContent='Fresh start! Walls wrap around. Avoid the bombs!'}
- function change(d){const dirs={up:{x:0,y:-1},down:{x:0,y:1},left:{x:-1,y:0},right:{x:1,y:0}};const n=dirs[d];if(n&&!(n.x===-dir.x&&n.y===-dir.y))nextDir=n}
- document.addEventListener('keydown',e=>{if(e.target&&(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)||e.target.isContentEditable))return;const map={ArrowUp:'up',w:'up',W:'up',ArrowDown:'down',s:'down',S:'down',ArrowLeft:'left',a:'left',A:'left',ArrowRight:'right',d:'right',D:'right'};if(map[e.key]){e.preventDefault();change(map[e.key])}});
- document.querySelectorAll('[data-dir]').forEach(b=>b.addEventListener('click',()=>change(b.dataset.dir)));
- // Swipe gestures make the board directly playable on touchscreens.
- let touchStart=null;
- snakeCanvas.addEventListener('pointerdown',e=>{if(e.pointerType==='touch'||e.pointerType==='pen'){touchStart={x:e.clientX,y:e.clientY};e.preventDefault()}},{passive:false});
- snakeCanvas.addEventListener('pointerup',e=>{if(!touchStart)return;const dx=e.clientX-touchStart.x,dy=e.clientY-touchStart.y;touchStart=null;if(Math.max(Math.abs(dx),Math.abs(dy))<18)return;if(Math.abs(dx)>Math.abs(dy))change(dx>0?'right':'left');else change(dy>0?'down':'up')});
- snakeCanvas.addEventListener('pointercancel',()=>{touchStart=null});
- document.getElementById('snakeStart').addEventListener('click',start);
- document.getElementById('snakePause').addEventListener('click',()=>{if(running){stop();msg.textContent='Paused. Press Start game to continue.'}else if(!ended)start()});
- document.getElementById('snakeReset').addEventListener('click',reset);
- reset();
-}
-
-</script>
-
-<script>
-(()=>{
-const $=id=>document.getElementById(id);
-const names=['You','Nova','Pixel','Glitch'],colors=['red','yellow','green','blue'];
-const values=['0','1','2','3','4','5','6','7','8','9','Skip','Reverse','+2'];
-let deck=[],hands=[],discard=[],turn=0,direction=1,currentColor='red',drawnId=null,waitingColor=null,locked=false,finished=false,unoCalled=[true,true,true,true],turnTimer=null;
-let nextId=1;
-function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function makeDeck(){const d=[];for(const color of colors){d.push({id:nextId++,color,value:'0'});for(let n=1;n<=9;n++)for(let k=0;k<2;k++)d.push({id:nextId++,color,value:String(n)});for(const value of ['Skip','Reverse','+2'])for(let k=0;k<2;k++)d.push({id:nextId++,color,value})}for(let k=0;k<4;k++){d.push({id:nextId++,color:'wild',value:'Wild'},{id:nextId++,color:'wild',value:'+4'})}return shuffle(d)}
-function refill(){if(deck.length)return;const top=discard.pop();deck=shuffle(discard);discard=[top]}
-function take(){refill();return deck.pop()}
-function deal(){nextId=1;deck=makeDeck();hands=[[],[],[],[]];for(let n=0;n<7;n++)for(let p=0;p<4;p++)hands[p].push(take());discard=[];let first=take();while(first.color==='wild'||['Skip','Reverse','+2'].includes(first.value)){deck.unshift(first);first=take()}discard.push(first);currentColor=first.color;turn=0;direction=1;drawnId=null;waitingColor=null;locked=false;finished=false;unoCalled=[true,true,true,true];clearTimeout(turnTimer);render();say('Your turn! Match the '+currentColor+' card or its value.')}
-function top(){return discard[discard.length-1]}
-function playable(c){return c.color==='wild'||c.color===currentColor||c.value===top().value}
-function cardText(c){return c.value==='Skip'?'⊘':c.value==='Reverse'?'⇄':c.value==='+2'?'+2':c.value==='+4'?'+4':c.value==='Wild'?'★':c.value}
-function cardClass(c){return c.color==='wild'?'wild':c.color}
-function say(t){$('unoStatus').textContent=t}
-function render(){
- const opp=$('unoOpponents');opp.innerHTML='';
- for(let p=1;p<4;p++){const el=document.createElement('div');el.className='uno-player'+(turn===p?' active':'');el.innerHTML='<b>'+names[p]+'</b>'+hands[p].length+' cards';opp.appendChild(el)}
- const d=top(),discardEl=$('unoDiscard');discardEl.className='uno-card '+(d.color==='wild'?'wild':d.color);discardEl.textContent=cardText(d);discardEl.title=d.color==='wild'?'Wild — '+currentColor:d.color+' '+d.value;
- const hand=$('unoHand');hand.innerHTML='';
- hands[0].forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.className='uno-card '+cardClass(c);b.textContent=cardText(c);b.disabled=finished||locked||turn!==0||waitingColor!==null||!(drawnId?c.id===drawnId:playable(c));b.setAttribute('aria-label',c.color+' '+c.value);const sm=document.createElement('small');sm.textContent=c.color==='wild'?'W':c.color[0].toUpperCase();b.appendChild(sm);b.addEventListener('click',()=>humanPlay(c.id));hand.appendChild(b)});
- $('unoDraw').disabled=finished||locked||turn!==0||drawnId!==null||waitingColor!==null;
- $('unoKeep').disabled=finished||locked||turn!==0||drawnId===null;
- $('unoCall').disabled=finished||hands[0].length!==1||unoCalled[0];
- $('unoColorPicker').hidden=waitingColor===null;
-}
-function drawCards(p,n){for(let i=0;i<n;i++)hands[p].push(take())}
-function next(n=1){turn=(turn+direction*n+4*4)%4;drawnId=null;prepareTurn()}
-function prepareTurn(){
- if(finished)return;
- if(hands[turn].length===1&&!unoCalled[turn]){drawCards(turn,2);unoCalled[turn]=true;if(turn===0)say('You forgot to call UNO! Draw 2 cards.');}
- render();
- if(turn!==0){locked=true;render();turnTimer=setTimeout(aiTurn,850)}
- else{locked=false;render();if(hands[0].length===1)say('Only one card left — press UNO! before the next player moves.');else say('Your turn. Play a matching card or draw one.')}
-}
-function endIfWon(p){if(hands[p].length===0){finished=true;locked=true;clearTimeout(turnTimer);render();say(names[p]+' wins the game! 🎉');return true}return false}
-function applyCard(p,c,chosen){
- discard.push(c);drawnId=null;
- if(c.color==='wild')currentColor=chosen||colors[Math.floor(Math.random()*4)];else currentColor=c.color;
- if(hands[p].length===1){unoCalled[p]=p===0?false:true}
- if(endIfWon(p))return;
- let skip=1;
- if(c.value==='Skip')skip=2;
- if(c.value==='Reverse'){direction*=-1;if(hands.length===2)skip=2}
- if(c.value==='+2'){const target=(p+direction+16)%4;drawCards(target,2);skip=2}
- if(c.value==='+4'){const target=(p+direction+16)%4;drawCards(target,4);skip=2}
- next(skip);
-}
-function humanPlay(id){
- if(locked||turn!==0||finished)return;
- const idx=hands[0].findIndex(c=>c.id===id);if(idx<0)return;const c=hands[0][idx];
- if(drawnId&&id!==drawnId)return;if(!playable(c))return;
- hands[0].splice(idx,1);
- if(c.color==='wild'){waitingColor=c;render();say(c.value+'! Choose the color.');return}
- applyCard(0,c);render();
-}
-$('unoColorPicker').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{if(!waitingColor)return;const c=waitingColor;waitingColor=null;applyCard(0,c,b.dataset.color);render()}));
-$('unoDraw').addEventListener('click',()=>{if(locked||turn!==0||drawnId!==null||finished)return;const c=take();hands[0].push(c);drawnId=c.id;if(playable(c)){say('You drew a playable card. Play it or keep it.')}else{say('No playable card. You drew one and your turn ends.');drawnId=null;next()}render()});
-$('unoKeep').addEventListener('click',()=>{if(drawnId===null||locked||turn!==0)return;drawnId=null;next();render()});
-$('unoCall').addEventListener('click',()=>{if(hands[0].length===1&&!unoCalled[0]){unoCalled[0]=true;say('UNO! You called it in time!');render()}});
-function chooseColor(hand){const counts={red:0,yellow:0,green:0,blue:0};hand.forEach(c=>{if(c.color!=='wild')counts[c.color]++});return colors.sort((a,b)=>counts[b]-counts[a])[0]}
-function aiTurn(){
- if(finished||turn===0)return;
- if(hands[0].length===1&&!unoCalled[0]){drawCards(0,2);unoCalled[0]=true;say('You missed UNO! Draw 2 cards.');}
- const p=turn;let choices=hands[p].filter(playable);
- if(choices.length){choices.sort((a,b)=>{const rank=c=>(c.value==='+4'?5:c.value==='+2'?4:c.value==='Skip'||c.value==='Reverse'?3:c.color==='wild'?2:1);return rank(b)-rank(a)});const c=choices[0];hands[p].splice(hands[p].findIndex(x=>x.id===c.id),1);if(hands[p].length===1)unoCalled[p]=true;applyCard(p,c,c.color==='wild'?chooseColor(hands[p]):undefined);if(!finished)say(names[p]+' played '+c.value+'.');render();return}
- const c=take();hands[p].push(c);
- if(playable(c)){hands[p].splice(hands[p].length-1,1);if(hands[p].length===1)unoCalled[p]=true;applyCard(p,c,c.color==='wild'?chooseColor(hands[p]):undefined);if(!finished)say(names[p]+' drew and played a card.')}
- else{say(names[p]+' drew a card.');next()}
- render();
-}
-$('unoNew').addEventListener('click',deal);
-deal();
-})();
-</script>
-
-
-<script>
-(()=>{
-const canvas=document.getElementById('raceCanvas');if(!canvas)return;
-const ctx=canvas.getContext('2d'),$=id=>document.getElementById(id);
-const lanes=[75,180,285],carW=42,carH=68;
-let lane=1,traffic=[],score=0,best=0,running=false,over=false,last=0,spawn=0,speed=3.2,road=0,raf=0;
-try{best=Number(localStorage.getItem('gmHubRaceBest'))||0}catch(e){}
-$('raceBest').textContent=best;
-function rounded(x,y,w,h,r,color){ctx.fillStyle=color;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill()}
-function drawCar(x,y,color,player=false){
- rounded(x-carW/2,y-carH/2,carW,carH,9,color);
- rounded(x-carW/2+6,y-carH/2+10,carW-12,18,5,player?'#baf7ff':'#263746');
- rounded(x-carW/2+6,y+10,carW-12,14,4,player?'#0c3445':'#111827');
- ctx.fillStyle='#fef3c7';ctx.fillRect(x-carW/2+4,y-carH/2+4,8,5);ctx.fillRect(x+carW/2-12,y-carH/2+4,8,5);
- ctx.fillStyle='#fb7185';ctx.fillRect(x-carW/2+4,y+carH/2-8,8,5);ctx.fillRect(x+carW/2-12,y+carH/2-8,8,5);
-}
-function paint(){
- ctx.clearRect(0,0,360,480);ctx.fillStyle='#176044';ctx.fillRect(0,0,360,480);ctx.fillStyle='#303744';ctx.fillRect(25,0,310,480);
- ctx.fillStyle='#f8fafc';ctx.fillRect(20,0,5,480);ctx.fillRect(335,0,5,480);
- ctx.strokeStyle='#d8dee9';ctx.lineWidth=4;ctx.setLineDash([28,24]);ctx.lineDashOffset=-road;ctx.beginPath();ctx.moveTo(127,0);ctx.lineTo(127,480);ctx.moveTo(233,0);ctx.lineTo(233,480);ctx.stroke();ctx.setLineDash([]);
- traffic.forEach(t=>drawCar(lanes[t.lane],t.y,t.color));
- drawCar(lanes[lane],410,'#8b5cf6',true);
- if(!running){ctx.fillStyle='#05070bbd';ctx.fillRect(25,0,310,480);ctx.textAlign='center';ctx.fillStyle='#fff';ctx.font='bold 25px system-ui';ctx.fillText(over?'CRASH!':'NEON RACER',180,218);ctx.font='15px system-ui';ctx.fillStyle='#b9eaff';ctx.fillText(over?'Press Restart to race again':'Press Start race',180,249)}
-}
-function reset(){lane=1;traffic=[];score=0;speed=3.2;road=0;spawn=0;over=false;running=false;$('raceScore').textContent='0';$('raceStatus').textContent='Ready when you are!';paint()}
-function end(){running=false;over=true;if(score>best){best=score;$('raceBest').textContent=best;try{localStorage.setItem('gmHubRaceBest',best)}catch(e){}}$('raceStatus').textContent='Crash! Final score: '+score+'. Hit Restart to try again.';paint()}
-function frame(time){if(!running)return;const dt=Math.min((time-last)/16.67,2)||1;last=time;road=(road+speed*dt)%52;spawn+=dt;
- if(spawn>Math.max(25,62-score*.18)){spawn=0;let l=Math.floor(Math.random()*3);if(!traffic.some(t=>t.lane===l&&t.y<120))traffic.push({lane:l,y:-55,color:['#ef4444','#f59e0b','#06b6d4','#e879f9','#e5e7eb'][Math.floor(Math.random()*5)],passed:false})}
- traffic.forEach(t=>{t.y+=speed*dt;if(!t.passed&&t.y>450){t.passed=true;score++;$('raceScore').textContent=score;speed=Math.min(8,3.2+score*.09)}});
- traffic=traffic.filter(t=>t.y<540);
- for(const t of traffic){if(t.lane===lane&&Math.abs(t.y-410)<52){end();return}}
- paint();raf=requestAnimationFrame(frame)
-}
-function start(){if(running)return;if(over)reset();running=true;$('raceStatus').textContent='Go! Dodge the traffic!';last=performance.now();raf=requestAnimationFrame(frame)}
-function move(dir){if(running)lane=Math.max(0,Math.min(2,lane+dir));paint()}
-$('raceStart').addEventListener('click',start);$('raceRestart').addEventListener('click',()=>{cancelAnimationFrame(raf);reset();start()});
-$('raceLeft').addEventListener('click',()=>move(-1));$('raceRight').addEventListener('click',()=>move(1));
-document.addEventListener('keydown',e=>{if(e.target&&(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)||e.target.isContentEditable))return;if(['ArrowLeft','ArrowRight','a','A','d','D'].includes(e.key)){e.preventDefault();move(e.key==='ArrowLeft'||e.key==='a'||e.key==='A'?-1:1)}if(e.key===' '&&!running){e.preventDefault();start()}});
-paint();
-})();
-</script>
-
-
-<script>
-(()=>{
-const canvas=document.getElementById('footballCanvas');if(!canvas)return;
-const ctx=canvas.getContext('2d'),$=id=>document.getElementById(id);
-let aim=0,goals=0,shots=0,done=false,anim=null,keeperLane=1,shot=null;
-const targets=[105,200,295];
-function draw(){
- ctx.clearRect(0,0,400,300);
- const grass=ctx.createLinearGradient(0,0,0,300);grass.addColorStop(0,'#27834e');grass.addColorStop(1,'#145333');ctx.fillStyle=grass;ctx.fillRect(0,0,400,300);
- ctx.strokeStyle='#d9fbe5';ctx.lineWidth=3;ctx.strokeRect(24,18,352,264);ctx.strokeRect(105,18,190,95);
- // goal frame and net
- ctx.fillStyle='#e8f4ed';ctx.fillRect(92,18,216,9);ctx.fillRect(92,18,8,105);ctx.fillRect(300,18,8,105);
- ctx.strokeStyle='#c9ded2';ctx.lineWidth=1;for(let x=105;x<300;x+=15){ctx.beginPath();ctx.moveTo(x,29);ctx.lineTo(x,115);ctx.stroke()}for(let y=40;y<116;y+=15){ctx.beginPath();ctx.moveTo(101,y);ctx.lineTo(299,y);ctx.stroke()}
- // penalty spot and arc
- ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(200,248,3,0,Math.PI*2);ctx.fill();
- ctx.strokeStyle='#d9fbe5';ctx.beginPath();ctx.arc(200,248,48,Math.PI*1.15,Math.PI*1.85);ctx.stroke();
- // goalkeeper
- const gx=targets[keeperLane],gy=shot?Math.max(42,70-shot.progress*18):75;
- ctx.save();if(shot&&shot.saved){ctx.translate(gx,gy);ctx.rotate(shot.dive*.55);ctx.translate(-gx,-gy)}
- ctx.strokeStyle='#fbbf24';ctx.lineWidth=10;ctx.lineCap='round';
- ctx.beginPath();ctx.moveTo(gx,gy+12);ctx.lineTo(gx-25,gy+25);ctx.moveTo(gx,gy+12);ctx.lineTo(gx+25,gy+25);ctx.stroke();
- ctx.fillStyle='#facc15';ctx.fillRect(gx-11,gy+8,22,32);ctx.fillStyle='#f3c9a5';ctx.beginPath();ctx.arc(gx,gy,10,0,Math.PI*2);ctx.fill();
- ctx.strokeStyle='#f3c9a5';ctx.lineWidth=8;ctx.beginPath();ctx.moveTo(gx-9,gy+14);ctx.lineTo(gx-31,gy+24);ctx.moveTo(gx+9,gy+14);ctx.lineTo(gx+31,gy+24);ctx.stroke();
- ctx.restore();
- // kicker
- ctx.fillStyle='#e5e7eb';ctx.beginPath();ctx.arc(200,225,9,0,Math.PI*2);ctx.fill();ctx.fillStyle='#2563eb';ctx.fillRect(191,235,18,26);ctx.strokeStyle='#111827';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(195,258);ctx.lineTo(187,275);ctx.moveTo(205,258);ctx.lineTo(213,275);ctx.stroke();
- // ball
- let bx=200,by=215,r=9;if(shot){const p=Math.min(1,shot.progress);bx=200+(targets[shot.aim]-200)*p;by=215-175*p;r=9-3*p}
- ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(bx,by,r,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#111827';ctx.lineWidth=1.5;ctx.stroke();ctx.fillStyle='#111827';ctx.beginPath();ctx.arc(bx,by,3,0,Math.PI*2);ctx.fill();
- if(shot&&shot.result){ctx.fillStyle='#06130bdd';ctx.fillRect(90,135,220,48);ctx.textAlign='center';ctx.font='bold 24px system-ui';ctx.fillStyle=shot.result==='GOAL!'?'#86efac':'#fecaca';ctx.fillText(shot.result,200,167)}
- if(done){ctx.fillStyle='#06130ddd';ctx.fillRect(55,115,290,75);ctx.textAlign='center';ctx.fillStyle='#fff';ctx.font='bold 22px system-ui';ctx.fillText('SHOOTOUT OVER',200,145);ctx.font='bold 17px system-ui';ctx.fillStyle='#86efac';ctx.fillText('You scored '+goals+' / 5',200,173)}
-}
-function selectAim(n){if(done||shot)return;aim=n;document.querySelectorAll('.football-controls button').forEach(b=>b.classList.toggle('active',Number(b.dataset.aim)===n))}
-function takeShot(){
- if(done||shot)return;
- shots++;keeperLane=Math.floor(Math.random()*3);
- const saved=keeperLane===aim;
- shot={aim,progress:0,saved,dive:aim-keeperLane,result:''};
- $('footballShots').textContent=shots+' / 5';
- $('footballStatus').textContent='You take the shot...';
- const tick=()=>{shot.progress=Math.min(1,shot.progress+.055);draw();if(shot.progress>=1){shot.result=saved?'SAVED!':'GOAL!';if(!saved)goals++;$('footballGoals').textContent=goals;$('footballStatus').textContent=saved?'The keeper saved it! Try another corner.':'GOAL! What a finish!';draw();anim=null;shot=null;setTimeout(()=>{if(shots>=5){done=true;$('footballStatus').textContent='Full time! You scored '+goals+' out of 5. Start a new shootout to play again.';draw()}},850)}else anim=requestAnimationFrame(tick)};
- anim=requestAnimationFrame(tick);
-}
-function reset(){if(anim)cancelAnimationFrame(anim);anim=null;aim=0;goals=0;shots=0;done=false;shot=null;keeperLane=1;$('footballGoals').textContent='0';$('footballShots').textContent='0 / 5';$('footballStatus').textContent='Choose your target and take your first shot!';document.querySelectorAll('.football-controls button').forEach(b=>b.classList.toggle('active',Number(b.dataset.aim)===0));draw()}
-document.querySelectorAll('.football-controls button').forEach(b=>b.addEventListener('click',()=>selectAim(Number(b.dataset.aim))));
-$('footballShoot').addEventListener('click',takeShot);$('footballReset').addEventListener('click',reset);draw();
-})();
-</script>
-
-
-<script>
-(()=>{
-const canvas=document.getElementById('gkCanvas');if(!canvas)return;
-const ctx=canvas.getContext('2d'),$=id=>document.getElementById(id);
-let dive=0,saves=0,shots=0,done=false,anim=null,shot=null;
-const xs=[105,200,295];
-function draw(){
- ctx.clearRect(0,0,400,300);
- const grass=ctx.createLinearGradient(0,0,0,300);grass.addColorStop(0,'#27834e');grass.addColorStop(1,'#145333');ctx.fillStyle=grass;ctx.fillRect(0,0,400,300);
- ctx.strokeStyle='#d9fbe5';ctx.lineWidth=3;ctx.strokeRect(24,18,352,264);ctx.strokeRect(105,18,190,95);
- ctx.fillStyle='#e8f4ed';ctx.fillRect(92,18,216,9);ctx.fillRect(92,18,8,105);ctx.fillRect(300,18,8,105);
- ctx.strokeStyle='#c9ded2';ctx.lineWidth=1;for(let x=105;x<300;x+=15){ctx.beginPath();ctx.moveTo(x,29);ctx.lineTo(x,115);ctx.stroke()}for(let y=40;y<116;y+=15){ctx.beginPath();ctx.moveTo(101,y);ctx.lineTo(299,y);ctx.stroke()}
- // Keeper stays in goal, diving toward the selected side
- const gx=shot?xs[shot.dive]:xs[1],gy=shot?80:76;
- ctx.save();if(shot){ctx.translate(gx,gy);ctx.rotate(shot.progress*.22*(shot.dive-1));ctx.translate(-gx,-gy)}
- ctx.strokeStyle='#f3c9a5';ctx.lineWidth=11;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(gx-8,gy+12);ctx.lineTo(gx-32,gy+24);ctx.moveTo(gx+8,gy+12);ctx.lineTo(gx+32,gy+24);ctx.stroke();
- ctx.fillStyle='#22c55e';ctx.fillRect(gx-12,gy+8,24,37);ctx.fillStyle='#f3c9a5';ctx.beginPath();ctx.arc(gx,gy,10,0,Math.PI*2);ctx.fill();
- ctx.strokeStyle='#f3c9a5';ctx.lineWidth=8;ctx.beginPath();ctx.moveTo(gx-10,gy+17);ctx.lineTo(gx-35,gy+24);ctx.moveTo(gx+10,gy+17);ctx.lineTo(gx+35,gy+24);ctx.stroke();
- ctx.fillStyle='#facc15';ctx.beginPath();ctx.arc(gx-37,gy+24,7,0,Math.PI*2);ctx.arc(gx+37,gy+24,7,0,Math.PI*2);ctx.fill();ctx.restore();
- // penalty taker
- ctx.fillStyle='#e5e7eb';ctx.beginPath();ctx.arc(200,225,9,0,Math.PI*2);ctx.fill();ctx.fillStyle='#dc2626';ctx.fillRect(191,235,18,26);ctx.strokeStyle='#111827';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(195,258);ctx.lineTo(187,275);ctx.moveTo(205,258);ctx.lineTo(213,275);ctx.stroke();
- if(shot){let p=Math.min(1,shot.progress),bx=200+(xs[shot.target]-200)*p,by=215-175*p,r=9-3*p;ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(bx,by,r,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#111827';ctx.lineWidth=1.5;ctx.stroke();ctx.fillStyle='#111827';ctx.beginPath();ctx.arc(bx,by,3,0,Math.PI*2);ctx.fill()}
- if(shot&&shot.result){ctx.fillStyle='#06130bdd';ctx.fillRect(90,135,220,48);ctx.textAlign='center';ctx.font='bold 24px system-ui';ctx.fillStyle=shot.result==='SAVED!'?'#86efac':'#fecaca';ctx.fillText(shot.result,200,167)}
- if(done){ctx.fillStyle='#06130ddd';ctx.fillRect(55,115,290,75);ctx.textAlign='center';ctx.fillStyle='#fff';ctx.font='bold 22px system-ui';ctx.fillText('MATCH OVER',200,145);ctx.font='bold 17px system-ui';ctx.fillStyle='#86efac';ctx.fillText('You saved '+saves+' / 5',200,173)}
-}
-function choose(n){if(done||shot)return;dive=n;document.querySelectorAll('.gk-controls button').forEach(b=>b.classList.toggle('active',Number(b.dataset.dive)===n))}
-function attempt(){
- if(done||shot)return;
- shots++;const target=Math.floor(Math.random()*3),saved=target===dive;
- shot={target,dive,progress:0,result:''};$('gkShots').textContent=shots+' / 5';$('gkStatus').textContent='The striker shoots...';
- const tick=()=>{shot.progress=Math.min(1,shot.progress+.055);draw();if(shot.progress>=1){shot.result=saved?'SAVED!':'GOAL!';if(saved)saves++;$('gkSaves').textContent=saves;$('gkStatus').textContent=saved?'Amazing save! You stopped the shot!':'Goal conceded! Pick the right direction next time.';draw();anim=null;shot=null;setTimeout(()=>{if(shots>=5){done=true;$('gkStatus').textContent='Full time! You saved '+saves+' out of 5 shots. Start a new match to play again.';draw()}},850)}else anim=requestAnimationFrame(tick)};
- anim=requestAnimationFrame(tick);
-}
-function reset(){if(anim)cancelAnimationFrame(anim);anim=null;dive=0;saves=0;shots=0;done=false;shot=null;$('gkSaves').textContent='0';$('gkShots').textContent='0 / 5';$('gkStatus').textContent='Choose a direction and get ready!';document.querySelectorAll('.gk-controls button').forEach(b=>b.classList.toggle('active',Number(b.dataset.dive)===0));draw()}
-document.querySelectorAll('.gk-controls button').forEach(b=>b.addEventListener('click',()=>choose(Number(b.dataset.dive))));
-$('gkDive').addEventListener('click',attempt);$('gkReset').addEventListener('click',reset);draw();
-})();
-</script>
-
-
-<script>
-(()=> {
-const canvas=document.getElementById('flappyCanvas'); if(!canvas)return;
-const ctx=canvas.getContext('2d'),$=id=>document.getElementById(id);
-const W=canvas.width,H=canvas.height;
-let bird, pipes, score, running=false, over=false, raf=0, last=0, spawn=0;
-let best=0;try{best=Number(localStorage.getItem('gmFlappyBest')||0)}catch(e){}
-$('flappyBest').textContent=best;
-function reset(){cancelAnimationFrame(raf);bird={x:76,y:180,vy:0,r:12};pipes=[];score=0;spawn=0;running=false;over=false;last=0;$('flappyScore').textContent='0';$('flappyStatus').textContent='Tap the game or press Space to flap!';draw()}
-function flap(){if(over){reset();running=true;bird.vy=-5.4;$('flappyStatus').textContent='Keep flying!';return}if(!running){running=true;$('flappyStatus').textContent='Keep flying!';}bird.vy=-5.4}
-function start(){if(over)reset();if(!running){running=true;flap();}}
-function addPipe(){const gap=116,top=35+Math.random()*(H-gap-115);pipes.push({x:W+8,top, gap,passed:false})}
-function draw(){
- const sky=ctx.createLinearGradient(0,0,0,H);sky.addColorStop(0,'#38bdf8');sky.addColorStop(1,'#dbeafe');ctx.fillStyle=sky;ctx.fillRect(0,0,W,H);
- ctx.fillStyle='rgba(255,255,255,.5)';for(let i=0;i<4;i++){let x=(i*105+25-(score*2)%105);ctx.beginPath();ctx.ellipse(x,55+i%2*38,23,8,0,0,Math.PI*2);ctx.fill()}
- pipes.forEach(p=>{ctx.fillStyle='#16a34a';ctx.fillRect(p.x,0,48,p.top);ctx.fillRect(p.x,p.top-14,54,14);ctx.fillRect(p.x,p.top+p.gap,48,H-p.top-p.gap);ctx.fillRect(p.x-3,p.top+p.gap,54,14);ctx.fillStyle='#4ade80';ctx.fillRect(p.x+7,0,7,p.top-14);ctx.fillRect(p.x+7,p.top+p.gap+14,7,H-p.top-p.gap-14)});
- ctx.fillStyle='#facc15';ctx.beginPath();ctx.arc(bird.x,bird.y,bird.r,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#ca8a04';ctx.lineWidth=2;ctx.stroke();
- ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(bird.x+5,bird.y-4,4,0,Math.PI*2);ctx.fill();ctx.fillStyle='#111827';ctx.beginPath();ctx.arc(bird.x+6,bird.y-4,1.8,0,Math.PI*2);ctx.fill();
- ctx.fillStyle='#f97316';ctx.beginPath();ctx.moveTo(bird.x+10,bird.y+1);ctx.lineTo(bird.x+20,bird.y+5);ctx.lineTo(bird.x+10,bird.y+8);ctx.fill();
- ctx.fillStyle='#a16207';ctx.fillRect(0,H-10,W,10);
- if(!running&&!over){ctx.fillStyle='rgba(15,23,42,.78)';ctx.font='bold 19px system-ui';ctx.textAlign='center';ctx.fillText('TAP TO FLY',W/2,H/2+72)}
- if(over){ctx.fillStyle='rgba(15,23,42,.7)';ctx.fillRect(25,145,W-50,100);ctx.fillStyle='white';ctx.textAlign='center';ctx.font='bold 24px system-ui';ctx.fillText('GAME OVER',W/2,185);ctx.font='15px system-ui';ctx.fillText('Tap or press Restart to try again',W/2,215)}
-}
-function end(){running=false;over=true;if(score>best){best=score;$('flappyBest').textContent=best;try{localStorage.setItem('gmFlappyBest',String(best))}catch(e){}}$('flappyStatus').textContent='Game over! You scored '+score+'. Try again!';draw()}
-function loop(t){if(!running)return;const dt=Math.min((t-last)/16.67||1,2);last=t;bird.vy+=.27*dt;bird.y+=bird.vy*dt;spawn+=dt;if(spawn>92){addPipe();spawn=0}
- pipes.forEach(p=>{p.x-=2.15*dt;if(!p.passed&&p.x+48<bird.x){p.passed=true;score++;$('flappyScore').textContent=score}});
- pipes=pipes.filter(p=>p.x>-60);
- if(bird.y-bird.r<0||bird.y+bird.r>H-10||pipes.some(p=>bird.x+bird.r>p.x&&bird.x-bird.r<p.x+48&&(bird.y-bird.r<p.top||bird.y+bird.r>p.top+p.gap))){end();return}
- draw();raf=requestAnimationFrame(loop)}
-function launch(){if(over)reset();if(!running){running=true;last=0;raf=requestAnimationFrame(loop)}flap()}
-canvas.addEventListener('pointerdown',e=>{e.preventDefault();launch()});
-$('flappyStart').addEventListener('click',()=>{if(!running){if(over)reset();running=true;last=0;raf=requestAnimationFrame(loop)}flap()});
-$('flappyRestart').addEventListener('click',()=>{reset();running=true;last=0;raf=requestAnimationFrame(loop);flap()});
-document.addEventListener('keydown',e=>{if(['Space','ArrowUp'].includes(e.code)&&document.getElementById('flappy').getBoundingClientRect().top<window.innerHeight&&document.getElementById('flappy').getBoundingClientRect().bottom>0){e.preventDefault();launch()}});
-reset();
-})();
-</script>
-
-
-<script>
-(()=>{
-const duo=[
-['ttt','❎','Tic-Tac-Toe','Classic 3×3 strategy','Two-player + AI'],
-['hotpotato','🥔','Hot Potato','Pass the potato before the timer ends','Two-player + AI'],
-['rps','✊','Rock Paper Scissors','Outplay the computer or a friend','Two-player + AI'],
-['higher','🃏','Higher Card','Pick the higher card to win the round','Two-player + AI'],
-['mathduel','➕','Quick Math Duel','Race to answer simple sums','Two-player + AI']
-];
-const solo=[
-['memory','🧠','Memory Match','Find all matching pairs'],['coin','🪙','Coin Flip','Guess heads or tails'],['mines','💣','Minesweeper','Reveal safe squares and avoid mines'],['dice','🎲','Dice Roll','Roll the dice and beat your best score'],['whack','🔨','Whack-a-Mole','Hit the mole before it moves'],['guess','🎯','Number Guess','Find the secret number'],['hangman','🔤','Hangman','Guess the hidden word'],['treasure','🗝️','Treasure Pick','Choose a chest to find the treasure'],['math','➗','Math Rush','Solve quick math questions'],['clicker','👆','Mega Clicker','Click fast and build your score'],['aim','🎯','Aim Trainer','Hit the moving target'],['wheel','🎡','Lucky Wheel','Spin the wheel for a surprise'],['lights','💡','Lights Out','Turn every light off'],['sequence','🧩','Number Sequence','Find the missing number'],['taprace','👆','Tap Race','Tap ten times as fast as you can']
-];
-const $=id=>document.getElementById(id), panel=$('newGamePanel'), controls=$('ngControls'), play=$('ngPlay'), status=$('ngStatus');
-const btn=(label,fn)=>{let b=document.createElement('button');b.textContent=label;b.onclick=fn;controls.append(b);return b};
-function cards(arr,target,tag){const host=$(target);if(!host)return;arr.forEach(g=>{let b=document.createElement('button');b.type='button';b.className='extra-game';b.innerHTML='<div class="eg-icon">'+g[1]+'</div><h3>'+g[2]+'</h3><p>'+g[3]+'</p><small>'+tag+'</small>';b.addEventListener('click',()=>{try{start(g[0])}catch(err){console.error('Game failed to open:',g[0],err);$('ngTitle').textContent='Game could not start';$('ngDesc').textContent='Please choose another game or refresh the page.';say('Sorry — this game hit an error.')}});host.appendChild(b)})}
-cards(duo,'duoGameList','2 players / AI');cards(solo,'soloGameList','Solo game');
-let mode='ai',game='',board=[],turn=0,over=false,secret=0,seq=[],step=0,score=0,timer=null;
-function celebrate(){let el=document.createElement('div');el.className='win-confetti';el.textContent='🎉 🏆 ✨';document.body.append(el);setTimeout(()=>el.remove(),1400);panel.classList.remove('win-flash');void panel.offsetWidth;panel.classList.add('win-flash')}function say(t){status.textContent=t;if(/\\b(you win|you won|you guessed right|you found|you solved|you matched|correct!|board cleared|all lights out|jackpot|you got it)\\b/i.test(t))celebrate()}function cellBoard(n,cols,fn){play.innerHTML='';let grid=document.createElement('div');grid.className='ng-board';grid.style.gridTemplateColumns='repeat('+cols+',1fr)';for(let i=0;i<n;i++){let b=document.createElement('button');b.className='ng-cell';b.textContent=board[i]||'';b.onclick=()=>fn(i);grid.append(b)}play.append(grid)}
-function start(id){game=id;over=false;board=[];turn=0;score=0;controls.innerHTML='';play.innerHTML='';say('');let info=[...duo,...solo].find(x=>x[0]===id);$('ngTitle').textContent=info[2];$('ngDesc').textContent=info[3];panel.scrollIntoView({behavior:'smooth',block:'center'});
-if(duo.some(x=>x[0]===id)){mode='ai';btn('Play vs AI',()=>{mode='ai';start(id)});btn('2 Players',()=>{mode='2p';start(id)});say(mode==='ai'?'Your turn (X). Playing against AI.':'Player 1 (X) starts.');if(id==='ttt'||id==='gomoku')drawMarks(id);else if(id==='rps')drawRps();else if(['hotpotato','higher','mathduel'].includes(id))drawSimpleDuel(id);return}
-soloStart(id)}
-function drawMarks(id){let n=id==='ttt'?9:225,c=id==='ttt'?3:15;board=Array(n).fill('');function render(){cellBoard(n,c,i=>{if(over||board[i])return;board[i]=turn%2?'O':'X';turn++;if(checkLine(id)){say((turn%2?'X':'O')+' wins!');over=true}else if(board.every(Boolean)){say('Draw!');over=true}else if(mode==='ai'){let choices=board.map((v,i)=>v?-1:i).filter(i=>i>=0);let pick=choices[Math.floor(Math.random()*choices.length)];board[pick]='O';turn++;if(checkLine(id)){say('AI wins!');over=true}else say('Your turn (X).')}else say('Player '+(turn%2+1)+' turn.');render()})}render()}
-function checkLine(id){let n=id==='ttt'?3:15,need=id==='ttt'?3:5;for(let r=0;r<n;r++)for(let c=0;c<n;c++){let v=board[r*n+c];if(!v)continue;for(let [dr,dc] of [[0,1],[1,0],[1,1],[1,-1]]){let ok=true;for(let k=1;k<need;k++){let rr=r+dr*k,cc=c+dc*k;if(rr<0||rr>=n||cc<0||cc>=n||board[rr*n+cc]!==v){ok=false;break}}if(ok)return true}}return false}
-function drawConnect(){board=Array(42).fill('');let grid=document.createElement('div');grid.className='ng-board';grid.style.gridTemplateColumns='repeat(7,1fr)';for(let c=0;c<7;c++){let b=document.createElement('button');b.className='ng-cell';b.textContent='↓';b.onclick=()=>drop(c);grid.append(b)}for(let i=0;i<42;i++){let b=document.createElement('div');b.className='ng-cell';b.style.background=board[i]==='R'?'#e44':board[i]==='Y'?'#edc83e':'#21142e';b.textContent=board[i]||'·';grid.append(b)}play.append(grid)}
-function drop(c){if(over)return;let r=5;while(r>=0&&board[r*7+c])r--;if(r<0)return;board[r*7+c]=turn%2?'Y':'R';turn++;drawConnect();if(connectWin()){say('Player '+(turn%2+1)+' wins!');over=true;return}if(mode==='ai'){let cols=[0,1,2,3,4,5,6].filter(x=>!board[x]);if(cols.length){let x=cols[Math.floor(Math.random()*cols.length)],rr=5;while(rr>=0&&board[rr*7+x])rr--;board[rr*7+x]='Y';turn++;drawConnect();if(connectWin()){say('AI wins!');over=true}}}else say('Player '+(turn%2+1)+' turn.')}
-function connectWin(){for(let r=0;r<6;r++)for(let c=0;c<7;c++){let v=board[r*7+c];if(v&&[[0,1],[1,0],[1,1],[1,-1]].some(([dr,dc])=>{for(let k=1;k<4;k++){let rr=r+dr*k,cc=c+dc*k;if(rr<0||rr>=6||cc<0||cc>=7||board[rr*7+cc]!==v)return false}return true}))return true}return false}
-function drawSimpleDuel(id){let first=null;let labels=id==='hotpotato'?['Pass','Hold']:id==='higher'?['Low card','High card']:['1','2','3','4','5','6'];let title=id==='hotpotato'?'Hot Potato':id==='higher'?'Higher Card':'Quick Math Duel';say(mode==='ai'?'Play against the computer.':'Player 1 starts.');labels.forEach((label,i)=>btn(label,()=>{if(id==='hotpotato'){let result=Math.random()<.5?'You got caught holding it!':'You passed it safely!';if(mode==='2p')result='Player '+(turn%2+1)+' chose '+label+'.';say(result);turn++;if(turn>=5){say('Round over! New round?');turn=0;celebrate()}return}if(id==='higher'){let card=1+Math.floor(Math.random()*13),op=1+Math.floor(Math.random()*13);say('Your card: '+card+' • '+(mode==='ai'?'AI card: ':'Rival card: ')+op+' — '+(card===op?'Draw!':card>op?'You win!':'Opponent wins!'));if(card>op)celebrate();return}let a=1+Math.floor(Math.random()*9),b=1+Math.floor(Math.random()*9),answer=a+b;let pick=Number(label);if(mode==='ai'){say('Quick sum: '+a+' + '+b+' = '+answer+'. Choose the matching answer next round!');let opts=[answer,answer+1,Math.max(1,answer-1),answer+2].sort(()=>Math.random()-.5);controls.innerHTML='';opts.forEach(v=>btn(String(v),()=>{say(v===answer?'Correct! You win this round!':'Not quite! The answer was '+answer);if(v===answer)celebrate()}))}else{if(first===null){first=answer;say('Player 1 got a sum. Player 2, solve: '+a+' + '+b);return}say(pick===first?'Correct answer!':'Try again!');first=null}}))}
-function drawRps(){let first=null;['✊ Rock','✋ Paper','✌️ Scissors'].forEach((x,i)=>btn(x,()=>{let choices=['Rock','Paper','Scissors'],a=choices[i];if(mode==='2p'&&!first){first=a;say('Player 1 locked in. Player 2, choose now.');return}let other=mode==='ai'?choices[Math.floor(Math.random()*3)]:first;let win=a===other?'Draw!':(a==='Rock'&&other==='Scissors'||a==='Paper'&&other==='Rock'||a==='Scissors'&&other==='Paper'?'Player 2 wins!':'Player 1 wins!');say(mode==='ai'?a+' vs AI '+other+' — '+(win==='Player 1 wins!'?'You win!':win==='Draw!'?'Draw!':'AI wins!'): 'Player 1: '+other+' • Player 2: '+a+' — '+win);first=null}))}
-function drawDots(){board=Array(9).fill(0);btn('New round',()=>start('dots'));say('Claim squares; the player with the most wins.');function render(){cellBoard(9,3,i=>{if(over||board[i])return;board[i]=turn%2+1;turn++;if(mode==='ai'){let empty=board.map((v,j)=>v?-1:j).filter(j=>j>=0);if(empty.length)board[empty[Math.floor(Math.random()*empty.length)]]=2;turn++}let one=board.filter(x=>x===1).length,two=board.filter(x=>x===2).length;if(board.every(Boolean)){over=true;say(one===two?'Draw!':one>two?'You win!':'Opponent wins!')}else say(mode==='ai'?'Your turn.':'Player '+(turn%2+1)+' turn.');render()});play.querySelectorAll('button').forEach((b,i)=>{if(board[i])b.textContent=board[i]===1?'🔵':'🟣'})}render()}
-function soloStart(id){if(id==='memory'){let a=[1,1,2,2,3,3,4,4,5,5,6,6].sort(()=>Math.random()-.5),opened=[],done=[];cellBoard(12,4,i=>{if(opened.length===2||done.includes(i)||opened.includes(i))return;opened.push(i);play.querySelectorAll('button')[i].textContent=a[i];if(opened.length===2){if(a[opened[0]]===a[opened[1]])done.push(...opened);setTimeout(()=>{if(done.length===12)say('You matched every pair!');else{opened.forEach(j=>play.querySelectorAll('button')[j].textContent='?');opened=[]}},650)}});play.querySelectorAll('button').forEach(b=>b.textContent='?');return}
-if(id==='coin'){['Heads','Tails'].forEach(x=>btn(x,()=>{let result=Math.random()<.5?'Heads':'Tails';say(result===x?'You guessed right! 🎉':'It was '+result+'. Try again!')}));return}
-if(id==='dice'){btn('Roll dice 🎲',()=>{let n=1+Math.floor(Math.random()*6);say('You rolled '+n+'! '+(n===6?'Amazing roll!':'Roll again to get a 6.'))});return}
-if(id==='treasure'){let prize=Math.floor(Math.random()*3);['Chest 1','Chest 2','Chest 3'].forEach((x,i)=>btn(x,()=>say(i===prize?'You found the treasure! 🏆':'Empty chest! Try another round.')));return}
-if(id==='wheel'){
- const prizes=['10 points','20 points','A bonus','Try again','JACKPOT!','50 points','Extra turn','Mystery prize'];
- const colors=['#8b5cf6','#ec4899','#06b6d4','#f59e0b','#22c55e','#6366f1','#e879f9','#14b8a6'];
- const stage=document.createElement('div');stage.className='wheel-stage';
- const pointer=document.createElement('div');pointer.className='wheel-pointer';pointer.textContent='▼';
- const canvas=document.createElement('canvas');canvas.width=canvas.height=360;canvas.className='lucky-wheel';
- const ctx=canvas.getContext('2d'),cx=180,cy=180,r=166;
- prizes.forEach((prize,i)=>{const a=-Math.PI/2+i*Math.PI/4,b=a+Math.PI/4;ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,r,a,b);ctx.closePath();ctx.fillStyle=colors[i];ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.stroke();ctx.save();ctx.translate(cx,cy);ctx.rotate(a+Math.PI/8);ctx.textAlign='right';ctx.textBaseline='middle';ctx.fillStyle='#fff';ctx.font='bold 14px system-ui';ctx.shadowColor='#000';ctx.shadowBlur=3;ctx.fillText(prize, r-13,0,112);ctx.restore()});
- ctx.beginPath();ctx.arc(cx,cy,25,0,Math.PI*2);ctx.fillStyle='#160d22';ctx.fill();ctx.lineWidth=4;ctx.strokeStyle='#fff';ctx.stroke();
- stage.append(pointer,canvas);play.append(stage);
- let spinning=false;
- btn('SPIN 🎡',()=>{if(spinning)return;spinning=true;say('The wheel is spinning…');const extra=1800+Math.random()*1440;const rotation=extra+Math.random()*360;canvas.style.transition='none';canvas.style.transform='rotate(0deg)';requestAnimationFrame(()=>requestAnimationFrame(()=>{canvas.style.transition='transform 5s cubic-bezier(.12,.72,.12,1)';canvas.style.transform='rotate('+rotation+'deg)'}));canvas.ontransitionend=()=>{const angle=((360-(rotation%360))%360);const index=Math.floor(angle/45)%prizes.length;spinning=false;canvas.ontransitionend=null;if(prizes[index]==='JACKPOT!'){say('🎉 JACKPOT! YOU HIT THE BIG PRIZE! 🏆');stage.classList.add('jackpot-win');const banner=document.createElement('div');banner.className='jackpot-banner';banner.innerHTML='<strong>JACKPOT!</strong><span>🏆 YOU HIT THE BIG PRIZE! 🏆</span>';stage.append(banner);for(let i=0;i<42;i++){const bit=document.createElement('i');bit.className='jackpot-confetti';bit.style.setProperty('--x',Math.round(Math.random()*100)+'%');bit.style.setProperty('--delay',(Math.random()*.65)+'s');bit.style.setProperty('--drift',(Math.round(Math.random()*160-80))+'px');bit.textContent=['✨','🎉','⭐','💎','🏆'][i%5];stage.append(bit)}setTimeout(()=>{stage.classList.remove('jackpot-win');banner.remove();stage.querySelectorAll('.jackpot-confetti').forEach(x=>x.remove())},3200)}else say('🎉 The wheel landed on: '+prizes[index]+'!')}});
- return}
-if(id==='taprace'){let n=0;btn('TAP!',()=>{n++;say('Taps: '+n+' / 10');if(n>=10){say('You won the tap race! 🏆');celebrate()}});btn('Restart',()=>start(id));return}
-if(id==='mines'){let bombs=new Set([2,7,13,19,22]),revealed=new Set();cellBoard(25,5,i=>{if(revealed.has(i))return;revealed.add(i);let b=play.querySelectorAll('button')[i];if(bombs.has(i)){b.textContent='💣';say('Boom! Start a new board.')}else{let count=[i-5,i+5,i-1,i+1].filter(x=>bombs.has(x)).length;b.textContent=count||'✓';if(revealed.size===20)say('Board cleared!')}});btn('New board',()=>start('mines'));return}
-if(id==='simon'){seq=[];step=0;btn('Start sequence',()=>{seq.push(1+Math.floor(Math.random()*4));say('Repeat: '+seq.join(' – '));});['🟥','🟦','🟩','🟨'].forEach((x,i)=>btn(x,()=>{if(!seq.length)return;if(i+1!==seq[step]){say('Wrong sequence!');seq=[];step=0;return}step++;if(step===seq.length){step=0;seq.push(1+Math.floor(Math.random()*4));say('Great! Next sequence: '+seq.join(' – '))}}));return}
-if(id==='whack'||id==='aim'){let target=0;function spawn(){target=Math.floor(Math.random()*9);cellBoard(9,3,i=>{if(i===target){score++;say('Hits: '+score);spawn()}else say('Miss! Try again.')});play.querySelectorAll('button')[target].textContent='🎯'}spawn();return}
-if(id==='guess'){secret=1+Math.floor(Math.random()*100);let inp=document.createElement('input');inp.type='number';inp.placeholder='Guess 1–100';inp.className='ng-cell';play.append(inp);btn('Guess',()=>say(+inp.value===secret?'Correct! You got it!':+inp.value<secret?'Too low!':'Too high!'));btn('New number',()=>start('guess'));return}
-if(id==='hangman'||id==='scramble'){let words=['GAMING','HABIBI','ARCADE','PLAYER','CHESS'],w=words[Math.floor(Math.random()*words.length)],guess=[];let inp=document.createElement('input');inp.maxLength=1;inp.placeholder='Type a letter';inp.className='ng-cell';play.append(inp);let out=document.createElement('p');play.append(out);function upd(){out.textContent=w.split('').map(x=>guess.includes(x)?x:'_').join(' ');if(w.split('').every(x=>guess.includes(x)))say('You solved it!')}upd();btn('Try letter',()=>{guess.push(inp.value.toUpperCase());upd()});return}
-if(id==='math'){let a=2+Math.floor(Math.random()*20),b=2+Math.floor(Math.random()*20),inp=document.createElement('input');inp.placeholder=a+' + '+b+' = ?';inp.className='ng-cell';play.append(inp);btn('Check',()=>say(+inp.value===a+b?'Correct!':'Try again!'));return}
-if(id==='clicker'){let n=0;btn('CLICK ME!',()=>{say('Clicks: '+(++n));});btn('Reset',()=>start(id));return}
-if(id==='color'){let c=['RED','BLUE','GREEN','YELLOW'][Math.floor(Math.random()*4)];$('ngDesc').textContent='Tap the matching color: '+c;['RED','BLUE','GREEN','YELLOW'].forEach(x=>btn(x,()=>say(x===c?'Correct!':'Not quite — try again.')));return}
-if(id==='lights'){board=Array(25).fill(0).map(()=>Math.random()<.35?1:0);function render(){cellBoard(25,5,i=>{[i,i-5,i+5,i-1,i+1].forEach(j=>{if(j>=0&&j<25)board[j]^=1});render();if(board.every(x=>!x))say('All lights out — you win!')});play.querySelectorAll('button').forEach((b,i)=>b.textContent=board[i]?'💡':'·')}render();return}
-if(id==='sequence'){let n=2+Math.floor(Math.random()*8),v=n*3;let inp=document.createElement('input');inp.placeholder='What comes next? '+(n*3-6)+', '+(n*3-3)+', '+v+', ?';inp.className='ng-cell';play.append(inp);btn('Answer',()=>say(+inp.value===v+3?'Correct!':'Not quite!'));return}
-if(id==='reaction'){let b=btn('Start',()=>{b.disabled=true;say('Wait for the signal...');setTimeout(()=>{b.disabled=false;b.textContent='TAP NOW!';let t=Date.now();b.onclick=()=>say('Reaction: '+(Date.now()-t)+' ms')},1200+Math.random()*2200)});return}
-}
-const themeBtn=$('themeToggle');let light=false;try{light=localStorage.getItem('habibiTheme')==='light'}catch(e){}document.body.classList.toggle('light-mode',light);themeBtn.textContent=light?'🌙 Dark mode':'☀️ Light mode';themeBtn.addEventListener('click',()=>{light=!light;document.body.classList.toggle('light-mode',light);themeBtn.textContent=light?'🌙 Dark mode':'☀️ Light mode';try{localStorage.setItem('habibiTheme',light?'light':'dark')}catch(e){}});$('year').textContent=new Date().getFullYear();
-})();
-</script>
-
+<section id="studio"><div class="wrap">
+<div class="studio-head"><div><div class="eyebrow">Private owner area</div><h1>Artist studio</h1><p class="hint">Only the site owner should have an account here.</p></div><button class="btn secondary small hidden" id="logoutBtn" type="button">Log out</button></div>
+<div class="admin-card" id="loginCard" style="max-width:480px;margin:auto"><h2 style="font:600 1.7rem 'Playfair Display',serif">Owner login</h2><p class="hint">Sign in with the owner account created in Supabase. Public visitors cannot create accounts here.</p><form id="loginForm"><div class="field"><label for="ownerEmail">Owner email</label><input id="ownerEmail" type="email" required autocomplete="username"></div><div class="field"><label for="ownerPassword">Password</label><input id="ownerPassword" type="password" required autocomplete="current-password"></div><button class="btn" type="submit">Log in to studio</button><div class="status" id="loginStatus" role="status"></div></form></div>
+<div id="dashboard" class="hidden"><div class="studio-grid">
+<div class="admin-card"><div class="eyebrow">Your portfolio</div><h2 style="font:600 1.65rem 'Playfair Display',serif">Add a new drawing</h2><form id="artForm"><div class="field"><label for="artTitle">Artwork title *</label><input id="artTitle" required maxlength="100" placeholder="e.g. Pencil portrait"></div><div class="field"><label for="artCategory">Category</label><select id="artCategory"><option>Portrait</option><option>Hand drawing</option><option>Eye drawing</option><option>Pet portrait</option><option>Other</option></select></div><div class="field"><label for="artDescription">Description</label><textarea id="artDescription" maxlength="500" placeholder="A short description of this artwork"></textarea></div><div class="field"><label for="artPrice">Price (optional)</label><input id="artPrice" maxlength="40" placeholder="e.g. From €35"></div><div class="field"><label for="artImage">Artwork photo *</label><input id="artImage" type="file" accept="image/*" required><span class="hint">JPG, PNG or WEBP. Maximum 8 MB.</span></div><button class="btn" type="submit" id="artSubmit">Upload artwork</button><div class="status" id="artStatus" role="status"></div></form></div>
+<div class="admin-card"><div class="eyebrow">Manage your work</div><h2 style="font:600 1.65rem 'Playfair Display',serif">Published artwork</h2><div class="manage-list" id="manageList"><p class="hint">Your uploaded drawings will appear here.</p></div></div>
+</div><div class="admin-card" style="margin-top:22px"><div class="eyebrow">Customer messages</div><h2 style="font:600 1.65rem 'Playfair Display',serif">Custom drawing requests</h2><div class="orders-list" id="ordersList"><p class="hint">New customer requests will appear here.</p></div><div class="status" id="ordersStatus" role="status"></div></div></div>
+</div></section>
+<footer><div class="wrap footer-row"><span>© <span id="year"></span> FAHADPAINTER · Original art, made with care.</span><a class="owner-link" href="#studio" id="ownerAccess">Owner access</a></div></footer>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 (()=>{
  const SUPABASE_URL='https://iagedjpjsrzvcfdrdzgn.supabase.co';
  const SUPABASE_PUBLISHABLE_KEY='sb_publishable__Lbj00nBf67_zlgVBtpGCQ_vwVMuwTi';
- const status=document.getElementById('habibiAuthStatus');
- const scoreStatus=document.getElementById('scoreStatus');
- const form=document.getElementById('habibiAuthForm');
- if(!form||!window.supabase)return;
- const client=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
- let signingUp=true,currentUser=null;
- const el=id=>document.getElementById(id);
- const say=(node,msg)=>{if(node)node.textContent=msg};
- function showMode(){
-  el('accountFormTitle').textContent=signingUp?'Create your account':'Welcome back';
-  el('habibiAuthSubmit').textContent=signingUp?'Sign up':'Log in';
-  el('habibiUsername').style.display=signingUp?'block':'none';
-  el('authSwitchText').textContent=signingUp?'Already have an account?':'New to HABIBI?';
-  el('authSwitch').textContent=signingUp?'Log in':'Sign up';
-  el('habibiPassword').autocomplete=signingUp?'new-password':'current-password';
+ const client=window.supabase?.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+ const $=id=>document.getElementById(id);
+ const say=(id,msg,kind='')=>{const n=$(id);if(n){n.textContent=msg;n.className='status '+kind}};
+ const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ $('year').textContent=new Date().getFullYear();
+ let currentUser=null,artworks=[];
+ const studio=()=>{const on=location.hash==='#studio';$('publicSite').classList.toggle('hidden',on);$('siteHeader').classList.toggle('hidden',on);$('studio').classList.toggle('active',on);if(on)refreshSession();};
+ window.addEventListener('hashchange',studio);
+ $('ownerAccess').addEventListener('click',()=>{});
+ async function loadGallery(){
+  if(!client)return;
+  const {data,error}=await client.from('artworks').select('*').order('created_at',{ascending:false});
+  if(error){$('galleryGrid').innerHTML='<div class="empty-gallery">The artwork gallery is being set up. Please check back soon.</div>';return;}
+  artworks=data||[];
+  $('galleryGrid').innerHTML=artworks.length?artworks.map(a=>'<article class="art-card"><img loading="lazy" src="'+escapeHtml(a.image_url)+'" alt="'+escapeHtml(a.title)+'"><div class="art-info"><h3>'+escapeHtml(a.title)+'</h3><p>'+escapeHtml(a.description||a.category||'Original artwork')+'</p><div class="art-meta"><span>'+escapeHtml(a.category||'Artwork')+'</span><span>'+escapeHtml(a.price||'Ask for price')+'</span></div></div></article>').join(''):'<div class="empty-gallery">Your artwork gallery is ready.<br>New drawings will appear here when Fahad uploads them.</div>';
  }
- el('authSwitch').addEventListener('click',e=>{e.preventDefault();signingUp=!signingUp;say(status,'');showMode()});
- form.addEventListener('submit',async e=>{
-  e.preventDefault();say(status,'Please wait…');el('habibiAuthSubmit').disabled=true;
-  const email=el('habibiEmail').value.trim(),password=el('habibiPassword').value;
+ $('orderForm').addEventListener('submit',async e=>{
+  e.preventDefault();if(!client){say('orderStatus','The order form is temporarily unavailable. Please try again later.','bad');return;}
+  const btn=$('orderSubmit');btn.disabled=true;btn.textContent='Sending request…';
   try{
-   if(signingUp){
-    const username=el('habibiUsername').value.trim();
-    if(!username){say(status,'Choose a player name first.');return}
-    const {data,error}=await client.auth.signUp({email,password,options:{data:{username},emailRedirectTo:'https://yusufalaaw15-bit.github.io/gm-hub/'} });
-    if(error)throw error;
-    if(data.session){say(status,'Account created! You are signed in.')}
-    else{say(status,'Account created! Check your email to confirm, then log in.')}
-   }else{
-    const {error}=await client.auth.signInWithPassword({email,password});if(error)throw error;say(status,'Welcome back!');
-   }
-  }catch(err){say(status,err.message||'Could not complete sign in.')}
-  finally{el('habibiAuthSubmit').disabled=false}
+   const file=$('referencePhoto').files[0];let photoUrl=null;
+   if(file){if(file.size>5*1024*1024)throw new Error('Please choose a photo smaller than 5 MB.');const path='customer-refs/'+crypto.randomUUID()+'-'+file.name.replace(/[^a-zA-Z0-9._-]/g,'_');const up=await client.storage.from('drawing-requests').upload(path,file,{upsert:false});if(up.error)throw up.error;photoUrl=client.storage.from('drawing-requests').getPublicUrl(path).data.publicUrl;}
+   const payload={customer_name:$('customerName').value.trim(),customer_email:$('customerEmail').value.trim(),drawing_type:$('drawingType').value,size_preference:$('size').value,details:$('details').value.trim(),reference_photo_url:photoUrl};
+   const {error}=await client.from('drawing_requests').insert(payload);if(error)throw error;
+   $('orderForm').reset();say('orderStatus','Thank you! Your drawing request has been sent. I’ll review it and get back to you.','good');
+  }catch(err){say('orderStatus',err.message||'Could not send your request. Please try again.','bad');}
+  finally{btn.disabled=false;btn.textContent='Send drawing request ↗';}
  });
- el('habibiLogout').addEventListener('click',async()=>{const {error}=await client.auth.signOut();say(status,error?error.message:'You are logged out.')});
- async function refreshLeaderboard(){
-  const host=el('leaderboardRows');host.innerHTML='';
-  const {data,error}=await client.from('leaderboard_scores').select('username,game,score,created_at').order('score',{ascending:false}).limit(10);
-  if(error){console.error('Leaderboard query failed:',error);const p=document.createElement('p');p.className='account-muted';p.textContent='Leaderboard error: '+(error.message||error.code||'Unknown error');host.append(p);return}
-  if(!data.length){const p=document.createElement('p');p.className='account-muted';p.textContent='No scores yet. Be the first on the board!';host.append(p);return}
-  data.forEach((r,i)=>{const row=document.createElement('div');row.className='leader-row';const rank=document.createElement('strong');rank.textContent=['🥇','🥈','🥉'][i]||('#'+(i+1));const name=document.createElement('span');name.textContent=(r.username||'Player')+' · '+(r.game||'Game');const score=document.createElement('strong');score.textContent=Number(r.score).toLocaleString();row.append(rank,name,score);host.append(row)});
- }
- el('habibiScoreForm').addEventListener('submit',async e=>{
-  e.preventDefault();if(!currentUser){say(scoreStatus,'Log in before submitting a score.');return}
-  const game=el('scoreGame').value.trim(),score=Number(el('scoreValue').value);
-  const username=currentUser.user_metadata?.username||currentUser.email?.split('@')[0]||'Player';
-  const {error}=await client.from('leaderboard_scores').insert({user_id:currentUser.id,username,game,score});
-  say(scoreStatus,error?error.message:'Score submitted!');if(!error){el('habibiScoreForm').reset();refreshLeaderboard()}
+ $('loginForm').addEventListener('submit',async e=>{
+  e.preventDefault();if(!client){say('loginStatus','Could not connect to the account service.','bad');return;}
+  const {error}=await client.auth.signInWithPassword({email:$('ownerEmail').value.trim(),password:$('ownerPassword').value});
+  if(error){say('loginStatus',error.message,'bad');return;}await refreshSession();
  });
- async function updateUser(user){
-  currentUser=user;const logged=!!user;
-  el('habibiLogout').style.display=logged?'inline-block':'none';
-  el('habibiScoreForm').style.display=logged?'block':'none';
-  el('habibiUsername').required=signingUp;
-  if(logged)say(status,'Signed in as '+(user.user_metadata?.username||user.email)+'.');
-  refreshLeaderboard();
+ async function refreshSession(){
+  if(!client)return;
+  const {data}=await client.auth.getSession();currentUser=data.session?.user||null;
+  $('loginCard').classList.toggle('hidden',!!currentUser);$('dashboard').classList.toggle('hidden',!currentUser);$('logoutBtn').classList.toggle('hidden',!currentUser);
+  if(currentUser){await Promise.all([loadGallery(),loadOrders()]);renderManage();}
  }
- client.auth.getSession().then(({data})=>updateUser(data.session?.user||null));
- client.auth.onAuthStateChange((_event,session)=>updateUser(session?.user||null));
- showMode();
+ $('logoutBtn').addEventListener('click',async()=>{await client.auth.signOut();currentUser=null;location.hash='home';$('dashboard').classList.add('hidden');$('loginCard').classList.remove('hidden');$('logoutBtn').classList.add('hidden');});
+ $('artForm').addEventListener('submit',async e=>{
+  e.preventDefault();if(!currentUser)return;
+  const file=$('artImage').files[0];if(!file)return;
+  if(file.size>8*1024*1024){say('artStatus','Please choose an image smaller than 8 MB.','bad');return;}
+  const btn=$('artSubmit');btn.disabled=true;btn.textContent='Uploading…';
+  try{
+   const path='portfolio/'+crypto.randomUUID()+'-'+file.name.replace(/[^a-zA-Z0-9._-]/g,'_');
+   const up=await client.storage.from('artwork').upload(path,file,{upsert:false});if(up.error)throw up.error;
+   const imageUrl=client.storage.from('artwork').getPublicUrl(path).data.publicUrl;
+   const {error}=await client.from('artworks').insert({title:$('artTitle').value.trim(),category:$('artCategory').value,description:$('artDescription').value.trim(),price:$('artPrice').value.trim(),image_url:imageUrl,storage_path:path});
+   if(error){await client.storage.from('artwork').remove([path]);throw error;}
+   $('artForm').reset();say('artStatus','Artwork uploaded and published!','good');await loadGallery();renderManage();
+  }catch(err){say('artStatus',err.message||'Upload failed.','bad');}
+  finally{btn.disabled=false;btn.textContent='Upload artwork';}
+ });
+ function renderManage(){
+  $('manageList').innerHTML=artworks.length?artworks.map(a=>'<div class="manage-item"><img src="'+escapeHtml(a.image_url)+'" alt=""><div><b>'+escapeHtml(a.title)+'</b><small>'+escapeHtml(a.category||'Artwork')+' · '+escapeHtml(a.price||'No price set')+'</small></div><button class="btn danger small" type="button" data-delete="'+escapeHtml(a.id)+'">Delete</button></div>').join(''):'<p class="hint">No artwork uploaded yet.</p>';
+  $('manageList').querySelectorAll('[data-delete]').forEach(b=>b.addEventListener('click',()=>deleteArtwork(b.dataset.delete)));
+ }
+ async function deleteArtwork(id){
+  if(!confirm('Delete this artwork from your gallery?'))return;
+  const a=artworks.find(x=>String(x.id)===String(id));if(!a)return;
+  const {error}=await client.from('artworks').delete().eq('id',id);if(error){say('artStatus',error.message,'bad');return;}
+  if(a.storage_path)await client.storage.from('artwork').remove([a.storage_path]);
+  await loadGallery();renderManage();
+ }
+ async function loadOrders(){
+  const {data,error}=await client.from('drawing_requests').select('*').order('created_at',{ascending:false}).limit(100);
+  if(error){$('ordersList').innerHTML='<p class="hint">Could not load requests. Check the database setup.</p>';say('ordersStatus',error.message,'bad');return;}
+  $('ordersList').innerHTML=(data||[]).length?data.map(o=>'<article class="order-item"><h4>'+escapeHtml(o.drawing_type)+' · '+escapeHtml(o.customer_name)+'</h4><p><b>Email:</b> '+escapeHtml(o.customer_email)+' · <b>Size:</b> '+escapeHtml(o.size_preference||'Not specified')+'</p><p>'+escapeHtml(o.details)+'</p>'+(o.reference_photo_url?'<a href="'+escapeHtml(o.reference_photo_url)+'" target="_blank" rel="noopener">View reference photo</a>':'')+'<p class="hint">'+new Date(o.created_at).toLocaleString()+'</p></article>').join(''):'<p class="hint">No custom drawing requests yet.</p>';
+ }
+ async function boot(){await loadGallery();if(location.hash==='#studio')studio();}
+ boot();studio();
 })();
 </script>
-
-</body></html>
+</body>
+</html>
